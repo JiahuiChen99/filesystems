@@ -1,7 +1,9 @@
-import { component$, $ } from "@builder.io/qwik";
+import { component$, $, useSignal } from "@builder.io/qwik";
 import styles from "./ext2-global.module.css";
 
 export const Ext2 = component$(() => {
+  const blockGroupVisible = useSignal<boolean>(false);
+
   const mouseOverHighlight = $((e) => {
     e.srcElement.childNodes.item(0).style.fill = "rgb(255, 229, 153)";
   });
@@ -14,6 +16,10 @@ export const Ext2 = component$(() => {
     console.log(el.id);
   });
 
+  const blockGroupClick = $(() => {
+    blockGroupVisible.value = !blockGroupVisible.value
+  })
+
   return (
     <svg
       class={styles["full-screen"]}
@@ -22,7 +28,7 @@ export const Ext2 = component$(() => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <g id="ext2-all">
-        <g id="ext2-block-layout">
+        <g class={blockGroupVisible.value ? null : styles['global-layout-invisible']} id="ext2-block-layout">
           <g
             id="data-blocks-g"
             class={styles["clickable-group"]}
@@ -316,7 +322,7 @@ export const Ext2 = component$(() => {
           <g
             id="block-group-1-g"
             class={styles["clickable-group"]}
-            onClick$={blockClick}
+            onClick$={blockGroupClick}
             onMouseEnter$={mouseOverHighlight}
             onMouseLeave$={mouseLeaveHighlight}
           >
