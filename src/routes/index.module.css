@@ -1,20 +1,3 @@
-.view-api-warn {
-  position: fixed;
-  width: 400px;
-  background-color: black;
-  opacity: .5;
-  padding: 20px;
-  bottom: 20px;
-  right: 20px;
-}
-
-.view-api-warn-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-}
-
 .container {
   margin: auto 100px; 
 }

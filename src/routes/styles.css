@@ -181,3 +181,20 @@ button.button-small {
   }
 }
 
+.view-api-warn {
+  position: fixed;
+  width: 400px;
+  background-color: black;
+  opacity: .5;
+  padding: 20px;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+}
+
+.view-api-warn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+}
