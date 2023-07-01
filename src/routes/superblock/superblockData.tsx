@@ -239,5 +239,10 @@ export const superblockExtendedData = [
     size: 4,
     description: "s_first_meta_bg",
   },
-  { id: "unused", offset: 264, size: 760, description: "unused - reserved for future revisions" },
+  {
+    id: "unused",
+    offset: 264,
+    size: 760,
+    description: "unused - reserved for future revisions",
+  },
 ];
