@@ -7,6 +7,10 @@
     cursor: pointer;
 }
 
-.global-layout-invisible {
+.clickable-group:hover rect {
+  fill: rgb(255, 229, 153);
+}
+
+.block-group-layout-invisible {
   visibility: hidden;
 }

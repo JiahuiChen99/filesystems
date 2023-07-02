@@ -4,13 +4,7 @@ import styles from "./ext2-global.module.css";
 export const Ext2 = component$(() => {
   const blockGroupVisible = useSignal<boolean>(false);
 
-  const mouseOverHighlight = $((e) => {
-    e.srcElement.childNodes.item(0).style.fill = "rgb(255, 229, 153)";
-  });
 
-  const mouseLeaveHighlight = $((e) => {
-    e.srcElement.childNodes.item(0).style.fill = "white";
-  });
 
   const blockClick = $((_, el) => {
     console.log(el.id);
@@ -33,8 +27,6 @@ export const Ext2 = component$(() => {
             id="data-blocks-g"
             class={styles["clickable-group"]}
             onClick$={blockClick}
-            onMouseEnter$={mouseOverHighlight}
-            onMouseLeave$={mouseLeaveHighlight}
           >
             <rect
               x="439.5"
@@ -62,8 +54,6 @@ export const Ext2 = component$(() => {
             id="inode-table-g"
             class={styles["clickable-group"]}
             onClick$={blockClick}
-            onMouseEnter$={mouseOverHighlight}
-            onMouseLeave$={mouseLeaveHighlight}
           >
             <rect
               x="326.5"
@@ -91,8 +81,6 @@ export const Ext2 = component$(() => {
             id="inode-bitmap-g"
             class={styles["clickable-group"]}
             onClick$={blockClick}
-            onMouseEnter$={mouseOverHighlight}
-            onMouseLeave$={mouseLeaveHighlight}
           >
             <rect
               x="259.5"
@@ -123,8 +111,6 @@ export const Ext2 = component$(() => {
             id="block-bitmap-g"
             class={styles["clickable-group"]}
             onClick$={blockClick}
-            onMouseEnter$={mouseOverHighlight}
-            onMouseLeave$={mouseLeaveHighlight}
           >
             <rect
               x="192.5"
@@ -155,8 +141,6 @@ export const Ext2 = component$(() => {
             id="block-group-g"
             class={styles["clickable-group"]}
             onClick$={blockClick}
-            onMouseEnter$={mouseOverHighlight}
-            onMouseLeave$={mouseLeaveHighlight}
           >
             <rect
               x="85.5"
@@ -187,8 +171,6 @@ export const Ext2 = component$(() => {
             id="super-block-g"
             class={styles["clickable-group"]}
             onClick$={blockClick}
-            onMouseEnter$={mouseOverHighlight}
-            onMouseLeave$={mouseLeaveHighlight}
           >
             <rect
               x="0.5"
@@ -236,8 +218,6 @@ export const Ext2 = component$(() => {
             id="block-group-n-g"
             class={styles["clickable-group"]}
             onClick$={blockClick}
-            onMouseEnter$={mouseOverHighlight}
-            onMouseLeave$={mouseLeaveHighlight}
           >
             <rect
               x="528.5"
@@ -261,13 +241,7 @@ export const Ext2 = component$(() => {
               </tspan>
             </text>
           </g>
-          <g
-            id="...-g"
-            class={styles["clickable-group"]}
-            onClick$={blockClick}
-            onMouseEnter$={mouseOverHighlight}
-            onMouseLeave$={mouseLeaveHighlight}
-          >
+          <g id="...-g" class={styles["clickable-group"]} onClick$={blockClick}>
             <rect
               x="433.5"
               y="0.5"
@@ -294,8 +268,6 @@ export const Ext2 = component$(() => {
             id="block-group-2-g"
             class={styles["clickable-group"]}
             onClick$={blockClick}
-            onMouseEnter$={mouseOverHighlight}
-            onMouseLeave$={mouseLeaveHighlight}
           >
             <rect
               x="316.5"
@@ -323,8 +295,6 @@ export const Ext2 = component$(() => {
             id="block-group-1-g"
             class={styles["clickable-group"]}
             onClick$={blockGroupClick}
-            onMouseEnter$={mouseOverHighlight}
-            onMouseLeave$={mouseLeaveHighlight}
           >
             <rect
               x="199.5"
@@ -352,8 +322,6 @@ export const Ext2 = component$(() => {
             id="block-group-0-g"
             class={styles["clickable-group"]}
             onClick$={blockClick}
-            onMouseEnter$={mouseOverHighlight}
-            onMouseLeave$={mouseLeaveHighlight}
           >
             <rect
               x="82.5"
@@ -381,8 +349,6 @@ export const Ext2 = component$(() => {
             id="boot-sector-g"
             class={styles["clickable-group"]}
             onClick$={blockClick}
-            onMouseEnter$={mouseOverHighlight}
-            onMouseLeave$={mouseLeaveHighlight}
           >
             <rect
               x="0.5"
