@@ -11,8 +11,8 @@ export const Ext2 = component$(() => {
   });
 
   const blockGroupClick = $(() => {
-    blockGroupVisible.value = !blockGroupVisible.value
-  })
+    blockGroupVisible.value = !blockGroupVisible.value;
+  });
 
   return (
     <svg
@@ -22,7 +22,14 @@ export const Ext2 = component$(() => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <g id="ext2-all">
-        <g class={blockGroupVisible.value ? null : styles['global-layout-invisible']} id="ext2-block-layout">
+        <g
+          id="ext2-block-layout"
+          class={
+            blockGroupVisible.value
+              ? styles["superblock"]
+              : styles["block-group-layout-invisible"]
+          }
+        >
           <g
             id="data-blocks-g"
             class={styles["clickable-group"]}

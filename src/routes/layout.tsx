@@ -16,7 +16,7 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 
 export default component$(() => {
   useStyles$(styles);
-  const viewAPIWarn = useSignal<boolean>(true);
+  const viewAPIWarn = useSignal<boolean>(false);
 
   const viewAPIWarnClose = $(() => {
     viewAPIWarn.value = false;
@@ -34,10 +34,9 @@ export default component$(() => {
             />
             <p>
               This site supports View Transition, an experimental feature. For a
-              smoother experience use one of the following browsers [Chrome 111+,
-              Edge 111+, Opera 97+], and enable <i>viewTransition API</i> &
-              <i>viewTransition for navigations</i> flags at <a href="/">Flags</a>
-              .
+              smoother experience use one of the following browsers [Chrome
+              111+, Edge 111+, Opera 97+], and enable <i>viewTransition API</i>
+              &<i>viewTransition for navigations</i> flags at <a href="/">Flags</a>.
             </p>
           </div>
         )}
