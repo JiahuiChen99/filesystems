@@ -1,7 +1,7 @@
-import { component$, $, Slot, useSignal, useStyles$ } from '@builder.io/qwik';
-import type { RequestHandler } from '@builder.io/qwik-city';
+import { component$, $, Slot, useSignal, useStyles$ } from "@builder.io/qwik";
+import type { RequestHandler } from "@builder.io/qwik-city";
 import { HiXMarkSolid } from "@qwikest/icons/heroicons";
-import styles from './styles.css?inline';
+import styles from "./styles.css?inline";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
