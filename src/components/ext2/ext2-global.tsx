@@ -25,7 +25,7 @@ export const Ext2 = component$(() => {
           id="ext2-block-layout"
           class={
             blockGroupVisible.value
-              ? styles["superblock"]
+              ? styles["blockgroup"]
               : styles["block-group-layout-invisible"]
           }
         >
@@ -226,11 +226,7 @@ export const Ext2 = component$(() => {
           />
         </g>
         <g id="ext2-global-layout">
-          <g
-            id="block-group-n-g"
-            class={styles["clickable-group"]}
-            onClick$={blockClick}
-          >
+          <g id="block-group-n-g">
             <rect
               x="528.5"
               y="0.5"
@@ -253,7 +249,7 @@ export const Ext2 = component$(() => {
               </tspan>
             </text>
           </g>
-          <g id="...-g" class={styles["clickable-group"]} onClick$={blockClick}>
+          <g id="...-g">
             <rect
               x="433.5"
               y="0.5"
@@ -276,11 +272,7 @@ export const Ext2 = component$(() => {
               </tspan>
             </text>
           </g>
-          <g
-            id="block-group-2-g"
-            class={styles["clickable-group"]}
-            onClick$={blockClick}
-          >
+          <g id="block-group-2-g">
             <rect
               x="316.5"
               y="0.5"
@@ -330,11 +322,7 @@ export const Ext2 = component$(() => {
               </tspan>
             </text>
           </g>
-          <g
-            id="block-group-0-g"
-            class={styles["clickable-group"]}
-            onClick$={blockClick}
-          >
+          <g id="block-group-0-g">
             <rect
               x="82.5"
               y="0.5"
