@@ -28,12 +28,12 @@
     "start": "vite --open --mode ssr"
   },
   "devDependencies": {
-    "@builder.io/qwik": "^1.1.5",
-    "@builder.io/qwik-city": "^1.1.5",
+    "@builder.io/qwik": "^1.2.5",
+    "@builder.io/qwik-city": "^1.2.5",
+    "@qwikest/icons": "^0.0.8",
     "@types/eslint": "8.40.0",
     "@types/node": "^20.2.5",
     "@typescript-eslint/eslint-plugin": "5.59.8",
-    "@qwikest/icons": "^0.0.8",
     "@typescript-eslint/parser": "5.59.8",
     "eslint": "8.41.0",
     "eslint-plugin-qwik": "^1.1.5",
