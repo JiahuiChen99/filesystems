@@ -16,7 +16,7 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 
 export default component$(() => {
   useStyles$(styles);
-  const viewAPIWarn = useSignal<boolean>(false);
+  const viewAPIWarn = useSignal<boolean>(true);
 
   const viewAPIWarnClose = $(() => {
     viewAPIWarn.value = false;
@@ -28,15 +28,13 @@ export default component$(() => {
         <Slot />
         {viewAPIWarn.value && (
           <div class="view-api-warn">
-            <HiXMarkSolid
-              onClick$={viewAPIWarnClose}
-              class="view-api-warn-close"
-            />
+            <HiXMarkSolid onClick$={viewAPIWarnClose} class="close" />
             <p>
               This site supports View Transition, an experimental feature. For a
               smoother experience use one of the following browsers [Chrome
-              111+, Edge 111+, Opera 97+], and enable <i>viewTransition API</i>
-              &<i>viewTransition for navigations</i> flags at <a href="/">Flags</a>.
+              111+, Edge 111+, Opera 97+], and enable <i>viewTransition API</i>&
+              <i>viewTransition for navigations</i> flags at{" "}
+              <a href="/">Flags</a>.
             </p>
           </div>
         )}
