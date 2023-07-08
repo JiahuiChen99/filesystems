@@ -32,6 +32,7 @@ export const Ext2 = component$(() => {
         >
           <g
             id="data-blocks-g"
+            data-id="data-blocks"
             class={styles["clickable-group"]}
             onClick$={blockClick}
           >
@@ -59,6 +60,7 @@ export const Ext2 = component$(() => {
           </g>
           <g
             id="inode-table-g"
+            data-id="inode-table"
             class={styles["clickable-group"]}
             onClick$={blockClick}
           >
@@ -86,6 +88,7 @@ export const Ext2 = component$(() => {
           </g>
           <g
             id="inode-bitmap-g"
+            data-id="inode-bitmap"
             class={styles["clickable-group"]}
             onClick$={blockClick}
           >
@@ -116,6 +119,7 @@ export const Ext2 = component$(() => {
           </g>
           <g
             id="block-bitmap-g"
+            data-id="block-bitmap"
             class={styles["clickable-group"]}
             onClick$={blockClick}
           >
@@ -146,6 +150,7 @@ export const Ext2 = component$(() => {
           </g>
           <g
             id="block-group-g"
+            data-id="block-group-descriptor"
             class={styles["clickable-group"]}
             onClick$={blockClick}
           >
@@ -176,6 +181,7 @@ export const Ext2 = component$(() => {
           </g>
           <g
             id="super-block-g"
+            data-id="superblock"
             class={styles["clickable-group"]}
             onClick$={blockClick}
           >
