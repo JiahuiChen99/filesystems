@@ -162,7 +162,7 @@ export const Ext2 = component$(() => {
               stroke="black"
             />
             <text
-              id="block group descriptorr"
+              id="block group descriptor"
               fill="black"
               xml:space="preserve"
               style="white-space: pre"
