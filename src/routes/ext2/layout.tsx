@@ -17,7 +17,7 @@ export default component$(() => {
             <HiHomeOutline />
           </a>
           {loc.url.pathname.split("/").map((path) => {
-            return path === "" ? null : <Link path={path} />;
+            return path === "" ? null : <Link key={path} path={path} />;
           })}
         </div>
       </div>
