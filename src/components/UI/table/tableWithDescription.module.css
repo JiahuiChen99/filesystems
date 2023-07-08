@@ -1,0 +1,30 @@
+table {
+  width: 35%;
+}
+
+.table-with-property-description {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.property-description-section {
+  position: sticky;
+  top: 0;
+  background-color: cornsilk;
+  padding: 50px;
+  width: 65%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.property-description-section .metadata {
+  display: flex;
+  gap: 20px;
+  align-content: center;
+}
+
+.property-description-section .metadata svg {
+  font-size: 24px;
+}
