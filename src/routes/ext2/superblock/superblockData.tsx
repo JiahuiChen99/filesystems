@@ -1,4 +1,6 @@
 import { $, QRL } from "@builder.io/qwik";
+import { JSX } from "@builder.io/qwik/jsx-runtime";
+
 export interface superblockDataProps {
   id: string;
   offset: number;
