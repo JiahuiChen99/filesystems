@@ -8,7 +8,7 @@ import MdiMemory from "../icons/mdi-memory";
 
 export const TableWithDescription = component$(
   ({ data }: { data: superblockDataProps[] }) => {
-    const isDescriptionOpen = useSignal<boolean>(false);
+    const isDescriptionOpen = useSignal<boolean>(true);
     const selectedSuperblockProp = useSignal<superblockDataProps>(data[0]);
 
     const openPropertyDescription = $((selectedPropIndex: number) => {
