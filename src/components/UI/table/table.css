@@ -10,7 +10,7 @@ th {
   text-align: left;
 }
 
-td a {
+td a, td span {
   display: block;
   padding: 8px;
   text-decoration: none;
