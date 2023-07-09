@@ -9,7 +9,7 @@ import { TableWithDescription } from "~/components/UI/table/tableWithDescription
 
 export default component$(() => {
   return (
-    <section class={styles["sec"]}>
+    <section class={styles}>
       <p>
         The superblock contains <b>all the information</b> about the
         configuration of the filesystem. The information in the superblock
