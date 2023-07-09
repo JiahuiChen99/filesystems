@@ -11,6 +11,20 @@ export const EXT2Table = component$(
     clickCallback: CallableFunction;
   }) => {
     useStylesScoped$(styles);
+
+    const generatePropDescription = (
+      data: superblockDataProps,
+      index: number
+    ) => {
+      return data.info === undefined ? (
+        <span>{data.description}</span>
+      ) : (
+        <a href={`#${data.id}`} onclick$={() => clickCallback(index)}>
+          {data.description}
+        </a>
+      );
+    };
+
     return (
       <table>
         <thead>
@@ -25,14 +39,7 @@ export const EXT2Table = component$(
             <tr key={d.id}>
               <td>{d.offset}</td>
               <td>{d.size}</td>
-              <td>
-                <a
-                  href={`#${data[index].id}`}
-                  onclick$={() => clickCallback(index)}
-                >
-                  {d.description}
-                </a>
-              </td>
+              <td>{generatePropDescription(d, index)}</td>
             </tr>
           ))}
         </tbody>
