@@ -276,6 +276,27 @@ else
           most likely contain errors that will need to be fixed. Typically under
           Linux this means running fsck.
         </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Constant Name</th>
+              <th>Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>EXT2_VALID_FS</td>
+              <td>1</td>
+              <td>Unmounted cleanly</td>
+            </tr>
+            <tr>
+              <td>EXT2_ERROR_FS</td>
+              <td>2</td>
+              <td>Errors detected</td>
+            </tr>
+          </tbody>
+        </table>
       </>
     )),
   },
@@ -290,6 +311,32 @@ else
           16bit value indicating what the file system driver should do when an
           error is detected. The following values have been defined:
         </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Constant Name</th>
+              <th>Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>EXT2_ERRORS_CONTINUE</td>
+              <td>1</td>
+              <td>Continue as if nothing happened</td>
+            </tr>
+            <tr>
+              <td>EXT2_ERRORS_NO</td>
+              <td>2</td>
+              <td>Remount read-only</td>
+            </tr>
+            <tr>
+              <td>EXT2_ERRRORS_PANIC</td>
+              <td>3</td>
+              <td>Cause a kernel panic</td>
+            </tr>
+          </tbody>
+        </table>
       </>
     )),
   },
@@ -332,10 +379,48 @@ else
     size: 4,
     description: "s_creator_os",
     info: $(() => (
-      <p>
-        32bit identifier of the os that created the file system. Defined values
-        are:
-      </p>
+      <>
+        <p>
+          32bit identifier of the os that created the file system. Defined
+          values are:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Constant Name</th>
+              <th>Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>EXT2_OS_LINUX</td>
+              <td>0</td>
+              <td>Linux</td>
+            </tr>
+            <tr>
+              <td>EXT2_OS_HURD 1</td>
+              <td>1</td>
+              <td>GNU HURD</td>
+            </tr>
+            <tr>
+              <td>EXT2_OS_MASIX</td>
+              <td>2</td>
+              <td>MASIX</td>
+            </tr>
+            <tr>
+              <td>EXT2_OS_FREEBSD</td>
+              <td>3</td>
+              <td>FreeBSD</td>
+            </tr>
+            <tr>
+              <td>EXT2_OS_LITES</td>
+              <td>4</td>
+              <td>Lites</td>
+            </tr>
+          </tbody>
+        </table>
+      </>
     )),
   },
   {
@@ -343,7 +428,34 @@ else
     offset: 76,
     size: 4,
     description: "s_rev_level",
-    info: $(() => <p>32bit revision level value.</p>),
+    info: $(() => (
+      <>
+        <p>32bit revision level value.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Constant Name</th>
+              <th>Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>EXT2_GOOD_OLD_REV</td>
+              <td>0</td>
+              <td>Revision 0</td>
+            </tr>
+            <tr>
+              <td>EXT2_DYNAMIC_REV</td>
+              <td>1</td>
+              <td>
+                Revision 1 with variable inode sizes, extended attribute, etc.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </>
+    )),
   },
   {
     id: "s_def_resuid",
