@@ -21,9 +21,12 @@ export default component$(() => {
       </p>
       <p>
         The primary copy of the superblock is stored at an offset of{" "}
-        <b>1024 bytes</b> from the start of the device, and it is essential to
-        mounting the filesystem. Since it is so important, backup copies of the
-        superblock are stored in block groups throughout the filesystem.
+        <b>1024 bytes</b> from the start of the file, block device or partition
+        formatted with Ext2 and later variants (Ext3, Ext4). Its structure is
+        mostly constant from Ext2 to Ext3 and Ext4 with only some minor changes.
+        It is essential to mounting the filesystem. Since it is so important,
+        backup copies of the superblock are stored in block groups throughout
+        the filesystem.
       </p>
       <p>
         The first version of ext2 (revision 0) stores a copy at the start of
