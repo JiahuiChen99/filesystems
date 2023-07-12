@@ -31,13 +31,15 @@ export const TableWithDescription = component$(
             <div class={styles["metadata"]}>
               <div>
                 <MdiHorizontalExpand />
-                <span>Offset: </span>
-                <span>{selectedSuperblockProp.value.offset} bytes</span>
+                <span>
+                  Offset: <b>{selectedSuperblockProp.value.offset}</b> bytes
+                </span>
               </div>
               <div>
                 <MdiMemory />
-                <span>Size: </span>
-                <span>{selectedSuperblockProp.value.size} bytes</span>
+                <span>
+                  Size: <b>{selectedSuperblockProp.value.size}</b> bytes
+                </span>
               </div>
             </div>
             {selectedSuperblockProp.value.info &&
