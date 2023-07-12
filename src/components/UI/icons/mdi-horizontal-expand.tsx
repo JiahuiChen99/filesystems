@@ -9,16 +9,13 @@ export function MdiHorizontalExpand(
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
       height="1em"
-      viewBox="0 0 14 14"
+      viewBox="0 0 24 24"
       {...props}
       key={key}
     >
       <path
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M11.5 7h-9M5 4.5L2.5 7L5 9.5m4-5L11.5 7L9 9.5M.5.5v13m13-13v13"
+        fill="currentColor"
+        d="M9 11h6V8l4 4l-4 4v-3H9v3l-4-4l4-4v3m-7 9V4h2v16H2m18 0V4h2v16h-2Z"
       ></path>
     </svg>
   );
