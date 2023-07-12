@@ -535,10 +535,53 @@ export const superblockExtendedData = [
     size: 4,
     description: "s_feature_compat",
     info: $(() => (
-      <p>
-        32bit bitmask of compatible features. The file system implementation is
-        free to support them or not without risk of damaging the meta-data.
-      </p>
+      <>
+        <p>
+          32bit bitmask of compatible features. The file system implementation
+          is free to support them or not without risk of damaging the meta-data.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Constant Name</th>
+              <th>Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>EXT2_FEATURE_COMPAT_DIR_PREALLOC</td>
+              <td>0x0001</td>
+              <td>Block pre-allocation for new directories</td>
+            </tr>
+            <tr>
+              <td>EXT2_FEATURE_COMPAT_IMAGIC_INODES</td>
+              <td>0x0002</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>EXT3_FEATURE_COMPAT_HAS_JOURNAL</td>
+              <td>0x0004</td>
+              <td>An Ext3 journal exists</td>
+            </tr>
+            <tr>
+              <td>EXT2_FEATURE_COMPAT_EXT_ATTR</td>
+              <td>0x0008</td>
+              <td>Extended inode attributes are present</td>
+            </tr>
+            <tr>
+              <td>EXT2_FEATURE_COMPAT_RESIZE_INO</td>
+              <td>0x0010</td>
+              <td>Non-standard inode size used</td>
+            </tr>
+            <tr>
+              <td>EXT2_FEATURE_COMPAT_DIR_INDEX</td>
+              <td>0x0020</td>
+              <td>Directory indexing (HTree)</td>
+            </tr>
+          </tbody>
+        </table>
+      </>
     )),
   },
   {
@@ -559,6 +602,42 @@ export const superblockExtendedData = [
           used and an executable file would be unusable after being read from
           the disk if the system does not know how to uncompress it.
         </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Constant Name</th>
+              <th>Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>EXT2_FEATURE_INCOMPAT_COMPRESSION</td>
+              <td>0x0001</td>
+              <td>Disk/File compression is used</td>
+            </tr>
+            <tr>
+              <td>EXT2_FEATURE_INCOMPAT_FILETYPE</td>
+              <td>0x0002</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>EXT3_FEATURE_INCOMPAT_RECOVER</td>
+              <td>0x0004</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>EXT3_FEATURE_INCOMPAT_JOURNAL_DEV</td>
+              <td>0x0008</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>EXT2_FEATURE_INCOMPAT_META_BG</td>
+              <td>0x0010</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
       </>
     )),
   },
@@ -568,11 +647,39 @@ export const superblockExtendedData = [
     size: 4,
     description: "s_feature_ro_compat",
     info: $(() => (
-      <p>
-        32bit bitmask of “read-only” features. The file system implementation
-        should mount as read-only if any of the indicated feature is
-        unsupported.
-      </p>
+      <>
+        <p>
+          32bit bitmask of “read-only” features. The file system implementation
+          should mount as read-only if any of the indicated feature is
+          unsupported.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Constant Name</th>
+              <th>Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>EXT2_FEATURE_RO_COMPAT_SPARSE_SUPER</td>
+              <td>0x0001</td>
+              <td>Sparse Superblock</td>
+            </tr>
+            <tr>
+              <td>EXT2_FEATURE_RO_COMPAT_LARGE_FILE</td>
+              <td>0x0002</td>
+              <td>Large file support, 64-bit file size</td>
+            </tr>
+            <tr>
+              <td>EXT2_FEATURE_RO_COMPAT_BTREE_DIR</td>
+              <td>0x0004</td>
+              <td>Binary tree sorted directory files</td>
+            </tr>
+          </tbody>
+        </table>
+      </>
     )),
   },
   {
@@ -629,6 +736,42 @@ export const superblockExtendedData = [
           Compression is supported in Linux 2.4 and 2.6 via the e2compr patch.
           For more information, visit http://e2compr.sourceforge.net/
         </q>
+        <table>
+          <thead>
+            <tr>
+              <th>Constant Name</th>
+              <th>Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>EXT2_LZV1_ALG</td>
+              <td>0</td>
+              <td>Binary value of 0x00000001</td>
+            </tr>
+            <tr>
+              <td>EXT2_LZRW3A_ALG</td>
+              <td>1</td>
+              <td>Binary value of 0x00000002</td>
+            </tr>
+            <tr>
+              <td>EXT2_GZIP_ALG</td>
+              <td>2</td>
+              <td>Binary value of 0x00000004</td>
+            </tr>
+            <tr>
+              <td>EXT2_BZIP2_ALG</td>
+              <td>3</td>
+              <td>Binary value of 0x00000008</td>
+            </tr>
+            <tr>
+              <td>EXT2_LZO_ALG</td>
+              <td>4</td>
+              <td>Binary value of 0x00000010</td>
+            </tr>
+          </tbody>
+        </table>
       </>
     )),
   },
