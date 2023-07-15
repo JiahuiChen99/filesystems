@@ -11,14 +11,14 @@ export const TableWithDescription = component$(
     const isDescriptionOpen = useSignal<boolean>(true);
     const selectedSuperblockProp = useSignal<superblockDataProps>(data[0]);
 
-    const openPropertyDescription = $((selectedPropIndex: number) => {
+    const openPropertyDescription$ = $((selectedPropIndex: number) => {
       selectedSuperblockProp.value = data[selectedPropIndex];
       if (!isDescriptionOpen.value) isDescriptionOpen.value = true;
     });
 
     return (
       <div class={styles["table-with-property-description"]}>
-        <EXT2Table data={data} clickCallback={openPropertyDescription} />
+        <EXT2Table data={data} clickCallback$={openPropertyDescription$} />
         {isDescriptionOpen.value && (
           <div class={styles["property-description-section"]}>
             <HiXMarkSolid

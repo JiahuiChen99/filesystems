@@ -1,14 +1,18 @@
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import {
+  type PropFunction,
+  component$,
+  useStylesScoped$,
+} from "@builder.io/qwik";
 import styles from "~/components/UI/table/table.css?inline";
 import { superblockDataProps } from "~/routes/ext2/superblock/superblockData";
 
 export const EXT2Table = component$(
   ({
     data,
-    clickCallback,
+    clickCallback$,
   }: {
     data: superblockDataProps[];
-    clickCallback: CallableFunction;
+    clickCallback$: PropFunction<(index: number) => void>;
   }) => {
     useStylesScoped$(styles);
 
@@ -19,7 +23,7 @@ export const EXT2Table = component$(
       return data.info === undefined ? (
         <span>{data.description}</span>
       ) : (
-        <a href={`#${data.id}`} onclick$={() => clickCallback(index)}>
+        <a href={`#${data.id}`} onclick$={() => clickCallback$(index)}>
           {data.description}
         </a>
       );
