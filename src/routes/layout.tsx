@@ -4,7 +4,6 @@ import {
   Slot,
   useSignal,
   useStyles$,
-  useTask$,
   useVisibleTask$,
 } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
