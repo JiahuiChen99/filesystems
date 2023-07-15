@@ -1,4 +1,4 @@
-import { component$, $ } from "@builder.io/qwik";
+import { component$, useContext, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import styles from "./index.module.css";
 import {
@@ -6,8 +6,15 @@ import {
   superblockExtendedData,
 } from "~/routes/ext2/superblock/superblockData";
 import { TableWithDescription } from "~/components/UI/table/tableWithDescription";
+import { BlockGroupRegionContext } from "../context/ext2Context";
 
 export default component$(() => {
+  const blockGroupRegionInfo = useContext(BlockGroupRegionContext);
+
+  useVisibleTask$(() => {
+    blockGroupRegionInfo.blockGroupRegionTitle = "Superblock";
+  });
+
   return (
     <section class={styles}>
       <p>
