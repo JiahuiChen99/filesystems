@@ -1,12 +1,27 @@
-import { component$, Slot, useStyles$ } from "@builder.io/qwik";
+import {
+  component$,
+  Slot,
+  useContextProvider,
+  useStore,
+  useStyles$,
+} from "@builder.io/qwik";
 import { HiChevronRightMini, HiHomeOutline } from "@qwikest/icons/heroicons";
 import { useLocation } from "@builder.io/qwik-city";
 import { Ext2BlockGroup } from "~/components/ext2/block-group/ext2-block-group";
 import styles from "./ext2.css?inline";
+import {
+  BlockGroupRegionContext,
+  BlockGroupRegionContextType,
+} from "./context/ext2Context";
 
 export default component$(() => {
   useStyles$(styles);
   const loc = useLocation();
+  const blockGroupRegionInfo = useStore<BlockGroupRegionContextType>({
+    blockGroupRegionTitle: "",
+  });
+
+  useContextProvider(BlockGroupRegionContext, blockGroupRegionInfo);
 
   return (
     <>
@@ -21,7 +36,7 @@ export default component$(() => {
           })}
         </div>
       </div>
-      <h1>Superblock</h1>
+      <h1>{blockGroupRegionInfo.blockGroupRegionTitle}</h1>
       <Slot />
     </>
   );
