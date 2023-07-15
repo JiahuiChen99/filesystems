@@ -1,13 +1,15 @@
-import { component$, $ } from "@builder.io/qwik";
+import { component$, $, QwikMouseEvent } from "@builder.io/qwik";
 import styles from "./ext2-block-group.module.css";
 import ext2styles from "../ext2-global.module.css";
 import { useNavigate } from "@builder.io/qwik-city";
 
 export const Ext2BlockGroup = component$(() => {
   const nav = useNavigate();
-  const blockClick = $((_, el) => {
-    nav(`/ext2/${el.dataset.id}`);
-  });
+  const blockClick = $(
+    (_: QwikMouseEvent<HTMLElement, MouseEvent>, el: HTMLElement) => {
+      nav(`/ext2/${el.dataset.id}`);
+    }
+  );
 
   return (
     <svg

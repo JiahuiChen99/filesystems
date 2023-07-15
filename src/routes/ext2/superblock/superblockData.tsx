@@ -9,7 +9,7 @@ export interface superblockDataProps {
   info?: QRL<() => JSX.Element>;
 }
 
-export const superblockData = [
+export const superblockData: superblockDataProps[] = [
   {
     id: "s_inodes_count",
     offset: 0,
@@ -487,7 +487,7 @@ else
   },
 ];
 
-export const superblockExtendedData = [
+export const superblockExtendedData: superblockDataProps[] = [
   {
     id: "s_first_ino",
     offset: 84,
@@ -815,7 +815,7 @@ export const superblockExtendedData = [
       </>
     )),
   },
-  { id: "alignment", offset: "206", size: 2, description: "(alignment)" },
+  { id: "alignment", offset: 206, size: 2, description: "(alignment)" },
   {
     id: "s_journal_uuid",
     offset: 208,

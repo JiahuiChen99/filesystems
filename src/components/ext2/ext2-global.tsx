@@ -1,13 +1,15 @@
-import { component$, $, useSignal } from "@builder.io/qwik";
+import { component$, $, useSignal, QwikMouseEvent } from "@builder.io/qwik";
 import styles from "./ext2-global.module.css";
 import { useNavigate } from "@builder.io/qwik-city";
 
 export const Ext2 = component$(() => {
   const blockGroupVisible = useSignal<boolean>(false);
   const nav = useNavigate();
-  const blockClick = $((_, el) => {
-    nav(`/ext2/${el.dataset.id}`);
-  });
+  const blockClick = $(
+    (_: QwikMouseEvent<HTMLElement, MouseEvent>, el: HTMLElement) => {
+      nav(`/ext2/${el.dataset.id}`);
+    }
+  );
 
   const blockGroupClick = $(() => {
     blockGroupVisible.value = !blockGroupVisible.value;
