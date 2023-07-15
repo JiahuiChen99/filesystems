@@ -1,4 +1,12 @@
-import { component$, $, Slot, useSignal, useStyles$ } from "@builder.io/qwik";
+import {
+  component$,
+  $,
+  Slot,
+  useSignal,
+  useStyles$,
+  useTask$,
+  useVisibleTask$,
+} from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 import { HiXMarkSolid } from "@qwikest/icons/heroicons";
 import styles from "./styles.css?inline";
@@ -16,10 +24,16 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 
 export default component$(() => {
   useStyles$(styles);
-  const viewAPIWarn = useSignal<boolean>(true);
+  const viewAPIWarn = useSignal<boolean>(false);
+
+  useVisibleTask$(async () => {
+    const warn = sessionStorage.getItem("v-api-warn");
+    viewAPIWarn.value = warn === null ? true : warn === "true";
+  });
 
   const viewAPIWarnClose = $(() => {
     viewAPIWarn.value = false;
+    sessionStorage.setItem("v-api-warn", String(false));
   });
 
   return (
