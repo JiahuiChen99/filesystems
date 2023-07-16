@@ -51,26 +51,24 @@ export const EXT2Table = component$(
         value={tableHeaders}
         onPending={() => tableSkeleton}
         onResolved={(headers) => (
-          <>
-            <table>
-              <thead>
-                <tr>
-                  {headers.map((th: string) => (
-                    <th>{th}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((d, index) => (
-                  <tr key={d.id}>
-                    <td>{d.offset}</td>
-                    <td>{d.size}</td>
-                    <td>{generatePropDescription(d, index)}</td>
-                  </tr>
+          <table>
+            <thead>
+              <tr>
+                {headers.map((th: string) => (
+                  <th>{th}</th>
                 ))}
-              </tbody>
-            </table>
-          </>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((d, index) => (
+                <tr key={d.id}>
+                  <td>{d.offset}</td>
+                  <td>{d.size}</td>
+                  <td>{generatePropDescription(d, index)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         )}
       />
     );
