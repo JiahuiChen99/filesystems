@@ -79,7 +79,7 @@ export const EXT2Table = component$(
                           if (key === "description") {
                             return <td>{generatePropDescription(d, index)}</td>;
                           }
-                          return <td>{d[key]}</td>;
+                          return <td>{d[key as keyof EXT2.Struct]}</td>;
                         })}
                       </>
                     )}
