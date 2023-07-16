@@ -479,7 +479,7 @@ else
   },
 ];
 
-export const superblockExtendedData: superblockDataProps[] = [
+export const superblockExtendedData: EXT2.Struct[] = [
   {
     id: "s_first_ino",
     offset: 84,
