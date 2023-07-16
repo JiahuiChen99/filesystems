@@ -75,7 +75,6 @@ export const EXT2Table = component$(
                     onResolved={(colKeys) => (
                       <>
                         {colKeys.map((key) => {
-                          // TODO: <td>{generatePropDescription(d, index)}</td>
                           if (key === "description") {
                             return <td>{generatePropDescription(d, index)}</td>;
                           }
