@@ -14,24 +14,34 @@ export const EXT2Table = component$(
     data,
     clickCallback$,
   }: {
-    data: EXT2.Struct[];
-    clickCallback$: PropFunction<(index: number) => void>;
+    data: EXT2.Struct[] | EXT2.ConstValueDesc[];
+    clickCallback$?: PropFunction<(index: number) => void>;
   }) => {
     useStylesScoped$(styles);
-
-    const generatePropDescription = (data: EXT2.Struct, index: number) => {
-      return data.info === undefined ? (
-        <span>{data.description}</span>
-      ) : (
-        <a href={`#${data.id}`} onclick$={() => clickCallback$(index)}>
-          {data.description}
-        </a>
-      );
-    };
-
-    const isStruct = $((d: any): boolean => {
+    const isStruct = $((d: any): d is EXT2.Struct => {
       return typeof d.offset === "number" && typeof d.size === "number";
     });
+
+    const generateNoClikcDescription = $((description: string) => (
+      <span>{description}</span>
+    ));
+
+    const generatePropDescription = $(
+      async (data: EXT2.Struct | EXT2.ConstValueDesc, index: number) => {
+        if (
+          (await isStruct(data)) &&
+          (data as EXT2.Struct).info !== undefined
+        ) {
+          return (
+            <a href={`#${data.id}`} onclick$={() => clickCallback$!(index)}>
+              {data.description}
+            </a>
+          );
+        } else {
+          return generateNoClikcDescription(data.description);
+        }
+      }
+    );
 
     // Probe data first object and determine Table headers
     const tableHeaders = useResource$(async () => {
@@ -51,7 +61,17 @@ export const EXT2Table = component$(
     });
 
     const tableSkeleton = (
-      <div style={{ backgroundColor: "lightgrey", width: "35%" }}>Loading</div>
+      <div
+        style={{
+          display: "flex",
+          backgroundColor: "lightgrey",
+          width: "35%",
+          minHeight: "30rem",
+          justifyContent: "center",
+        }}
+      >
+        Loading...
+      </div>
     );
 
     return (
@@ -76,9 +96,24 @@ export const EXT2Table = component$(
                       <>
                         {colKeys.map((key) => {
                           if (key === "description") {
-                            return <td>{generatePropDescription(d, index)}</td>;
+                            return (
+                              <td key={key}>
+                                {generatePropDescription(d, index)}
+                              </td>
+                            );
                           }
-                          return <td>{d[key as keyof EXT2.Struct]}</td>;
+                          return (
+                            <td>
+                              {
+                                d[
+                                  key as keyof (
+                                    | EXT2.Struct
+                                    | EXT2.ConstValueDesc
+                                  )
+                                ]
+                              }
+                            </td>
+                          );
                         })}
                       </>
                     )}
