@@ -1,15 +1,15 @@
 import { $, component$, useSignal } from "@builder.io/qwik";
 import { EXT2Table } from "~/components/UI/table/table";
-import { superblockDataProps } from "~/routes/ext2/superblock/superblockData";
 import { HiXMarkSolid } from "@qwikest/icons/heroicons";
 import MdiHorizontalExpand from "../icons/mdi-horizontal-expand";
 import styles from "./tableWithDescription.module.css";
 import MdiMemory from "../icons/mdi-memory";
+import { EXT2 } from "~/typings/ext2";
 
 export const TableWithDescription = component$(
-  ({ data }: { data: superblockDataProps[] }) => {
+  ({ data }: { data: EXT2.Struct[] }) => {
     const isDescriptionOpen = useSignal<boolean>(true);
-    const selectedSuperblockProp = useSignal<superblockDataProps>(data[0]);
+    const selectedSuperblockProp = useSignal<EXT2.Struct>(data[0]);
 
     const openPropertyDescription$ = $((selectedPropIndex: number) => {
       selectedSuperblockProp.value = data[selectedPropIndex];
