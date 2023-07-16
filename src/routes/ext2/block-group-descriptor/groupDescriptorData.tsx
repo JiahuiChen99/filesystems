@@ -1,7 +1,7 @@
 import { $ } from "@builder.io/qwik";
-import { superblockDataProps } from "../superblock/superblockData";
+import { EXT2 } from "~/typings/ext2";
 
-export const groupDescriptorData: superblockDataProps[] = [
+export const groupDescriptorData: EXT2.Struct[] = [
   {
     id: "bg_block_bitmap",
     offset: 0,

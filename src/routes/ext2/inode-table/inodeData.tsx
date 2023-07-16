@@ -1,7 +1,7 @@
 import { $ } from "@builder.io/qwik";
-import { superblockDataProps } from "../superblock/superblockData";
+import { EXT2 } from "~/typings/ext2";
 
-export const inodeData: superblockDataProps[] = [
+export const inodeData: EXT2.Struct[] = [
   {
     id: "i_mode",
     offset: 0,

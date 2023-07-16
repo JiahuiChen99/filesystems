@@ -4,22 +4,19 @@ import {
   useStylesScoped$,
 } from "@builder.io/qwik";
 import styles from "~/components/UI/table/table.css?inline";
-import { superblockDataProps } from "~/routes/ext2/superblock/superblockData";
+import { EXT2 } from "~/typings/ext2";
 
 export const EXT2Table = component$(
   ({
     data,
     clickCallback$,
   }: {
-    data: superblockDataProps[];
+    data: EXT2.Struct[];
     clickCallback$: PropFunction<(index: number) => void>;
   }) => {
     useStylesScoped$(styles);
 
-    const generatePropDescription = (
-      data: superblockDataProps,
-      index: number
-    ) => {
+    const generatePropDescription = (data: EXT2.Struct, index: number) => {
       return data.info === undefined ? (
         <span>{data.description}</span>
       ) : (

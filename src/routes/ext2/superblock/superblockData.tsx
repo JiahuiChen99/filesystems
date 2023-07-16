@@ -1,15 +1,7 @@
-import { $, QRL } from "@builder.io/qwik";
-import { JSX } from "@builder.io/qwik/jsx-runtime";
+import { $ } from "@builder.io/qwik";
+import { EXT2 } from "~/typings/ext2";
 
-export interface superblockDataProps {
-  id: string;
-  offset: number;
-  size: number;
-  description: string;
-  info?: QRL<() => JSX.Element>;
-}
-
-export const superblockData: superblockDataProps[] = [
+export const superblockData: EXT2.Struct[] = [
   {
     id: "s_inodes_count",
     offset: 0,
