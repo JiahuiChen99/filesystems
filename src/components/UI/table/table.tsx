@@ -42,6 +42,14 @@ export const EXT2Table = component$(
       }
     });
 
+    const tableColKeys = useResource$(async () => {
+      if (await isStruct(data[0])) {
+        return ["offset", "size", "description"];
+      } else {
+        return ["name", "value", "description"];
+      }
+    });
+
     const tableSkeleton = (
       <div style={{ backgroundColor: "lightgrey", width: "35%" }}>Loading</div>
     );
@@ -62,9 +70,20 @@ export const EXT2Table = component$(
             <tbody>
               {data.map((d, index) => (
                 <tr key={d.id}>
-                  <td>{d.offset}</td>
-                  <td>{d.size}</td>
-                  <td>{generatePropDescription(d, index)}</td>
+                  <Resource
+                    value={tableColKeys}
+                    onResolved={(colKeys) => (
+                      <>
+                        {colKeys.map((key) => {
+                          // TODO: <td>{generatePropDescription(d, index)}</td>
+                          if (key === "description") {
+                            return <td>{generatePropDescription(d, index)}</td>;
+                          }
+                          return <td>{d[key]}</td>;
+                        })}
+                      </>
+                    )}
+                  />
                 </tr>
               ))}
             </tbody>
