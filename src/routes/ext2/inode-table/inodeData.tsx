@@ -3,6 +3,8 @@ import { EXT2Table } from "~/components/UI/table/table";
 import { EXT2 } from "~/typings/ext2";
 import { imodeData } from "./data/imodeData";
 import { iflagsData } from "./data/iflagsData";
+import { TableWithDescription } from "~/components/UI/table/tableWithDescription";
+import { iosd2HurdData, iosd2LinuxData, iosd2MasixData } from "./data/iosd2";
 
 export const inodeData: EXT2.Struct[] = [
   {
@@ -291,6 +293,16 @@ export const inodeData: EXT2.Struct[] = [
     offset: 116,
     size: 12,
     description: "i_osd2",
-    info: $(() => <></>),
+    info: $(() => (
+      <>
+        <p>96bit OS dependant structure.</p>
+        <h3>Hurd</h3>
+        <TableWithDescription data={iosd2HurdData} />
+        <h3>Linux</h3>
+        <TableWithDescription data={iosd2LinuxData} />
+        <h3>Masix</h3>
+        <TableWithDescription data={iosd2MasixData} />
+      </>
+    )),
   },
 ];
