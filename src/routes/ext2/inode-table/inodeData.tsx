@@ -2,6 +2,7 @@ import { $ } from "@builder.io/qwik";
 import { EXT2Table } from "~/components/UI/table/table";
 import { EXT2 } from "~/typings/ext2";
 import { imodeData } from "./data/imodeData";
+import { iflagsData } from "./data/iflagsData";
 
 export const inodeData: EXT2.Struct[] = [
   {
@@ -25,70 +26,138 @@ export const inodeData: EXT2.Struct[] = [
     offset: 2,
     size: 2,
     description: "i_uid",
-    info: $(() => <></>),
+    info: $(() => <p>16bit user id associated with the file.</p>),
   },
   {
     id: "i_size",
     offset: 4,
     size: 4,
     description: "i_size",
-    info: $(() => <></>),
+    info: $(() => (
+      <p>
+        In revision 0, (signed) 32bit value indicating the size of the file in
+        bytes. In revision 1 and later revisions, and only for regular files,
+        this represents the lower 32-bit of the file size; the upper 32-bit is
+        located in the i_dir_acl.
+      </p>
+    )),
   },
   {
     id: "i_atime",
     offset: 8,
     size: 4,
     description: "i_atime",
-    info: $(() => <></>),
+    info: $(() => (
+      <p>
+        32bit value representing the number of seconds since january 1st 1970 of
+        the last time this inode was accessed.
+      </p>
+    )),
   },
   {
     id: "i_ctime",
     offset: 12,
     size: 4,
     description: "i_ctime",
-    info: $(() => <></>),
+    info: $(() => (
+      <p>
+        32bit value representing the number of seconds since january 1st 1970,
+        of when the inode was created.
+      </p>
+    )),
   },
   {
     id: "i_mtime",
     offset: 16,
     size: 4,
     description: "i_mtime",
-    info: $(() => <></>),
+    info: $(() => (
+      <p>
+        32bit value representing the number of seconds since january 1st 1970,
+        of the last time this inode was modified.
+      </p>
+    )),
   },
   {
     id: "i_dtime",
     offset: 20,
     size: 4,
     description: "i_dtime",
-    info: $(() => <></>),
+    info: $(() => (
+      <p>
+        32bit value representing the number of seconds since january 1st 1970,
+        of when the inode was deleted.
+      </p>
+    )),
   },
   {
     id: "i_gid",
     offset: 24,
     size: 2,
     description: "i_gid",
-    info: $(() => <></>),
+    info: $(() => (
+      <p>16bit value of the POSIX group having access to this file.</p>
+    )),
   },
   {
     id: "i_links_count",
     offset: 26,
     size: 2,
     description: "i_links_count",
-    info: $(() => <></>),
+    info: $(() => (
+      <>
+        <p>
+          16bit value indicating how many times this particular inode is linked
+          (referred to). Most files will have a link count of 1. Files with hard
+          links pointing to them will have an additional count for each hard
+          link.
+        </p>
+        <p>
+          Symbolic links do not affect the link count of an inode. When the link
+          count reaches 0 the inode and all its associated blocks are freed.
+        </p>
+      </>
+    )),
   },
   {
     id: "i_blocks",
     offset: 28,
     size: 4,
     description: "i_blocks",
-    info: $(() => <></>),
+    info: $(() => (
+      <>
+        <p>
+          32-bit value representing the total number of 512-bytes blocks
+          reserved to contain the data of this inode, regardless if these blocks
+          are used or not. The block numbers of these reserved blocks are
+          contained in the <a href="/ext2/inode-table#i_block">i_block</a>{" "}
+          array.
+        </p>
+        <p>
+          Since this value represents 512-byte blocks and not file system
+          blocks, this value should not be directly used as an index to the
+          i_block array. Rather, the maximum index of the i_block array should
+          be computed from i_blocks /{" "}
+          <code>{`((1024<<s_log_block_size)/512)`}</code>, or once simplified,{" "}
+          <code>{`i_blocks/(2<<s_log_block_size)`}</code> .
+        </p>
+      </>
+    )),
   },
   {
     id: "i_flags",
     offset: 32,
     size: 4,
     description: "i_flags",
-    info: $(() => <></>),
+    info: $(() => (
+      <>
+        <p>
+          32bit value indicating how the ext2 implementation should behave when
+          accessing the data for this inode.
+        </p>
+        <EXT2Table data={iflagsData} />
+      </>
+    )),
   },
   {
     id: "i_osd1",
