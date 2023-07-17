@@ -86,7 +86,7 @@ export const EXT2Table = component$(
             <thead>
               <tr>
                 {headers.map((th: string) => (
-                  <th>{th}</th>
+                  <th key={th}>{th}</th>
                 ))}
               </tr>
             </thead>
@@ -106,7 +106,7 @@ export const EXT2Table = component$(
                             );
                           }
                           return (
-                            <td>
+                            <td key={key}>
                               {
                                 d[
                                   key as keyof (
