@@ -19,7 +19,10 @@ export const EXT2Table = component$(
   }) => {
     useStylesScoped$(styles);
     const isStruct = $((d: any): d is EXT2.Struct => {
-      return typeof d.offset === "number" && typeof d.size === "number";
+      return (
+        typeof d.offset === "number" &&
+        (typeof d.size === "number" || typeof d.size === "string")
+      );
     });
 
     const generateNoClikcDescription = $((description: string) => (
