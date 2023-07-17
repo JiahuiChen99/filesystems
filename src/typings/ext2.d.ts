@@ -1,14 +1,14 @@
 import {type QRL } from "@builder.io/qwik";
 
 export namespace EXT2 {
-  interface ConstValueDesc {
+  export interface ConstValueDesc {
     id: string;
     name: string;
     value: number | string;
     description: string;
   }
 
-  interface Struct {
+  export interface Struct {
     id: string;
     offset: number;
     size: number | string;
