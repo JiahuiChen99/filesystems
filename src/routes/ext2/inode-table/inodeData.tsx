@@ -1,5 +1,7 @@
 import { $ } from "@builder.io/qwik";
+import { EXT2Table } from "~/components/UI/table/table";
 import { EXT2 } from "~/typings/ext2";
+import { imodeData } from "./data/imodeData";
 
 export const inodeData: EXT2.Struct[] = [
   {
@@ -7,7 +9,16 @@ export const inodeData: EXT2.Struct[] = [
     offset: 0,
     size: 2,
     description: "i_mode",
-    info: $(() => <></>),
+    info: $(() => (
+      <>
+        <p>
+          16bit value used to indicate the format of the described file and the
+          access rights. Here are the possible values, which can be combined in
+          various ways:
+        </p>
+        <EXT2Table data={imodeData} />
+      </>
+    )),
   },
   {
     id: "i_uid",
