@@ -1,6 +1,6 @@
 import { $ } from "@builder.io/qwik";
 import { EXT2Table } from "~/components/UI/table/table";
-import { EXT2 } from "~/typings/ext2";
+import { type EXT2 } from "~/typings/ext2";
 import { imodeData } from "./data/imodeData";
 import { iflagsData } from "./data/iflagsData";
 import { TableWithDescription } from "~/components/UI/table/tableWithDescription";

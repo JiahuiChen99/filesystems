@@ -1,4 +1,4 @@
-import { EXT2 } from "~/typings/ext2";
+import { type EXT2 } from "~/typings/ext2";
 
 export const reservedInodesData: EXT2.ConstValueDesc[] = [
   {

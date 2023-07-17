@@ -4,7 +4,7 @@ import { HiXMarkSolid } from "@qwikest/icons/heroicons";
 import MdiHorizontalExpand from "../icons/mdi-horizontal-expand";
 import styles from "./tableWithDescription.module.css";
 import MdiMemory from "../icons/mdi-memory";
-import { EXT2 } from "~/typings/ext2";
+import { type EXT2 } from "~/typings/ext2";
 
 export const TableWithDescription = component$(
   ({ data }: { data: EXT2.Struct[] }) => {

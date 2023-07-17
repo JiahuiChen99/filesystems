@@ -1,4 +1,4 @@
-import { QRL } from "@builder.io/qwik";
+import {type QRL } from "@builder.io/qwik";
 
 export namespace EXT2 {
   interface ConstValueDesc {

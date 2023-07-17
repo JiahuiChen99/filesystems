@@ -11,7 +11,7 @@ import { Ext2BlockGroup } from "~/components/ext2/block-group/ext2-block-group";
 import styles from "./ext2.css?inline";
 import {
   BlockGroupRegionContext,
-  BlockGroupRegionContextType,
+  type BlockGroupRegionContextType,
 } from "./context/ext2Context";
 
 export default component$(() => {

@@ -1,5 +1,5 @@
 import { $ } from "@builder.io/qwik";
-import { EXT2 } from "~/typings/ext2";
+import { type EXT2 } from "~/typings/ext2";
 
 export const iosd2HurdData: EXT2.Struct[] = [
   {

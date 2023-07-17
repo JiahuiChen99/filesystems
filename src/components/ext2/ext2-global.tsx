@@ -1,4 +1,9 @@
-import { component$, $, useSignal, QwikMouseEvent } from "@builder.io/qwik";
+import {
+  component$,
+  $,
+  useSignal,
+  type QwikMouseEvent,
+} from "@builder.io/qwik";
 import styles from "./ext2-global.module.css";
 import { useNavigate } from "@builder.io/qwik-city";
 

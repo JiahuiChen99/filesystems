@@ -7,7 +7,7 @@ import {
   Resource,
 } from "@builder.io/qwik";
 import styles from "~/components/UI/table/table.css?inline";
-import { EXT2 } from "~/typings/ext2";
+import { type EXT2 } from "~/typings/ext2";
 
 export const EXT2Table = component$(
   ({
