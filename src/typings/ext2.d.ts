@@ -4,7 +4,7 @@ export namespace EXT2 {
   interface ConstValueDesc {
     id: string;
     name: string;
-    value: number;
+    value: number | string;
     description: string;
   }
 
