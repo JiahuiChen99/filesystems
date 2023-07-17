@@ -1,0 +1,31 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  gap: 10px;
+}
+
+.block-group-navigation {
+  display: flex;
+  align-items: center;
+}
+
+.block-group-navigation svg {
+  font-size: 18px;
+}
+
+.block-group-navigation a {
+  border-radius: 5px;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.block-group-navigation a:hover {
+  background-color: rgb(201, 201, 201);
+}
+
+h1 {
+  padding: 10px 0;
+  border-bottom: 1px solid gray;
+  position: relative;
+}

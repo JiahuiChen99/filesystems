@@ -1,7 +1,14 @@
-import { component$, Slot, useStyles$ } from '@builder.io/qwik';
-import { routeLoader$ } from '@builder.io/qwik-city';
-import type { RequestHandler } from '@builder.io/qwik-city';
-import styles from './styles.css?inline';
+import {
+  component$,
+  $,
+  Slot,
+  useSignal,
+  useStyles$,
+  useVisibleTask$,
+} from "@builder.io/qwik";
+import type { RequestHandler } from "@builder.io/qwik-city";
+import { HiXMarkSolid } from "@qwikest/icons/heroicons";
+import styles from "./styles.css?inline";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -16,10 +23,34 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 
 export default component$(() => {
   useStyles$(styles);
+  const viewAPIWarn = useSignal<boolean>(false);
+
+  useVisibleTask$(async () => {
+    const warn = sessionStorage.getItem("v-api-warn");
+    viewAPIWarn.value = warn === null ? true : warn === "true";
+  });
+
+  const viewAPIWarnClose = $(() => {
+    viewAPIWarn.value = false;
+    sessionStorage.setItem("v-api-warn", String(false));
+  });
+
   return (
     <>
       <main>
         <Slot />
+        {viewAPIWarn.value && (
+          <div class="view-api-warn">
+            <HiXMarkSolid onClick$={viewAPIWarnClose} class="close" />
+            <p>
+              This site supports View Transition, an experimental feature. For a
+              smoother experience use one of the following browsers [Chrome
+              111+, Edge 111+, Opera 97+], and enable <i>viewTransition API</i>&
+              <i>viewTransition for navigations</i> flags at{" "}
+              <a href="/">Flags</a>.
+            </p>
+          </div>
+        )}
       </main>
     </>
   );

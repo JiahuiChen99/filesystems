@@ -1,0 +1,37 @@
+table {
+  width: 35%;
+}
+
+.table-with-property-description {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.property-description-section {
+  position: sticky;
+  top: 0;
+  background-color: cornsilk;
+  padding: 2rem;
+  width: 65%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.property-description-section .metadata {
+  display: flex;
+  gap: 1.5rem;
+  align-content: center;
+}
+
+.property-description-section .metadata div {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.property-description-section .metadata svg {
+  font-size: 1.5rem;
+}
