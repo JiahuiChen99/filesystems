@@ -10,6 +10,10 @@ export default component$(() => {
       <div class={styles["container"]}>
         <Ext2 />
       </div>
+      <ul>
+        <li> The second Extended File Systems (EXT2)</li>
+        <li> Fat Allocation Table 16 (FAT16)</li>
+      </ul>
     </>
   );
 });
