@@ -1,19 +1,46 @@
-import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
-import { Ext2 } from "~/components/ext2/ext2-global";
+import {
+  component$,
+  noSerialize,
+  useSignal,
+  useVisibleTask$,
+} from "@builder.io/qwik";
+import { Link, type DocumentHead } from "@builder.io/qwik-city";
 import styles from "./index.module.css";
+import Lottie from "lottie-web";
+import storageAnime from "~/assets/storageAnime.json";
 
 export default component$(() => {
+  const canvas = useSignal<Element>();
+
+  useVisibleTask$(() => {
+    noSerialize(
+      Lottie.loadAnimation({
+        container: canvas.value as Element,
+        animationData: storageAnime,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        name: "storage animation",
+      })
+    );
+  });
+
   return (
     <>
-      <h1>File Systems: The second Extended File System</h1>
-      <div class={styles["container"]}>
-        <Ext2 />
-      </div>
-      <ul>
-        <li> The second Extended File Systems (EXT2)</li>
-        <li> Fat Allocation Table 16 (FAT16)</li>
-      </ul>
+      <section id="herobanner" class={styles["herobanner"]}>
+        <div class={styles["herobanner__left"]}>
+          <h1>File Systems</h1>
+          <ul class={styles["fslist"]}>
+            <li>
+              <Link href="/ext2">The second Extended File Systems (EXT2)</Link>
+            </li>
+            <li>
+              <Link href="/fat16">Fat Allocation Table 16 (FAT16)</Link>
+            </li>
+          </ul>
+        </div>
+        <div ref={canvas} class={styles["animation"]} />
+      </section>
     </>
   );
 });
