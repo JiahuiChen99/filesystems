@@ -13,7 +13,7 @@
   width: 45%;
 }
 
-h1 {
+.herobanner__left h1 {
   font-size: 6rem;
   font-weight: 800;
 }
@@ -21,6 +21,7 @@ h1 {
 .animation {
   height: 100%;
   width: 55%;
+  display: flex;
 }
 
 .fslist {
