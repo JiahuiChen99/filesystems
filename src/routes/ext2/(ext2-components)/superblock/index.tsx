@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 import {
   superblockData,
   superblockExtendedData,
-} from "~/routes/ext2/superblock/superblockData";
+} from "~/routes/ext2/(ext2-components)/superblock/superblockData";
 import { TableWithDescription } from "~/components/UI/table/tableWithDescription";
 import { BlockGroupRegionContext } from "../context/ext2Context";
 
