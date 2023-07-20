@@ -1,7 +1,0 @@
-section {
-    flex-direction: column;
-    display: flex;
-    overflow: auto;
-    scroll-behavior: smooth;
-    padding: 0 10rem;
-}
