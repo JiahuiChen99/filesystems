@@ -1,10 +1,9 @@
 import { component$, useContext, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import styles from "./index.module.css";
 import {
   superblockData,
   superblockExtendedData,
-} from "~/routes/ext2/superblock/superblockData";
+} from "~/routes/ext2/(ext2-components)/superblock/superblockData";
 import { TableWithDescription } from "~/components/UI/table/tableWithDescription";
 import { BlockGroupRegionContext } from "../context/ext2Context";
 
@@ -16,7 +15,7 @@ export default component$(() => {
   });
 
   return (
-    <section class={styles}>
+    <section>
       <p>
         The superblock contains <b>all the information</b> about the
         configuration of the filesystem. The information in the superblock
