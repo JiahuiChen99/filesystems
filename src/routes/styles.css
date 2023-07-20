@@ -18,6 +18,10 @@ main {
   flex-direction: column;
 }
 
+section {
+  padding: 0;
+}
+
 /* HEADINGS ------------------------------------- */
 h1,
 h2,
