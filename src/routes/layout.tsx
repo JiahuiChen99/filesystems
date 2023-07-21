@@ -9,6 +9,7 @@ import {
 import type { RequestHandler } from "@builder.io/qwik-city";
 import { HiXMarkSolid } from "@qwikest/icons/heroicons";
 import styles from "./styles.css?inline";
+import Navbar from "~/components/UI/navbar/Navbar";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -37,6 +38,9 @@ export default component$(() => {
 
   return (
     <>
+      <header>
+        <Navbar />
+      </header>
       <main>
         <Slot />
         {viewAPIWarn.value && (
