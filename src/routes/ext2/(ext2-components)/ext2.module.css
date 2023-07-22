@@ -9,12 +9,15 @@ section {
 .navigation {
   display: flex;
   flex-direction: column;
-  padding: 10px 20px;
+  margin-top: .5rem;
+  width: 50%;
   gap: 10px;
+  align-self: center;
 }
 
-h1 {
+.layout-title {
   padding: 10px 0;
   border-bottom: 1px solid gray;
-  position: relative;
+  font-size: 1.5rem;
+  padding: .5rem 0;
 }
