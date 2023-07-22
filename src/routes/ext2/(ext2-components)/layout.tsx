@@ -26,9 +26,7 @@ export default component$(() => {
     <>
       <div class="navigation">
         <Ext2BlockGroup />
-        <div class="block-group-navigation">
-          <Breadcrumb />
-        </div>
+        <Breadcrumb />
       </div>
       <h1>{blockGroupRegionInfo.blockGroupRegionTitle}</h1>
       <Slot />
