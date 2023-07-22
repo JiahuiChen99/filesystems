@@ -31,8 +31,15 @@ export default component$(() => {
           <a href="/">
             <HiHomeOutline />
           </a>
-          {loc.url.pathname.split("/").map((path) => {
-            return path === "" ? null : <Link key={path} path={path} />;
+          {loc.url.pathname.split("/").map((path, index, subpaths) => {
+            const p = subpaths.reduce((prevSubPath, subpath, currentIndex) => {
+              if (currentIndex > index) return prevSubPath;
+              return prevSubPath + "/" + subpath;
+            });
+
+            return path === "" ? null : (
+              <Link key={path} asPath={path} path={p} />
+            );
           })}
         </div>
       </div>
@@ -42,11 +49,13 @@ export default component$(() => {
   );
 });
 
-const Link = component$(({ path }: { path: string }) => {
-  return (
-    <>
-      <HiChevronRightMini />
-      <a href={`/${path}`}>{path}</a>
-    </>
-  );
-});
+const Link = component$(
+  ({ path, asPath }: { path: string; asPath: string }) => {
+    return (
+      <>
+        <HiChevronRightMini />
+        <a href={`${path}`}>{asPath}</a>
+      </>
+    );
+  }
+);
