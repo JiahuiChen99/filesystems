@@ -1,0 +1,22 @@
+nav ol {
+  display: inline-flex;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+li svg {
+  font-size: 18px;
+}
+
+li a {
+  border-radius: 5px;
+  padding: 5px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: rgb(201, 201, 201);
+}

@@ -5,18 +5,17 @@ import {
   useStore,
   useStyles$,
 } from "@builder.io/qwik";
-import { HiChevronRightMini, HiHomeOutline } from "@qwikest/icons/heroicons";
-import { useLocation } from "@builder.io/qwik-city";
 import { Ext2BlockGroup } from "~/components/ext2/block-group/ext2-block-group";
 import styles from "./ext2.css?inline";
 import {
   BlockGroupRegionContext,
   type BlockGroupRegionContextType,
 } from "./context/ext2Context";
+import Breadcrumb from "~/components/UI/breadcrumb/Breadcrumb";
 
 export default component$(() => {
   useStyles$(styles);
-  const loc = useLocation();
+
   const blockGroupRegionInfo = useStore<BlockGroupRegionContextType>({
     blockGroupRegionTitle: "",
   });
@@ -27,26 +26,10 @@ export default component$(() => {
     <>
       <div class="navigation">
         <Ext2BlockGroup />
-        <div class="block-group-navigation">
-          <a href="/">
-            <HiHomeOutline />
-          </a>
-          {loc.url.pathname.split("/").map((path) => {
-            return path === "" ? null : <Link key={path} path={path} />;
-          })}
-        </div>
+        <Breadcrumb />
       </div>
       <h1>{blockGroupRegionInfo.blockGroupRegionTitle}</h1>
       <Slot />
-    </>
-  );
-});
-
-const Link = component$(({ path }: { path: string }) => {
-  return (
-    <>
-      <HiChevronRightMini />
-      <a href={`/${path}`}>{path}</a>
     </>
   );
 });
