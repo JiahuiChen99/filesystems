@@ -3,10 +3,9 @@ import {
   Slot,
   useContextProvider,
   useStore,
-  useStyles$,
 } from "@builder.io/qwik";
 import { Ext2BlockGroup } from "~/components/ext2/block-group/ext2-block-group";
-import styles from "./ext2.css?inline";
+import styles from "./ext2.module.css";
 import {
   BlockGroupRegionContext,
   type BlockGroupRegionContextType,
@@ -14,8 +13,6 @@ import {
 import Breadcrumb from "~/components/UI/breadcrumb/Breadcrumb";
 
 export default component$(() => {
-  useStyles$(styles);
-
   const blockGroupRegionInfo = useStore<BlockGroupRegionContextType>({
     blockGroupRegionTitle: "",
   });
@@ -24,11 +21,13 @@ export default component$(() => {
 
   return (
     <>
-      <div class="navigation">
+      <div class={styles["navigation"]}>
         <Ext2BlockGroup />
         <Breadcrumb />
       </div>
-      <h1>{blockGroupRegionInfo.blockGroupRegionTitle}</h1>
+      <h1 class={styles["layout-title"]}>
+        {blockGroupRegionInfo.blockGroupRegionTitle}
+      </h1>
       <Slot />
     </>
   );
