@@ -1,22 +1,22 @@
-nav ol {
+.breadcrumb ol {
   display: inline-flex;
 }
 
-li {
+.breadcrumb-list-item {
   display: flex;
   align-items: center;
 }
 
-li svg {
+.breadcrumb-list-item svg {
   font-size: 18px;
 }
 
-li a {
+.breadcrumb-list-item a {
   border-radius: 5px;
   padding: 5px;
   text-decoration: none;
 }
 
-li a:hover {
+.breadcrumb-list-item a:hover {
   background-color: rgb(201, 201, 201);
 }

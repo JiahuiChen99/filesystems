@@ -1,15 +1,14 @@
-import { component$, useStyles$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import { HiChevronRightMini, HiHomeOutline } from "@qwikest/icons/heroicons";
-import styles from "./breadcrumb.module.css?inline";
+import styles from "./breadcrumb.module.css";
 
 export default component$(() => {
-  useStyles$(styles);
   const loc = useLocation();
   return (
-    <nav aria-label="breadcrumb">
+    <nav aria-label="breadcrumb" class={styles["breadcrumb"]}>
       <ol>
-        <li>
+        <li class={styles["breadcrumb-list-item"]}>
           <a href="/">
             <HiHomeOutline />
           </a>
@@ -21,7 +20,7 @@ export default component$(() => {
           });
 
           return path === "" ? null : (
-            <li>
+            <li class={styles["breadcrumb-list-item"]}>
               <HiChevronRightMini />
               <a href={`${p}`}>{path}</a>
             </li>
