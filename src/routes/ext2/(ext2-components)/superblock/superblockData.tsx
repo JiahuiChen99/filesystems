@@ -1,5 +1,14 @@
 import { $ } from "@builder.io/qwik";
+import { EXT2Table } from "~/components/UI/table/table";
 import { type EXT2 } from "~/typings/ext2";
+import { sstateData } from "./data/sstateData";
+import { sserrorsData } from "./data/serrorsData";
+import { sfeaturecompatData } from "./data/sfeaturecompatData";
+import { screatorosData } from "./data/screatorosData";
+import { srevlevelData } from "./data/srevlevelData";
+import { sfeatureincompatData } from "./data/sfeatureincompatData";
+import { sfeaturerocompatData } from "./data/sfeaturerocompatData";
+import { salgobitmapData } from "./data/salgobitmapData";
 
 export const superblockData: EXT2.Struct[] = [
   {
@@ -268,27 +277,7 @@ else
           most likely contain errors that will need to be fixed. Typically under
           Linux this means running fsck.
         </p>
-        <table>
-          <thead>
-            <tr>
-              <th>Constant Name</th>
-              <th>Value</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>EXT2_VALID_FS</td>
-              <td>1</td>
-              <td>Unmounted cleanly</td>
-            </tr>
-            <tr>
-              <td>EXT2_ERROR_FS</td>
-              <td>2</td>
-              <td>Errors detected</td>
-            </tr>
-          </tbody>
-        </table>
+        <EXT2Table data={sstateData} />
       </>
     )),
   },
@@ -303,32 +292,7 @@ else
           16bit value indicating what the file system driver should do when an
           error is detected. The following values have been defined:
         </p>
-        <table>
-          <thead>
-            <tr>
-              <th>Constant Name</th>
-              <th>Value</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>EXT2_ERRORS_CONTINUE</td>
-              <td>1</td>
-              <td>Continue as if nothing happened</td>
-            </tr>
-            <tr>
-              <td>EXT2_ERRORS_NO</td>
-              <td>2</td>
-              <td>Remount read-only</td>
-            </tr>
-            <tr>
-              <td>EXT2_ERRRORS_PANIC</td>
-              <td>3</td>
-              <td>Cause a kernel panic</td>
-            </tr>
-          </tbody>
-        </table>
+        <EXT2Table data={sserrorsData} />
       </>
     )),
   },
@@ -376,42 +340,7 @@ else
           32bit identifier of the os that created the file system. Defined
           values are:
         </p>
-        <table>
-          <thead>
-            <tr>
-              <th>Constant Name</th>
-              <th>Value</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>EXT2_OS_LINUX</td>
-              <td>0</td>
-              <td>Linux</td>
-            </tr>
-            <tr>
-              <td>EXT2_OS_HURD 1</td>
-              <td>1</td>
-              <td>GNU HURD</td>
-            </tr>
-            <tr>
-              <td>EXT2_OS_MASIX</td>
-              <td>2</td>
-              <td>MASIX</td>
-            </tr>
-            <tr>
-              <td>EXT2_OS_FREEBSD</td>
-              <td>3</td>
-              <td>FreeBSD</td>
-            </tr>
-            <tr>
-              <td>EXT2_OS_LITES</td>
-              <td>4</td>
-              <td>Lites</td>
-            </tr>
-          </tbody>
-        </table>
+        <EXT2Table data={screatorosData} />
       </>
     )),
   },
@@ -423,29 +352,7 @@ else
     info: $(() => (
       <>
         <p>32bit revision level value.</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Constant Name</th>
-              <th>Value</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>EXT2_GOOD_OLD_REV</td>
-              <td>0</td>
-              <td>Revision 0</td>
-            </tr>
-            <tr>
-              <td>EXT2_DYNAMIC_REV</td>
-              <td>1</td>
-              <td>
-                Revision 1 with variable inode sizes, extended attribute, etc.
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <EXT2Table data={srevlevelData} />
       </>
     )),
   },
@@ -532,47 +439,7 @@ export const superblockExtendedData: EXT2.Struct[] = [
           32bit bitmask of compatible features. The file system implementation
           is free to support them or not without risk of damaging the meta-data.
         </p>
-        <table>
-          <thead>
-            <tr>
-              <th>Constant Name</th>
-              <th>Value</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>EXT2_FEATURE_COMPAT_DIR_PREALLOC</td>
-              <td>0x0001</td>
-              <td>Block pre-allocation for new directories</td>
-            </tr>
-            <tr>
-              <td>EXT2_FEATURE_COMPAT_IMAGIC_INODES</td>
-              <td>0x0002</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>EXT3_FEATURE_COMPAT_HAS_JOURNAL</td>
-              <td>0x0004</td>
-              <td>An Ext3 journal exists</td>
-            </tr>
-            <tr>
-              <td>EXT2_FEATURE_COMPAT_EXT_ATTR</td>
-              <td>0x0008</td>
-              <td>Extended inode attributes are present</td>
-            </tr>
-            <tr>
-              <td>EXT2_FEATURE_COMPAT_RESIZE_INO</td>
-              <td>0x0010</td>
-              <td>Non-standard inode size used</td>
-            </tr>
-            <tr>
-              <td>EXT2_FEATURE_COMPAT_DIR_INDEX</td>
-              <td>0x0020</td>
-              <td>Directory indexing (HTree)</td>
-            </tr>
-          </tbody>
-        </table>
+        <EXT2Table data={sfeaturecompatData} />
       </>
     )),
   },
@@ -594,42 +461,7 @@ export const superblockExtendedData: EXT2.Struct[] = [
           used and an executable file would be unusable after being read from
           the disk if the system does not know how to uncompress it.
         </p>
-        <table>
-          <thead>
-            <tr>
-              <th>Constant Name</th>
-              <th>Value</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>EXT2_FEATURE_INCOMPAT_COMPRESSION</td>
-              <td>0x0001</td>
-              <td>Disk/File compression is used</td>
-            </tr>
-            <tr>
-              <td>EXT2_FEATURE_INCOMPAT_FILETYPE</td>
-              <td>0x0002</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>EXT3_FEATURE_INCOMPAT_RECOVER</td>
-              <td>0x0004</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>EXT3_FEATURE_INCOMPAT_JOURNAL_DEV</td>
-              <td>0x0008</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>EXT2_FEATURE_INCOMPAT_META_BG</td>
-              <td>0x0010</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+        <EXT2Table data={sfeatureincompatData} />
       </>
     )),
   },
@@ -645,32 +477,7 @@ export const superblockExtendedData: EXT2.Struct[] = [
           should mount as read-only if any of the indicated feature is
           unsupported.
         </p>
-        <table>
-          <thead>
-            <tr>
-              <th>Constant Name</th>
-              <th>Value</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>EXT2_FEATURE_RO_COMPAT_SPARSE_SUPER</td>
-              <td>0x0001</td>
-              <td>Sparse Superblock</td>
-            </tr>
-            <tr>
-              <td>EXT2_FEATURE_RO_COMPAT_LARGE_FILE</td>
-              <td>0x0002</td>
-              <td>Large file support, 64-bit file size</td>
-            </tr>
-            <tr>
-              <td>EXT2_FEATURE_RO_COMPAT_BTREE_DIR</td>
-              <td>0x0004</td>
-              <td>Binary tree sorted directory files</td>
-            </tr>
-          </tbody>
-        </table>
+        <EXT2Table data={sfeaturerocompatData} />
       </>
     )),
   },
@@ -728,42 +535,7 @@ export const superblockExtendedData: EXT2.Struct[] = [
           Compression is supported in Linux 2.4 and 2.6 via the e2compr patch.
           For more information, visit http://e2compr.sourceforge.net/
         </q>
-        <table>
-          <thead>
-            <tr>
-              <th>Constant Name</th>
-              <th>Value</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>EXT2_LZV1_ALG</td>
-              <td>0</td>
-              <td>Binary value of 0x00000001</td>
-            </tr>
-            <tr>
-              <td>EXT2_LZRW3A_ALG</td>
-              <td>1</td>
-              <td>Binary value of 0x00000002</td>
-            </tr>
-            <tr>
-              <td>EXT2_GZIP_ALG</td>
-              <td>2</td>
-              <td>Binary value of 0x00000004</td>
-            </tr>
-            <tr>
-              <td>EXT2_BZIP2_ALG</td>
-              <td>3</td>
-              <td>Binary value of 0x00000008</td>
-            </tr>
-            <tr>
-              <td>EXT2_LZO_ALG</td>
-              <td>4</td>
-              <td>Binary value of 0x00000010</td>
-            </tr>
-          </tbody>
-        </table>
+        <EXT2Table data={salgobitmapData} />
       </>
     )),
   },

@@ -27,7 +27,9 @@ export const TableWithDescription = component$(
                 (isDescriptionOpen.value = !isDescriptionOpen.value)
               }
             />
-            <h2>{selectedSuperblockProp.value.description}</h2>
+            <h2 style={{ fontWeight: 500 }}>
+              {selectedSuperblockProp.value.description}
+            </h2>
             <div class={styles["metadata"]}>
               <div>
                 <MdiHorizontalExpand />
