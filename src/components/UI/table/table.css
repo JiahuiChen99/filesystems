@@ -1,3 +1,8 @@
+table {
+  height: fit-content;
+  width: 100%;
+}
+
 thead {
   width: 100%;
   border-collapse: collapse;
