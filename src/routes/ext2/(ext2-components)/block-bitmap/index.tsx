@@ -1,5 +1,6 @@
 import { component$, useContext, useVisibleTask$ } from "@builder.io/qwik";
 import { BlockGroupRegionContext } from "../context/ext2Context";
+import { BlockBitmap } from "~/components/ext2/blocks-bitmap/block-bitmap";
 
 export default component$(() => {
   const blockGroupRegionInfo = useContext(BlockGroupRegionContext);
@@ -25,6 +26,7 @@ export default component$(() => {
         byte 0 while the 9th block is represented by bit 0 (least significant
         bit) of byte 1.
       </p>
+      <BlockBitmap />
     </section>
   );
 });
