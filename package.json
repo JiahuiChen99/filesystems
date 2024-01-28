@@ -1,51 +1,32 @@
 {
-  "name": "fileystems",
-  "author": {
-    "name": "Jiahui Chen",
-    "email": "Jiahui1@hotmail.es",
-    "url": "https://jiahuichen.dev"
-  },
-  "description": "Docs for the file systems projects of Advanced Operating Systems",
-  "homepage": "https://filesystems.jiahuichen.dev",
-  "repository": {
-    "url": "https://github.com/JiahuiChen99/fileystems"
-  },
-  "engines": {
-    "node": ">=15.0.0"
-  },
+  "name": "filesystems",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "qwik build",
-    "build.client": "vite build",
-    "build.preview": "vite build --ssr src/entry.preview.tsx",
-    "build.server": "vite build -c adapters/vercel-edge/vite.config.ts",
-    "build.types": "tsc --incremental --noEmit",
-    "deploy": "vercel deploy",
-    "dev": "vite --mode ssr",
-    "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
-    "fmt": "prettier --write .",
-    "fmt.check": "prettier --check .",
-    "lint": "eslint \"src/**/*.ts*\"",
-    "preview": "qwik build preview && vite preview --open",
-    "start": "vite --open --mode ssr"
-  },
-  "devDependencies": {
-    "@builder.io/qwik": "^1.2.5",
-    "@builder.io/qwik-city": "^1.2.5",
-    "@qwikest/icons": "^0.0.8",
-    "@types/eslint": "8.40.0",
-    "@types/node": "^20.2.5",
-    "@typescript-eslint/eslint-plugin": "5.59.8",
-    "@typescript-eslint/parser": "5.59.8",
-    "eslint": "8.41.0",
-    "eslint-plugin-qwik": "^1.1.5",
-    "prettier": "^2.8.8",
-    "typescript": "^5.1.3",
-    "vercel": "^29.1.1",
-    "vite": "4.3.9",
-    "vite-tsconfig-paths": "4.2.0"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "lottie-web": "^5.12.2"
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.316.0",
+    "next": "14.1.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
   }
 }
