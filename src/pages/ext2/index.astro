@@ -1,0 +1,12 @@
+---
+import "@/styles/globals.css";
+import { EXT2 } from "./components/ext2";
+import MainLayout from "@/layouts/MainLayout.astro";
+import FileSystemGraphicsLayout from "@/layouts/FilesystemGraphicsLayout.astro";
+---
+
+<MainLayout title="Second Extended Filesystem">
+  <FileSystemGraphicsLayout>
+    <EXT2 client:load />
+  </FileSystemGraphicsLayout>
+</MainLayout>

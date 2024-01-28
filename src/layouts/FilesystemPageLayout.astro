@@ -1,0 +1,39 @@
+---
+import { EXT2BlockGroup } from "@/pages/ext2/components/ext2-block-group";
+import { ChevronLeft } from "lucide-react";
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+
+<section id="filesystem information" class="h-full p-10">
+  <div class="px-32 pb-10">
+    <EXT2BlockGroup client:load />
+  </div>
+  <div class="flex flex-row w-full relative">
+    <div class="sticky top-2 w-4/12 h-fit mr-2">
+      <div
+        id="back-btn"
+        class="flex items-center mb-2 cursor-pointer w-fit hover:bg-slate-50 rounded-md p-2 pr-4">
+        <ChevronLeft className="mr-2 h-6 w-6" />
+        <h1 class="font-black text-2xl">{h1}</h1>
+      </div>
+      <section class="border p-4 rounded-lg">
+        <slot />
+      </section>
+    </div>
+    <slot name="extended-information" class="flex-grow" />
+  </div>
+</section>
+
+<script>
+  const backBtn = document.getElementById("back-btn");
+  const pathname = window.location.pathname;
+  const fsType = pathname.substring(1, pathname.indexOf("/", 1));
+
+  backBtn?.addEventListener("click", () => {
+    window.location.href = `http://localhost:4321/${fsType}`;
+  });
+</script>

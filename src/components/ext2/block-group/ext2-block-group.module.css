@@ -1,7 +1,0 @@
-.blockgroup {
-  view-transition-name: blockgroup;
-}
-
-::view-transition-new(blockgroup) {
-
-}

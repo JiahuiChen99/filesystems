@@ -1,9 +1,0 @@
-{
-  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "File systems",
-  "short_name": "fs",
-  "start_url": ".",
-  "display": "standalone",
-  "background_color": "#fff",
-  "description": "Docs for the file systems projects of Advanced Operating Systems"
-}
