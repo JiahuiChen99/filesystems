@@ -9,8 +9,9 @@ export const groupDescriptorData: EXT2.Struct[] = [
     info: (
       <>
         <p>
-          32bit block id of the first block of the "
-          <a href="block-bitmap">block bitmap</a>” for the group represented.
+          32bit block id of the first block of the &quot;
+          <a href="block-bitmap">block bitmap</a>&quot; for the group
+          represented.
         </p>
         <p>
           The actual block bitmap is located within its own allocated blocks
@@ -26,8 +27,9 @@ export const groupDescriptorData: EXT2.Struct[] = [
     description: "bg_inode_bitmap",
     info: (
       <p>
-        32bit block id of the first block of the "
-        <a href="#inode-bitamp">inode bitmap</a>" for the group represented.
+        32bit block id of the first block of the &quot;
+        <a href="#inode-bitamp">inode bitmap</a>&quot; for the group
+        represented.
       </p>
     ),
   },
@@ -38,8 +40,8 @@ export const groupDescriptorData: EXT2.Struct[] = [
     description: "bg_inode_table",
     info: (
       <p>
-        32bit block id of the first block of the "
-        <a href="inode-table">inode table</a>” for the group represented.
+        32bit block id of the first block of the &quot;
+        <a href="inode-table">inode table</a>&quot; for the group represented.
       </p>
     ),
   },

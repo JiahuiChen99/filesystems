@@ -8,20 +8,20 @@ export default function InodeBitmap() {
   return (
     <section>
       <p>
-        The “Inode Bitmap” works in a similar way as the "
+        The &quot;Inode Bitmap&quot; works in a similar way as the "
         <a href="/ext2/block-bitmap">Block Bitmap</a>", difference being in each
-        bit representing an inode in the “
-        <a href="/ext2/inode-table">Inode Table</a>” rather than a block. Since
-        inode numbers start from 1 rather than 0, the first bit in the first
-        block group's inode bitmap represent inode number 1.
+        bit representing an inode in the &quot;
+        <a href="/ext2/inode-table">Inode Table</a>&quot; rather than a block.
+        Since inode numbers start from 1 rather than 0, the first bit in the
+        first block group's inode bitmap represent inode number 1.
       </p>
       <p>
         There is one inode bitmap per group and its location may be determined
-        by reading the “
+        by reading the &quot;
         <a href="/ext2/block-group-descriptor/#bg_inode_bitmap">
           bg_inode_bitmap
         </a>
-        ” in its associated{" "}
+        &quot; in its associated{" "}
         <a href="/ext2/block-group-descriptor/">group descriptor</a>.
       </p>
       <p>

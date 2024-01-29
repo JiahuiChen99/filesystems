@@ -7,7 +7,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 
 const ListItem = React.forwardRef<
@@ -42,7 +42,7 @@ export function Navbar() {
       <NavigationMenu>
         <NavigationMenuList>
           <a href="/" className="mx-10">
-            <img
+            <Image
               src="/favicon.svg"
               alt="File systems icon"
               width={30}
@@ -58,7 +58,6 @@ export function Navbar() {
                     <a
                       className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                       href="https://jiahuichen.dev">
-                      {/* <Icons.logo className="h-6 w-6" /> */}
                       <div className="mb-2 mt-4 text-lg font-medium">
                         About the author
                       </div>
@@ -72,7 +71,8 @@ export function Navbar() {
                   Linux kernel filesystem.
                 </ListItem>
                 <ListItem href="/fat16" title="File Allocation Table 16">
-                  Default filesystem for MS-DOS and Windows 9x ('95, '98, Me).
+                  Default filesystem for MS-DOS and Windows 9x (&apos;95,
+                  &apos;98, Me).
                 </ListItem>
               </ul>
             </NavigationMenuContent>
