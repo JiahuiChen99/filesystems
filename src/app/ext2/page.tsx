@@ -1,4 +1,4 @@
-import { EXT2 as EXT2Graphic } from "./(ext2-parts)/components/ext2";
+import { EXT2 as EXT2Graphic } from "./(ext2-parts)/components/graphic/ext2";
 
 export default function EXT2() {
   return (

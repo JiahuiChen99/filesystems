@@ -1,5 +1,5 @@
 import React from "react";
-import { EXT2BlockGroup } from "./components/ext2-block-group";
+import { EXT2BlockGroup } from "./components/graphic/ext2-block-group";
 import { BackButton } from "@/components/common/fs-back-button";
 
 export default function FileSystemLayout({
@@ -19,9 +19,11 @@ export default function FileSystemLayout({
       <div className="flex flex-row w-full relative">
         <div className="sticky top-2 max-w-lg h-fit mr-2">
           <BackButton />
-          <section className="border p-4 rounded-lg">{description}</section>
+          <section className="border p-4 rounded-lg space-y-2">
+            {description}
+          </section>
         </div>
-        <div className="flex flex-col flex-grow gap-2 ">{extended}</div>
+        <section className="flex flex-col flex-grow gap-2">{extended}</section>
       </div>
     </section>
   );

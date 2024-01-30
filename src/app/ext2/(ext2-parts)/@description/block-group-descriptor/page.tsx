@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function BlockGroupDescriptor() {
   return (
-    <section>
+    <>
       <p>
         The block group descriptor table is an array of block group descriptor,
         used to define parameters of all the block groups. It provides the
@@ -35,9 +35,9 @@ export default function BlockGroupDescriptor() {
         <Blocks className="h-6 w-6" />
         <AlertTitle>Note:</AlertTitle>
         <AlertDescription>
-          All indicated “block id” are absolute.
+          All indicated &quot;block id&quot; are absolute.
         </AlertDescription>
       </Alert>
-    </section>
+    </>
   );
 }

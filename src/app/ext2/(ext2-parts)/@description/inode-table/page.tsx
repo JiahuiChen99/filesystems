@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 export default function InodeTable() {
   return (
-    <section>
+    <>
       <p>
         The inode table is used to keep track of every directory, regular file,
         symbolic link, or special file; their location, size, type and access
@@ -25,6 +25,6 @@ export default function InodeTable() {
         as a block of information related to an entity, describing its location
         on disk, its size and its owner. An inode looks like this:
       </p>
-    </section>
+    </>
   );
 }

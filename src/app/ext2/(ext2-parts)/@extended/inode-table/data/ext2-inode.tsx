@@ -153,15 +153,16 @@ export const inodeData: EXT2.Struct[] = [
           32-bit value representing the total number of 512-bytes blocks
           reserved to contain the data of this inode, regardless if these blocks
           are used or not. The block numbers of these reserved blocks are
-          contained in the <a href="/ext2/inode-table#i_block">i_block</a>{" "}
+          contained in the <a href="/ext2/inode-table#i_block">i_block</a>&nbsp;
           array.
         </p>
         <p>
           Since this value represents 512-byte blocks and not file system
           blocks, this value should not be directly used as an index to the
           i_block array. Rather, the maximum index of the i_block array should
-          be computed from i_blocks /{" "}
-          <code>{`((1024<<s_log_block_size)/512)`}</code>, or once simplified,{" "}
+          be computed from i_blocks /&nbsp;
+          <code>{`((1024<<s_log_block_size)/512)`}</code>, or once
+          simplified,&nbsp;
           <code>{`i_blocks/(2<<s_log_block_size)`}</code> .
         </p>
       </>
@@ -317,7 +318,7 @@ export const inodeData: EXT2.Struct[] = [
           In Linux and GNU HURD, since fragments are unsupported this value is
           always 0. In Ext4 this value is now marked as obsolete. In theory,
           this should contain the block number which hosts the actual fragment.
-          The fragment number and its size would be contained in the{" "}
+          The fragment number and its size would be contained in the&nbsp;
           <a href="/ext2/inode-table#i_osd2">i_osd2</a>
           structure.
         </q>
