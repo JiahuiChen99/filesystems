@@ -54,7 +54,7 @@ export const superblockData: EXT2.Struct[] = [
     info: (
       <p>
         32bit value indicating the total number of free blocks, including the
-        number of reserved blocks (see{" "}
+        number of reserved blocks (see&nbsp;
         <a href="#s_r_blocks_count">s_r_blocks_count</a>). This is a sum of all
         free blocks of all the block groups.
       </p>
@@ -109,7 +109,7 @@ export const superblockData: EXT2.Struct[] = [
         </code>
         <p>
           Common block sizes include 1KiB, 2KiB, 4KiB and 8Kib. For information
-          about the impact of selecting a block size, see{" "}
+          about the impact of selecting a block size, see&nbsp;
           <a href="#impact-of-block-size">Impact of Block Sizes.</a>
         </p>
         <q>
@@ -154,10 +154,10 @@ export const superblockData: EXT2.Struct[] = [
     info: (
       <p>
         32bit value indicating the total number of blocks per group. This value
-        in combination with <a href="#s_first_data_block">s_first_data_block</a>{" "}
-        can be used to determine the block groups boundaries. Due to volume size
-        boundaries, the last block group might have a smaller number of blocks
-        than what is specified in this field
+        in combination with <a href="#s_first_data_block">s_first_data_block</a>
+        &nbsp; can be used to determine the block groups boundaries. Due to
+        volume size boundaries, the last block group might have a smaller number
+        of blocks than what is specified in this field
       </p>
     ),
   },
@@ -338,7 +338,7 @@ export const superblockData: EXT2.Struct[] = [
     description: "s_minor_rev_level",
     info: (
       <p>
-        16bit value identifying the minor revision level within its{" "}
+        16bit value identifying the minor revision level within its&nbsp;
         <a href="#revision-level">revision level</a>.
       </p>
     ),

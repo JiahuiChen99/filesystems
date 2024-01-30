@@ -12,7 +12,7 @@ export default function BlockBitmap() {
         at the first block, or second block if a superblock backup is present,
         of each block group. Its official location can be determined by reading
         the &quot;<a href="/ext2/block-group-descriptor">bg_block_bitmap</a>
-        &quot; in its associated{" "}
+        &quot; in its associated&nbsp;
         <a href="/ext2/block-group-descriptor">group descriptor</a>.
       </p>
       <p>

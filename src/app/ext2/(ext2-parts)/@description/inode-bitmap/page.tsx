@@ -21,7 +21,7 @@ export default function InodeBitmap() {
         <a href="/ext2/block-group-descriptor/#bg_inode_bitmap">
           bg_inode_bitmap
         </a>
-        &quot; in its associated{" "}
+        &quot; in its associated&nbsp;
         <a href="/ext2/block-group-descriptor/">group descriptor</a>.
       </p>
       <p>

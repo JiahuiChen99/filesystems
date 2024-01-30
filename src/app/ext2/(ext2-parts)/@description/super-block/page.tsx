@@ -17,7 +17,7 @@ export default function SuperBlock() {
         and which OS created it.
       </p>
       <p>
-        The primary copy of the superblock is stored at an offset of{" "}
+        The primary copy of the superblock is stored at an offset of&nbsp;
         <b>1024 bytes</b> from the start of the file, block device or partition
         formatted with Ext2 and later variants (Ext3, Ext4). Its structure is
         mostly constant from Ext2 to Ext3 and Ext4 with only some minor changes.
@@ -40,10 +40,10 @@ export default function SuperBlock() {
       </p>
       <p>
         All fields in the superblock (as in all other ext2 structures) are
-        stored on the disc in{" "}
-        <a href="https://en.wikipedia.org/wiki/Endianness">little endian</a>{" "}
-        format, so a filesystem is portable between machines without having to
-        know what machine it was created on.
+        stored on the disc in&nbsp;
+        <a href="https://en.wikipedia.org/wiki/Endianness">little endian</a>
+        &nbsp; format, so a filesystem is portable between machines without
+        having to know what machine it was created on.
       </p>
     </>
   );
