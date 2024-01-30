@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 export default function SuperBlock() {
   return (
-    <section>
+    <>
       <p>
         The superblock contains <b>all the information</b> about the
         configuration of the filesystem. The information in the superblock
@@ -45,6 +45,6 @@ export default function SuperBlock() {
         format, so a filesystem is portable between machines without having to
         know what machine it was created on.
       </p>
-    </section>
+    </>
   );
 }

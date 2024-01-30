@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 export default function InodeBitmap() {
   return (
-    <section>
+    <>
       <p>
         The &quot;Inode Bitmap&quot; works in a similar way as the &quot;
         <a href="/ext2/block-bitmap">Block Bitmap</a>&quot;, difference being in
@@ -28,6 +28,6 @@ export default function InodeBitmap() {
         When the inode table is created, all the reserved inodes are marked as
         used. In revision 0 this is the first 11 inodes.
       </p>
-    </section>
+    </>
   );
 }
