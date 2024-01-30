@@ -1,5 +1,5 @@
 import React from "react";
-import { EXT2BlockGroup } from "./components/ext2-block-group";
+import { EXT2BlockGroup } from "./components/graphic/ext2-block-group";
 import { BackButton } from "@/components/common/fs-back-button";
 
 export default function FileSystemLayout({

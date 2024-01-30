@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { EXT2BlockGroup } from "./ext2-block-group";
+import { groupStyle, hoverStyle } from "./ext2-styles";
 
 export function EXT2() {
   const [isEXT2Expanded, setIsEXT2Expanded] = React.useState<boolean>(false);
@@ -34,7 +35,7 @@ export function EXT2() {
       )}
       <g id="ext2-all">
         <g id="ext2-global-layout">
-          <g id="block-group-n-g">
+          <g id="block-group-n-g" cursor="default">
             <rect
               x="528.5"
               y="0.5"
@@ -54,7 +55,7 @@ export function EXT2() {
               </tspan>
             </text>
           </g>
-          <g id="...-g">
+          <g id="...-g" cursor="default">
             <rect
               x="433.5"
               y="0.5"
@@ -74,7 +75,7 @@ export function EXT2() {
               </tspan>
             </text>
           </g>
-          <g id="block-group-2-g">
+          <g id="block-group-2-g" cursor="default">
             <rect
               x="316.5"
               y="0.5"
@@ -94,7 +95,10 @@ export function EXT2() {
               </tspan>
             </text>
           </g>
-          <g id="block-group-1-g" onClick={onBlockGroupClick}>
+          <g
+            id="block-group-1-g"
+            onClick={onBlockGroupClick}
+            className={groupStyle}>
             <rect
               x="199.5"
               y="0.5"
@@ -102,6 +106,7 @@ export function EXT2() {
               height="44"
               fill="white"
               stroke="black"
+              className={hoverStyle}
             />
             <text
               id="block group 1"
@@ -114,7 +119,7 @@ export function EXT2() {
               </tspan>
             </text>
           </g>
-          <g id="block-group-0-g">
+          <g id="block-group-0-g" cursor="default">
             <rect
               x="82.5"
               y="0.5"
@@ -134,7 +139,7 @@ export function EXT2() {
               </tspan>
             </text>
           </g>
-          <g id="boot-sector-g">
+          <g id="boot-sector-g" cursor="default">
             <rect
               x="0.5"
               y="0.5"

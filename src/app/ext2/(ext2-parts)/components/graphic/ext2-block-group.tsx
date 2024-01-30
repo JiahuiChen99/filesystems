@@ -1,5 +1,6 @@
 "use client";
 import type { MouseEvent } from "react";
+import { groupStyle, hoverStyle } from "./ext2-styles";
 
 const EXT2BlockGroup = () => {
   const onGroupClick = (e: MouseEvent<SVGGElement>) => {
@@ -11,14 +12,18 @@ const EXT2BlockGroup = () => {
     <svg viewBox="0 0 646 45" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="ext2-all">
         <g id="ext2-block-layout">
-          <g id="data-blocks-g" data-id="data-blocks" onClick={onGroupClick}>
+          <g
+            id="data-blocks-g"
+            data-id="data-blocks"
+            onClick={onGroupClick}
+            className={groupStyle}>
             <rect
               x="439.5"
               y="0.5"
               width="206"
               height="44"
-              fill="white"
               stroke="black"
+              className={hoverStyle}
             />
             <text
               id="data blocks"
@@ -31,7 +36,11 @@ const EXT2BlockGroup = () => {
               </tspan>
             </text>
           </g>
-          <g id="inode-table-g" data-id="inode-table" onClick={onGroupClick}>
+          <g
+            id="inode-table-g"
+            data-id="inode-table"
+            onClick={onGroupClick}
+            className={groupStyle}>
             <rect
               x="326.5"
               y="0.5"
@@ -39,6 +48,7 @@ const EXT2BlockGroup = () => {
               height="44"
               fill="white"
               stroke="black"
+              className={hoverStyle}
             />
             <text
               id="inode table"
@@ -51,7 +61,11 @@ const EXT2BlockGroup = () => {
               </tspan>
             </text>
           </g>
-          <g id="inode-bitmap-g" data-id="inode-bitmap" onClick={onGroupClick}>
+          <g
+            id="inode-bitmap-g"
+            data-id="inode-bitmap"
+            onClick={onGroupClick}
+            className={groupStyle}>
             <rect
               x="259.5"
               y="0.5"
@@ -59,6 +73,7 @@ const EXT2BlockGroup = () => {
               height="44"
               fill="white"
               stroke="black"
+              className={hoverStyle}
             />
             <text
               id="inode bitmap"
@@ -74,7 +89,11 @@ const EXT2BlockGroup = () => {
               </tspan>
             </text>
           </g>
-          <g id="block-bitmap-g" data-id="block-bitmap" onClick={onGroupClick}>
+          <g
+            id="block-bitmap-g"
+            data-id="block-bitmap"
+            onClick={onGroupClick}
+            className={groupStyle}>
             <rect
               x="192.5"
               y="0.5"
@@ -82,6 +101,7 @@ const EXT2BlockGroup = () => {
               height="44"
               fill="white"
               stroke="black"
+              className={hoverStyle}
             />
             <text
               id="block bitmap"
@@ -100,7 +120,8 @@ const EXT2BlockGroup = () => {
           <g
             id="block-group-g"
             data-id="block-group-descriptor"
-            onClick={onGroupClick}>
+            onClick={onGroupClick}
+            className={groupStyle}>
             <rect
               x="85.5"
               y="0.5"
@@ -108,6 +129,7 @@ const EXT2BlockGroup = () => {
               height="44"
               fill="white"
               stroke="black"
+              className={hoverStyle}
             />
             <text
               id="block group descriptor"
@@ -123,7 +145,11 @@ const EXT2BlockGroup = () => {
               </tspan>
             </text>
           </g>
-          <g id="super-block-g" data-id="super-block" onClick={onGroupClick}>
+          <g
+            id="super-block-g"
+            data-id="super-block"
+            onClick={onGroupClick}
+            className={groupStyle}>
             <rect
               x="0.5"
               y="0.5"
@@ -131,6 +157,7 @@ const EXT2BlockGroup = () => {
               height="44"
               fill="white"
               stroke="black"
+              className={hoverStyle}
             />
             <text
               id="super block"
