@@ -35,7 +35,7 @@ export default function BlockGroupDescriptor() {
         <Blocks className="h-6 w-6" />
         <AlertTitle>Note:</AlertTitle>
         <AlertDescription>
-          All indicated “block id” are absolute.
+          All indicated &quot;block id&quot; are absolute.
         </AlertDescription>
       </Alert>
     </>
