@@ -41,13 +41,14 @@ export function Navbar() {
     <div className="w-full border-b border-gray-300 p-2">
       <NavigationMenu>
         <NavigationMenuList>
-          <a href="/" className="mx-10">
+          <a href="/" className="mx-10 flex space-x-2.5">
             <Image
               src="/favicon.svg"
               alt="File systems icon"
               width={30}
               height={30}
             />
+            <span className="text-xl font-bold">File Systems</span>
           </a>
           <NavigationMenuItem>
             <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
