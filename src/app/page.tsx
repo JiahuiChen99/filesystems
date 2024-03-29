@@ -1,5 +1,6 @@
-import Link from "next/link";
 import { StorageLottie } from "./home/components/storage-lottie";
+import { FSListItem } from "./home/components/fs-list-item";
+import { FSList } from "./home/data/fs-list-data";
 
 export default function Home() {
   return (
@@ -15,20 +16,9 @@ export default function Home() {
           </p>
         </div>
         <ul className="my-10 space-y-2.5">
-          <li className="flex">
-            <Link
-              href="/ext2"
-              className="flex cursor-pointer bg-primary text-primary-foreground hover:bg-primary/90 justify-center rounded-md px-10 py-4 w-full">
-              The second Extended File Systems (EXT2)
-            </Link>
-          </li>
-          <li className="flex">
-            <Link
-              href="/fat16"
-              className="flex cursor-pointer bg-primary text-primary-foreground hover:bg-primary/90 justify-center rounded-md px-10 py-4 w-full">
-              Fat Allocation Table 16 (FAT16)
-            </Link>
-          </li>
+          {FSList.map((item) => (
+            <FSListItem key={item.id} {...item} />
+          ))}
         </ul>
       </div>
       <StorageLottie />
