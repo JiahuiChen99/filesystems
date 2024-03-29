@@ -3,7 +3,7 @@ import { StorageLottie } from "./home/components/storage-lottie";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex h-full flex-col items-center justify-between my-24">
       <div className="flex flex-col place-items-center">
         <div className="space-y-2">
           <h1 className="text-5xl font-black">
