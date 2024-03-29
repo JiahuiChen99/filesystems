@@ -1,5 +1,5 @@
 import Lottie from "lottie-web";
-import storageAnime from "../storageAnime.json";
+import storageAnime from "../data/storageAnime.json";
 import React from "react";
 
 export const useLootie = () => {
@@ -11,9 +11,6 @@ export const useLootie = () => {
       loop: true,
       autoplay: true,
       name: "storage animation",
-      rendererSettings: {
-        
-      }
     });
   }, []);
 
