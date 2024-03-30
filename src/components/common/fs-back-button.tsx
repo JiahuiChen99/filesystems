@@ -3,6 +3,7 @@
 import { ChevronLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
+import { Skeleton } from "../ui/skeleton";
 
 export function BackButton() {
   const [title, setTitle] = React.useState<string>("");
@@ -16,6 +17,9 @@ export function BackButton() {
     if (typeof document === "undefined") return;
     setTitle(document.title);
   }, []);
+
+  if (title === "")
+    return <Skeleton className="mb-2 w-full h-[48px] rounded-md" />;
 
   return (
     <div
