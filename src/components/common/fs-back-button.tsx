@@ -5,12 +5,12 @@ import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { Skeleton } from "../ui/skeleton";
 
-export function BackButton() {
+export function BackButton({ backToPath = "/" }: { backToPath: string }) {
   const [title, setTitle] = React.useState<string>("");
   const router = useRouter();
 
   const onBackClick = () => {
-    router.push(`${window.location.origin}/ext2`);
+    router.push(`${window.location.origin}${backToPath}`);
   };
 
   useEffect(() => {
