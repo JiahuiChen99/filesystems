@@ -18,7 +18,7 @@ export default function FileSystemLayout({
       </div>
       <div className="flex flex-row w-full relative">
         <div className="sticky top-2 max-w-lg h-fit mr-2">
-          <BackButton />
+          <BackButton backToPath="/ext2" />
           <section className="border p-4 rounded-lg space-y-2">
             {description}
           </section>
