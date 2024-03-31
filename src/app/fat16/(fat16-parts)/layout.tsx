@@ -16,18 +16,14 @@ export default function FAT16FileSystemLayout({
       <div className="px-32 pb-10">
         <FAT16Graphic />
       </div>
-      <div className="flex flex-col w-full relative">
-        <div className="sticky top-2 max-w-lg h-fit mr-2">
+      <div className="flex w-full relative">
+        <div className="sticky top-2 w-1/2 h-fit mr-2">
           <BackButton backToPath="/fat16" />
+          <section>{structure}</section>
         </div>
-        <div className="flex w-full h-full space-x-4">
-          <section className="w-1/2 border p-4 rounded-lg space-y-2">
-            {structure}
-          </section>
-          <section className="flex flex-col flex-grow gap-2 w-1/2">
-            {extended}
-          </section>
-        </div>
+        <section className="flex flex-col flex-grow gap-2 w-1/2">
+          {extended}
+        </section>
       </div>
     </section>
   );
