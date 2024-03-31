@@ -236,7 +236,7 @@ export const fat16RootDirData: { [key: string]: FAT16.Struct } = {
     size: 2,
     info: (
       <>
-        <p>Low word of this entry's first cluster number.</p>
+        <p>Low word of this entry&apos;s first cluster number.</p>
       </>
     ),
   },
@@ -247,7 +247,7 @@ export const fat16RootDirData: { [key: string]: FAT16.Struct } = {
     size: 4,
     info: (
       <>
-        <p>32-bit DWORD holding this file's size in bytes.</p>
+        <p>32-bit DWORD holding this file&apos;s size in bytes.</p>
       </>
     ),
   },
