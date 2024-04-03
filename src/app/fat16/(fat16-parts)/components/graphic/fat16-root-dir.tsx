@@ -402,8 +402,8 @@ export function FAT16RootDir() {
               id="fat16-dir-content-title"
               fill="black"
               fontFamily="Inter"
-              font-size="13"
-              font-weight="bold"
+              fontSize="12"
+              fontWeight="bold"
               letterSpacing="0em">
               <tspan x="190.005" y="13.7273">
                 FAT16 DIR Content
@@ -418,7 +418,7 @@ export function FAT16RootDir() {
               x2="189.594"
               y2="39.7076"
               stroke="black"
-              stroke-dasharray="2 2"
+              strokeDasharray="2 2"
             />
             <line
               id="Line 3"
@@ -427,7 +427,7 @@ export function FAT16RootDir() {
               x2="189.494"
               y2="323.922"
               stroke="black"
-              stroke-dasharray="2 2"
+              strokeDasharray="2 2"
             />
           </g>
           <g id="root-dir-content">
@@ -442,7 +442,7 @@ export function FAT16RootDir() {
                 transform="translate(0 124) rotate(-90)"
                 fill="black"
                 fontFamily="Inter"
-                font-size="11"
+                fontSize="12"
                 letterSpacing="0em">
                 <tspan x="0.0883789" y="10.5">
                   &#x394;offset
@@ -459,7 +459,7 @@ export function FAT16RootDir() {
                 id="sector = FirstRootDirSecNum"
                 fill="black"
                 fontFamily="Inter"
-                font-size="11"
+                fontSize="12"
                 letterSpacing="0em">
                 <tspan x="2.00977" y="10.5">
                   sector = FirstRootDirSecNum
@@ -487,7 +487,7 @@ export function FAT16RootDir() {
                   id="fat16 dir n"
                   fill="black"
                   fontFamily="Inter"
-                  font-size="12"
+                  fontSize="12"
                   letterSpacing="0em">
                   <tspan x="60.4648" y="240.864">
                     FAT16 DIR N
@@ -514,7 +514,7 @@ export function FAT16RootDir() {
                   id="dots"
                   fill="black"
                   fontFamily="Inter"
-                  font-size="12"
+                  fontSize="12"
                   letterSpacing="0em">
                   <tspan x="90.043" y="196.864">
                     ...
@@ -541,7 +541,7 @@ export function FAT16RootDir() {
                   id="fat16 dir 2"
                   fill="black"
                   fontFamily="Inter"
-                  font-size="12"
+                  fontSize="12"
                   letterSpacing="0em">
                   <tspan x="61.3496" y="152.864">
                     FAT16 DIR 2
@@ -568,7 +568,7 @@ export function FAT16RootDir() {
                   id="fat16 dir 1"
                   fill="black"
                   fontFamily="Inter"
-                  font-size="12"
+                  fontSize="12"
                   letterSpacing="0em">
                   <tspan x="62.1934" y="109.864">
                     FAT16 DIR 1
@@ -595,7 +595,7 @@ export function FAT16RootDir() {
                   id="fat16 dir 0"
                   fill="black"
                   fontFamily="Inter"
-                  font-size="12"
+                  fontSize="12"
                   letterSpacing="0em">
                   <tspan x="61.2324" y="65.8636">
                     FAT16 DIR 0
