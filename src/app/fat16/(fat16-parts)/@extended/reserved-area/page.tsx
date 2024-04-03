@@ -3,12 +3,12 @@ import { FAT16 } from "@/app/fat16/types/fat16";
 import { useStoreSelector } from "@/store/store-hooks";
 import { selectSelectedProp } from "@/app/fat16/store/fat16-slice";
 import { ArrowRightFromLine, Cpu } from "lucide-react";
-import { fat16RootDirData } from "./data/fat16-reserved-area";
+import { fat16ReservedAreaData } from "./data/fat16-reserved-area";
 
 export default function ReservedArea() {
   const selectedProp = useStoreSelector(selectSelectedProp);
   const { name, offset, size, info } =
-    fat16RootDirData[selectedProp as keyof FAT16.Struct] || {};
+    fat16ReservedAreaData[selectedProp as keyof FAT16.Struct] || {};
   return (
     <>
       <section id="root-dir-formulas" className="border p-4 rounded-lg">

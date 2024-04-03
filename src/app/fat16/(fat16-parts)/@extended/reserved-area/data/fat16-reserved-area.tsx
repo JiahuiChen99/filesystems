@@ -2,7 +2,7 @@ import { FAT16 } from "@/app/fat16/types/fat16";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AlertTriangleIcon } from "lucide-react";
 
-export const fat16RootDirData: { [key: string]: FAT16.Struct } = {
+export const fat16ReservedAreaData: { [key: string]: FAT16.Struct } = {
   bpb_jmpboot: {
     id: "BS_jmpBoot",
     name: "BS_jmpBoot",
