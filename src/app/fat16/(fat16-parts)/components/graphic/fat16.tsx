@@ -72,7 +72,7 @@ export function FAT16() {
           </g>
           <g
             id="fat-2-g"
-            data-id="fat-2"
+            data-id="fat"
             onClick={onFAT16SectionClick}
             className={groupStyle}>
             <rect x="230.5" y="0.5" width="91" height="44" fill="white" />
@@ -97,7 +97,7 @@ export function FAT16() {
           </g>
           <g
             id="fat-1-g"
-            data-id="fat-1"
+            data-id="fat"
             onClick={onFAT16SectionClick}
             className={groupStyle}>
             <rect x="142.5" y="0.5" width="89" height="44" fill="white" />
