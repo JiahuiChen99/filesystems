@@ -9,7 +9,7 @@ const initialState: FAT16State = {
   selectedProp: "",
 };
 
-export const counterSlice = createSlice({
+export const fat16Slice = createSlice({
   name: "fat16",
   initialState,
   reducers: {
@@ -23,6 +23,6 @@ export const counterSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { changeSelection } = counterSlice.actions;
-export const { selectSelectedProp } = counterSlice.selectors;
-export default counterSlice.reducer;
+export const { changeSelection } = fat16Slice.actions;
+export const { selectSelectedProp } = fat16Slice.selectors;
+export default fat16Slice.reducer;

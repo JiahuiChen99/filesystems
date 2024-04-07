@@ -1,7 +1,7 @@
 import { combineSlices, configureStore } from "@reduxjs/toolkit";
-import { counterSlice } from "@/app/fat16/store/fat16-slice";
+import { fat16Slice } from "@/app/fat16/store/fat16-slice";
 
-const storeReducer = combineSlices(counterSlice);
+const storeReducer = combineSlices(fat16Slice);
 
 export const makeStore = () => {
   return configureStore({
