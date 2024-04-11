@@ -1,3 +1,4 @@
+"use client";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -5,10 +6,12 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -38,18 +41,18 @@ ListItem.displayName = "ListItem";
 
 export function Navbar() {
   return (
-    <div className="w-full border-b border-gray-300 p-2">
+    <div className="flex flex-row w-full max-w-full border-b border-gray-300 p-2">
+      <a href="/" className="mx-10 flex items-center space-x-2.5">
+        <Image
+          src="/favicon.svg"
+          alt="File systems icon"
+          width={30}
+          height={30}
+        />
+        <span className="text-xl font-bold">File Systems</span>
+      </a>
       <NavigationMenu>
         <NavigationMenuList>
-          <a href="/" className="mx-10 flex space-x-2.5">
-            <Image
-              src="/favicon.svg"
-              alt="File systems icon"
-              width={30}
-              height={30}
-            />
-            <span className="text-xl font-bold">File Systems</span>
-          </a>
           <NavigationMenuItem>
             <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -78,13 +81,13 @@ export function Navbar() {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          {/* <NavigationMenuItem>
-            <Link
-              href="/docs"
-              className="inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-              <NavigationMenuLink>Resources</NavigationMenuLink>
+          <NavigationMenuItem>
+            <Link href="/glossary">
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Glossary
+              </NavigationMenuLink>
             </Link>
-          </NavigationMenuItem> */}
+          </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
     </div>

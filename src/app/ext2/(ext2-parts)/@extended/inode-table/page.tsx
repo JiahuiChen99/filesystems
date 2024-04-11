@@ -20,7 +20,7 @@ export default function InodeTable() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[100px]">Offset (bytes)</TableHead>
+              <TableHead>Offset (bytes)</TableHead>
               <TableHead>Size (bytes)</TableHead>
               <TableHead>Description</TableHead>
             </TableRow>

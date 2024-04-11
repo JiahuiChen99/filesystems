@@ -35,7 +35,11 @@ export function EXT2() {
       )}
       <g id="ext2-all">
         <g id="ext2-global-layout">
-          <g id="block-group-n-g" cursor="default">
+          <g
+            id="block-group-n-g"
+            onClick={onBlockGroupClick}
+            className={groupStyle}
+            cursor="default">
             <rect
               x="528.5"
               y="0.5"
@@ -43,6 +47,7 @@ export function EXT2() {
               height="44"
               fill="white"
               stroke="black"
+              className={hoverStyle}
             />
             <text
               id="block group n"
@@ -75,7 +80,11 @@ export function EXT2() {
               </tspan>
             </text>
           </g>
-          <g id="block-group-2-g" cursor="default">
+          <g
+            id="block-group-2-g"
+            cursor="default"
+            onClick={onBlockGroupClick}
+            className={groupStyle}>
             <rect
               x="316.5"
               y="0.5"
@@ -83,6 +92,7 @@ export function EXT2() {
               height="44"
               fill="white"
               stroke="black"
+              className={hoverStyle}
             />
             <text
               id="block group 2"
@@ -119,7 +129,11 @@ export function EXT2() {
               </tspan>
             </text>
           </g>
-          <g id="block-group-0-g" cursor="default">
+          <g
+            id="block-group-0-g"
+            onClick={onBlockGroupClick}
+            className={groupStyle}
+            cursor="default">
             <rect
               x="82.5"
               y="0.5"
@@ -127,6 +141,7 @@ export function EXT2() {
               height="44"
               fill="white"
               stroke="black"
+              className={hoverStyle}
             />
             <text
               id="block group 0"
