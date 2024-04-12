@@ -5,7 +5,7 @@ import { groupStyle, hoverStyle } from "./ext2-styles";
 const EXT2BlockGroup = () => {
   const onGroupClick = (e: MouseEvent<SVGGElement>) => {
     const component = e.currentTarget.parentElement?.getAttribute("data-id");
-    if (component) return;
+    if (!component) return;
     const location = window.location;
     location.href = `${location.origin}/ext2/${component}`;
   };
