@@ -1,14 +1,18 @@
 "use client";
 import type { MouseEvent } from "react";
 import { groupStyle, hoverStyle } from "./ext2-styles";
+import { useRouter } from "next/navigation";
 
 const EXT2BlockGroup = () => {
+  const router = useRouter();
+
   const onGroupClick = (e: MouseEvent<SVGGElement>) => {
     const component = e.currentTarget.parentElement?.getAttribute("data-id");
     if (!component) return;
     const location = window.location;
-    location.href = `${location.origin}/ext2/${component}`;
+    router.push(`${location.origin}/ext2/${component}`);
   };
+
   return (
     <svg viewBox="0 0 758 62" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="ext2-all">
