@@ -14,7 +14,7 @@ export default function FileSystemLayout({
   return (
     <section id="filesystem information" className="h-full p-10">
       <div className="px-32 pb-10">
-        <EXT2BlockGroup />
+        <EXT2BlockGroup dynamicStyles={true} />
       </div>
       <div className="flex flex-row w-full relative">
         <div className="sticky top-2 max-w-lg h-fit mr-2">
