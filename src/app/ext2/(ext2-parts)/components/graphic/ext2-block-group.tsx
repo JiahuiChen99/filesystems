@@ -1,23 +1,58 @@
 "use client";
-import type { MouseEvent } from "react";
 import { groupStyle, hoverStyle } from "./ext2-styles";
 import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { useStoreSelector } from "@/store/store-hooks";
+import {
+  changeSelectedFSComponent,
+  selectFSComponent,
+} from "@/app/store/global-slice";
 
-const EXT2BlockGroup = () => {
+const EXT2BlockGroup = ({
+  dynamicStyles = false,
+}: {
+  dynamicStyles?: boolean;
+}) => {
   const router = useRouter();
+  const dispatch = useDispatch();
+  const selectedComponent = useStoreSelector(selectFSComponent);
 
-  const onGroupClick = (e: MouseEvent<SVGGElement>) => {
+  const onGroupClick = (e: React.MouseEvent<SVGGElement>) => {
     const component = e.currentTarget.parentElement?.getAttribute("data-id");
     if (!component) return;
+    dispatch(changeSelectedFSComponent(component));
     const location = window.location;
     router.push(`${location.origin}/ext2/${component}`);
+  };
+
+  const getTextStyles = (component: string) => {
+    if (!dynamicStyles) return;
+    if (component !== selectedComponent)
+      return {
+        opacity: 0.25,
+        color: "grey",
+      } as React.SVGProps<SVGTextElement>;
+    return { color: "black" };
+  };
+
+  const getRectStyles = (component: string) => {
+    if (!dynamicStyles) return;
+    if (component !== selectedComponent)
+      return {
+        stroke: "black",
+        fill: "white",
+      } as React.SVGProps<SVGRectElement>;
+    return { stroke: "black" };
   };
 
   return (
     <svg viewBox="0 0 758 62" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="ext2-all">
         <g id="ext2-block-group-layout">
-          <g id="data-blocks-g" data-id="data-blocks">
+          <g
+            id="data-blocks-g"
+            data-id="data-blocks"
+            {...getTextStyles("data-blocks")}>
             <g
               id="data-blocks-rect"
               className={groupStyle}
@@ -27,10 +62,10 @@ const EXT2BlockGroup = () => {
                 y="0.5"
                 width="298"
                 height="44"
-                fill="white"
+                stroke="black"
+                {...getRectStyles("data-blocks")}
                 className={hoverStyle}
               />
-              <rect x="459.5" y="0.5" width="298" height="44" stroke="black" />
               <text
                 id="data blocks"
                 fill="black"
@@ -53,7 +88,10 @@ const EXT2BlockGroup = () => {
               </tspan>
             </text>
           </g>
-          <g id="inode-table-g" data-id="inode-table">
+          <g
+            id="inode-table-g"
+            data-id="inode-table"
+            {...getTextStyles("inode-table")}>
             <g
               id="inode-table-rect"
               className={groupStyle}
@@ -64,9 +102,10 @@ const EXT2BlockGroup = () => {
                 width="126"
                 height="44"
                 fill="white"
+                stroke="black"
+                {...getRectStyles("inode-table")}
                 className={hoverStyle}
               />
-              <rect x="332.5" y="0.5" width="126" height="44" stroke="black" />
               <text
                 id="inode table"
                 fill="black"
@@ -89,7 +128,10 @@ const EXT2BlockGroup = () => {
               </tspan>
             </text>
           </g>
-          <g id="inode-bitmap-g" data-id="inode-bitmap">
+          <g
+            id="inode-bitmap-g"
+            data-id="inode-bitmap"
+            {...getTextStyles("inode-bitmap")}>
             <g
               id="inode-bitmap-rect"
               className={groupStyle}
@@ -100,9 +142,10 @@ const EXT2BlockGroup = () => {
                 width="69"
                 height="44"
                 fill="white"
+                stroke="black"
+                {...getRectStyles("inode-bitmap")}
                 className={hoverStyle}
               />
-              <rect x="262.5" y="0.5" width="69" height="44" stroke="black" />
               <text
                 id="inode bitmap"
                 fill="black"
@@ -128,7 +171,10 @@ const EXT2BlockGroup = () => {
               </tspan>
             </text>
           </g>
-          <g id="block-bitmap-g" data-id="block-bitmap">
+          <g
+            id="block-bitmap-g"
+            data-id="block-bitmap"
+            {...getTextStyles("block-bitmap")}>
             <g
               id="block-bitmap-rect"
               className={groupStyle}
@@ -139,9 +185,10 @@ const EXT2BlockGroup = () => {
                 width="69"
                 height="44"
                 fill="white"
+                stroke="black"
+                {...getRectStyles("block-bitmap")}
                 className={hoverStyle}
               />
-              <rect x="192.5" y="0.5" width="69" height="44" stroke="black" />
               <text
                 id="block bitmap"
                 fill="black"
@@ -167,7 +214,10 @@ const EXT2BlockGroup = () => {
               </tspan>
             </text>
           </g>
-          <g id="block-group-descriptor-g" data-id="block-group-descriptor">
+          <g
+            id="block-group-descriptor-g"
+            data-id="block-group-descriptor"
+            {...getTextStyles("block-group-descriptor")}>
             <g
               id="block-group-descriptor-rect"
               className={groupStyle}
@@ -178,9 +228,10 @@ const EXT2BlockGroup = () => {
                 width="127"
                 height="44"
                 fill="white"
+                stroke="black"
+                {...getRectStyles("block-group-descriptor")}
                 className={hoverStyle}
               />
-              <rect x="64.5" y="0.5" width="127" height="44" stroke="black" />
               <text
                 id="block group descriptorr"
                 fill="black"
@@ -206,7 +257,10 @@ const EXT2BlockGroup = () => {
               </tspan>
             </text>
           </g>
-          <g id="super-block-g" data-id="super-block">
+          <g
+            id="super-block-g"
+            data-id="super-block"
+            {...getTextStyles("super-block")}>
             <g
               id="super-block-rect"
               className={groupStyle}
@@ -217,9 +271,10 @@ const EXT2BlockGroup = () => {
                 width="63"
                 height="44"
                 fill="white"
+                stroke="black"
+                {...getRectStyles("super-block")}
                 className={hoverStyle}
               />
-              <rect x="0.5" y="0.5" width="63" height="44" stroke="black" />
               <text
                 id="super block"
                 fill="black"
