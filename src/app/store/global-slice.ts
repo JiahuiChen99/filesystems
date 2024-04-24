@@ -26,7 +26,7 @@ export const globalSlice = createSlice({
     },
   },
   selectors: {
-    selectTableGraphicSwitch: (global) => global.tableGraphic,
+    selectTableGraphic: (global) => global.tableGraphic,
     selectFSComponent: (global) => global.selectedFSComponent,
   },
 });
@@ -34,6 +34,5 @@ export const globalSlice = createSlice({
 // Action creators are generated for each case reducer function
 export const { toggleTableGraphic, changeSelectedFSComponent } =
   globalSlice.actions;
-export const { selectTableGraphicSwitch, selectFSComponent } =
-  globalSlice.selectors;
+export const { selectTableGraphic, selectFSComponent } = globalSlice.selectors;
 export default globalSlice.reducer;
