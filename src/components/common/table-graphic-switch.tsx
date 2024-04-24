@@ -2,9 +2,17 @@ import { Image, TableIcon } from "lucide-react";
 import clsx from "clsx";
 import { Switch } from "@/components/ui/switch";
 import * as React from "react";
+import { useSelector } from "react-redux";
+import { selectTableGraphic } from "@/app/store/global-slice";
 
 export function useTableGraphicSwitch() {
-  const [viewSwitch, setViewSwitch] = React.useState<boolean>(false);
+  const globalViewSwitch = useSelector(selectTableGraphic);
+  // Use global config by default
+  const [viewSwitch, setViewSwitch] = React.useState<boolean>(globalViewSwitch);
+
+  React.useEffect(() => {
+    setViewSwitch(globalViewSwitch);
+  }, [globalViewSwitch]);
 
   return {
     viewSwitch,

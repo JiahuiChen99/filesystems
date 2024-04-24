@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import { NavbarSettings } from "./nav-bar-settings";
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -88,6 +89,9 @@ export function Navbar() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
+          <React.Suspense fallback={<>Loading...</>}>
+            <NavbarSettings />
+          </React.Suspense>
         </NavigationMenuList>
       </NavigationMenu>
     </div>
