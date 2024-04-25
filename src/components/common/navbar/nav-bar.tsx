@@ -89,7 +89,7 @@ export function Navbar() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <React.Suspense fallback={<>Loading...</>}>
+          <React.Suspense fallback={null}>
             <NavbarSettings />
           </React.Suspense>
         </NavigationMenuList>
