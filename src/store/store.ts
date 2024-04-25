@@ -7,6 +7,7 @@ const storeReducer = combineSlices(globalSlice, fat16Slice);
 export const makeStore = () => {
   return configureStore({
     reducer: storeReducer,
+    devTools: process.env.NODE_ENV !== "production",
   });
 };
 
