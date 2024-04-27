@@ -4,11 +4,31 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 export interface GlobalState {
   tableGraphic: boolean;
   selectedFSComponent: string;
+  settings: {
+    ext2: {
+      "super-block": string;
+      "block-group-descriptor": string;
+      "block-bitmap": string;
+      "inode-bitmap": string;
+      "inode-table": string;
+      "data-blocks": string;
+    };
+  };
 }
 
 const initialState: GlobalState = {
   tableGraphic: true,
   selectedFSComponent: "",
+  settings: {
+    ext2: {
+      "super-block": "",
+      "block-group-descriptor": "",
+      "block-bitmap": "",
+      "inode-bitmap": "",
+      "inode-table": "",
+      "data-blocks": "",
+    },
+  },
 };
 
 export const globalSlice = createSlice({
