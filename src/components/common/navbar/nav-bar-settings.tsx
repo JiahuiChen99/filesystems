@@ -50,9 +50,11 @@ export function NavbarSettings() {
             Settings
           </Button>
         </DialogTrigger>
-        <DialogContent className="flex w-full max-w-4xl h-4/6">
-          <SettingsNav />
-          <div className="flex flex-col w-full">{settingsComponent}</div>
+        <DialogContent className="w-full max-w-4xl h-4/6 border-0">
+          <div className="absolute left-0 top-0 flex h-full w-full">
+            <SettingsNav />
+            <div className="flex flex-col w-full p-10">{settingsComponent}</div>
+          </div>
         </DialogContent>
       </Dialog>
     </NavigationMenuItem>

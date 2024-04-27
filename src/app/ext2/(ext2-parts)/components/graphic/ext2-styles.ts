@@ -1,2 +1,2 @@
 export const groupStyle = "group cursor-default";
-export const hoverStyle = "group-hover:fill-accent";
+export const hoverStyle = "group-hover:opacity-75";

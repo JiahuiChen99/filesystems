@@ -2,10 +2,39 @@
 import React from "react";
 import { EXT2BlockGroup } from "./ext2-block-group";
 import { groupStyle, hoverStyle } from "./ext2-styles";
+import { usePathname, useRouter } from "next/navigation";
+import {
+  changeSelectedFSComponent,
+  selectEXT2BlockGroupColors,
+} from "@/app/store/global-slice";
+import { useDispatch } from "react-redux";
+import { useStoreSelector } from "@/store/store-hooks";
 
 export function EXT2() {
   const [isEXT2Expanded, setIsEXT2Expanded] = React.useState<boolean>(false);
   const onBlockGroupClick = () => setIsEXT2Expanded((prevState) => !prevState);
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const pathname = usePathname();
+
+  const clickHandle = (id: string) => {
+    dispatch(changeSelectedFSComponent(id));
+    router.push(`${pathname}/${id}`);
+  };
+
+  const EXT2BlockGroupComponentColors = useStoreSelector(
+    selectEXT2BlockGroupColors
+  );
+
+  const groupHandlers = {
+    "super-block": clickHandle,
+    "block-group-descriptor": clickHandle,
+    "block-bitmap": clickHandle,
+    "inode-bitmap": clickHandle,
+    "inode-table": clickHandle,
+    "data-blocks": clickHandle,
+  };
+
   return (
     <svg
       width="100%"
@@ -34,7 +63,10 @@ export function EXT2() {
             strokeDasharray="2 2"
           />
           <g transform="translate(0,52)">
-            <EXT2BlockGroup />
+            <EXT2BlockGroup
+              onGroupClickHandlers={groupHandlers}
+              colors={EXT2BlockGroupComponentColors}
+            />
           </g>
         </g>
       )}

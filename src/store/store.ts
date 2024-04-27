@@ -1,13 +1,26 @@
 import { combineSlices, configureStore } from "@reduxjs/toolkit";
 import { fat16Slice } from "@/app/fat16/store/fat16-slice";
 import { globalSlice } from "@/app/store/global-slice";
+import storage from "redux-persist/lib/storage";
+import { persistReducer, persistStore } from "redux-persist";
 
-const storeReducer = combineSlices(globalSlice, fat16Slice);
+const persistConfig = {
+  key: "global",
+  storage,
+};
+
+const rootReducer = combineSlices(globalSlice, fat16Slice);
+
+const storeReducer = persistReducer(persistConfig, rootReducer);
 
 export const makeStore = () => {
-  return configureStore({
+  let store: any = configureStore({
     reducer: storeReducer,
+    devTools: process.env.NODE_ENV !== "production",
   });
+
+  store.persistor = persistStore(store);
+  return store;
 };
 
 export type StoreState = ReturnType<typeof storeReducer>;

@@ -25,7 +25,7 @@ export function SettingsNav() {
   const tab = searchParams.get("tab");
 
   return (
-    <nav className="flex flex-col min-w-60 bg-black p-4 h-full rounded-md gap-y-2 text-white">
+    <nav className="flex flex-col min-w-60 bg-black px-4 py-10 h-full rounded-tl-lg rounded-bl-lg gap-y-2 text-white">
       {SETTINGS_TABS.map((item) => {
         const { title, icon } = item;
         const selected = title.toLowerCase() === tab?.toLowerCase();

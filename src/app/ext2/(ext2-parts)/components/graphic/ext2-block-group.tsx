@@ -1,48 +1,41 @@
 "use client";
 import { groupStyle, hoverStyle } from "./ext2-styles";
-import { useRouter } from "next/navigation";
-import { useDispatch } from "react-redux";
-import { useStoreSelector } from "@/store/store-hooks";
-import {
-  changeSelectedFSComponent,
-  selectFSComponent,
-} from "@/app/store/global-slice";
 
 const EXT2BlockGroup = ({
+  selectedComponent,
   dynamicStyles = false,
+  onGroupClickHandlers,
+  colors,
 }: {
+  selectedComponent?: string;
   dynamicStyles?: boolean;
+  onGroupClickHandlers: {
+    [index: string]: (id: string) => void;
+  };
+  colors?: {
+    [index: string]: string;
+  };
 }) => {
-  const router = useRouter();
-  const dispatch = useDispatch();
-  const selectedComponent = useStoreSelector(selectFSComponent);
-
-  const onGroupClick = (e: React.MouseEvent<SVGGElement>) => {
-    const component = e.currentTarget.parentElement?.getAttribute("data-id");
-    if (!component) return;
-    dispatch(changeSelectedFSComponent(component));
-    const location = window.location;
-    router.push(`${location.origin}/ext2/${component}`);
+  // Get corresponding handler and call it
+  const getGroupClickHandler = (e: React.MouseEvent<SVGGElement>) => {
+    const id = e.currentTarget.parentElement?.getAttribute("data-id");
+    if (!id) return;
+    onGroupClickHandlers[id](id);
   };
 
   const getTextStyles = (component: string) => {
     if (!dynamicStyles) return;
     if (component !== selectedComponent)
       return {
-        opacity: 0.25,
-        color: "grey",
+        opacity: 0.5,
       } as React.SVGProps<SVGTextElement>;
-    return { color: "black" };
   };
 
   const getRectStyles = (component: string) => {
-    if (!dynamicStyles) return;
-    if (component !== selectedComponent)
-      return {
-        stroke: "black",
-        fill: "white",
-      } as React.SVGProps<SVGRectElement>;
-    return { stroke: "black" };
+    return {
+      stroke: "black",
+      fill: colors !== undefined ? colors[component] : "white",
+    } as React.SVGProps<SVGRectElement>;
   };
 
   return (
@@ -56,13 +49,12 @@ const EXT2BlockGroup = ({
             <g
               id="data-blocks-rect"
               className={groupStyle}
-              onClick={onGroupClick}>
+              onClick={getGroupClickHandler}>
               <rect
                 x="459.5"
                 y="0.5"
                 width="298"
                 height="44"
-                stroke="black"
                 {...getRectStyles("data-blocks")}
                 className={hoverStyle}
               />
@@ -95,14 +87,12 @@ const EXT2BlockGroup = ({
             <g
               id="inode-table-rect"
               className={groupStyle}
-              onClick={onGroupClick}>
+              onClick={getGroupClickHandler}>
               <rect
                 x="332.5"
                 y="0.5"
                 width="126"
                 height="44"
-                fill="white"
-                stroke="black"
                 {...getRectStyles("inode-table")}
                 className={hoverStyle}
               />
@@ -135,14 +125,12 @@ const EXT2BlockGroup = ({
             <g
               id="inode-bitmap-rect"
               className={groupStyle}
-              onClick={onGroupClick}>
+              onClick={getGroupClickHandler}>
               <rect
                 x="262.5"
                 y="0.5"
                 width="69"
                 height="44"
-                fill="white"
-                stroke="black"
                 {...getRectStyles("inode-bitmap")}
                 className={hoverStyle}
               />
@@ -178,14 +166,12 @@ const EXT2BlockGroup = ({
             <g
               id="block-bitmap-rect"
               className={groupStyle}
-              onClick={onGroupClick}>
+              onClick={getGroupClickHandler}>
               <rect
                 x="192.5"
                 y="0.5"
                 width="69"
                 height="44"
-                fill="white"
-                stroke="black"
                 {...getRectStyles("block-bitmap")}
                 className={hoverStyle}
               />
@@ -221,14 +207,12 @@ const EXT2BlockGroup = ({
             <g
               id="block-group-descriptor-rect"
               className={groupStyle}
-              onClick={onGroupClick}>
+              onClick={getGroupClickHandler}>
               <rect
                 x="64.5"
                 y="0.5"
                 width="127"
                 height="44"
-                fill="white"
-                stroke="black"
                 {...getRectStyles("block-group-descriptor")}
                 className={hoverStyle}
               />
@@ -264,14 +248,12 @@ const EXT2BlockGroup = ({
             <g
               id="super-block-rect"
               className={groupStyle}
-              onClick={onGroupClick}>
+              onClick={getGroupClickHandler}>
               <rect
                 x="0.5"
                 y="0.5"
                 width="63"
                 height="44"
-                fill="white"
-                stroke="black"
                 {...getRectStyles("super-block")}
                 className={hoverStyle}
               />
