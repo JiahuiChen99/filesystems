@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Glossary() {
   return (
-    <div className="mx-20 my-10 text-justify">
+    <>
       <h1 className="font-extrabold text-xl">Glossary </h1>
       <h2 className="font-bold text-lg">
         The Second Extended File System (EXT2)
@@ -41,6 +41,6 @@ export default function Glossary() {
         </p>
       </section>
       <h2 className="font-bold">File Allocation Table 16-bits (FAT16)</h2>
-    </div>
+    </>
   );
 }
