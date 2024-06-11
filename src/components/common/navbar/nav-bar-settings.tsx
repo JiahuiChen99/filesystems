@@ -43,7 +43,7 @@ export function NavbarSettings() {
   }, [tab]);
 
   return (
-    <NavigationMenuItem>
+    <NavigationMenuItem className="flex !ml-auto">
       <Dialog defaultOpen={defaultOpen} onOpenChange={onOpenChange}>
         <DialogTrigger asChild>
           <Button variant="ghost" className={navigationMenuTriggerStyle()}>
