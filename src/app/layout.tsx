@@ -7,6 +7,7 @@ import "./globals.css";
 import clsx from "clsx";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,6 +43,7 @@ export default function RootLayout({
   return (
     <StoreProvider>
       <TooltipProvider>
+        <SpeedInsights />
         <html lang="en">
           <body className={clsx("flex flex-col w-full h-dvh", inter.className)}>
             <Navbar />
