@@ -5,6 +5,7 @@ export interface TA {
   avatar: string;
 }
 
+// TODO: Fix avatar with static image import
 export const TAs: { [key: string]: TA[] | null } = {
   "Spring 2025": null,
   "Spring 2024": [
@@ -12,8 +13,7 @@ export const TAs: { [key: string]: TA[] | null } = {
       name: "Arnau Ros Sánchez",
       acronym: "AR",
       email: ["arnau.ros@salle.url.edu", "arnaurossanchez@gmail.com"],
-      avatar:
-        "https://media.licdn.com/dms/image/D4D03AQEwHlJcEnq1bw/profile-displayphoto-shrink_200_200/0/1710265939013?e=1723680000&v=beta&t=qw86bi2QFqWNjuvpGJu6q7iOlUL6gZCnJgkC4xiuYQ8",
+      avatar: "../../../../../ta_photos/arnau_ros_profile.jpeg",
     },
   ],
 };
