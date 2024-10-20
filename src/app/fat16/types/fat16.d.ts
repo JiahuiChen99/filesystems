@@ -5,7 +5,7 @@ export namespace FAT16 {
     id: string;
     name: string;
     offset: number;
-    size: number | string;
+    size: number;
     info?: ReactNode;
   }
 }

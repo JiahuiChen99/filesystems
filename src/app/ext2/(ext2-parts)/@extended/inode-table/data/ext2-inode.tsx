@@ -2,14 +2,15 @@ import type { EXT2 } from "@/app/ext2/types/ext2";
 import {
   Table,
   TableBody,
+  TableCell,
   TableHead,
   TableHeader,
   TableRow,
-  TableCell,
 } from "@/components/ui/table";
+import { CanvasDTO } from "@/dto/canvas";
+import { TableWithDescription } from "../../../components/table-with-description";
 import { imodeData } from "./ext2-imode-flags";
 import { iflagsData } from "./ext2-inode-flags";
-import { TableWithDescription } from "../../../components/table-with-description";
 import { iosd2HurdData, iosd2LinuxData, iosd2MasixData } from "./ext2-iosd2";
 
 export const inodeData: EXT2.Struct[] = [
@@ -342,4 +343,23 @@ export const inodeData: EXT2.Struct[] = [
       </>
     ),
   },
+];
+
+const decodeDataToNodeData = (data: EXT2.Struct): CanvasDTO.Data => {
+  const { id, offset, size } = data;
+  return {
+    id,
+    metadata: {
+      group: "inode-table",
+    },
+    offset,
+    offsetUnits: "byte",
+    size,
+    units: "byte",
+  };
+};
+
+// Adapted data for Canvas
+export const inodeDataCanvas: Array<CanvasDTO.Data> = [
+  ...inodeData.map<CanvasDTO.Data>(decodeDataToNodeData),
 ];

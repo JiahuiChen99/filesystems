@@ -1,4 +1,5 @@
 import type { EXT2 } from "@/app/ext2/types/ext2";
+import { CanvasDTO } from "@/dto/canvas";
 
 export const groupDescriptorData: EXT2.Struct[] = [
   {
@@ -97,4 +98,22 @@ export const groupDescriptorData: EXT2.Struct[] = [
     description: "bg_reserved",
     info: <p>12 bytes of reserved space for future revisions.</p>,
   },
+];
+
+const decodeDataToNodeData = (data: EXT2.Struct): CanvasDTO.Data => {
+  const { id, offset, size } = data;
+  return {
+    id,
+    metadata: {
+      group: "block-group-descriptor",
+    },
+    offset,
+    offsetUnits: "byte",
+    size,
+    units: "byte",
+  };
+};
+
+export const groupDescriptorDataCanvas: Array<CanvasDTO.Data> = [
+  ...groupDescriptorData.map<CanvasDTO.Data>(decodeDataToNodeData),
 ];

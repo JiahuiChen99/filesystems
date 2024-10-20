@@ -1,6 +1,7 @@
 import type { EXT2 } from "@/app/ext2/types/ext2";
+import { CanvasDTO } from "@/dto/canvas";
 
-export const superblockData: EXT2.Struct[] = [
+export const superblockData: Array<EXT2.Struct> = [
   {
     id: "s_inodes_count",
     offset: 0,
@@ -764,6 +765,9 @@ export const superblockExtendedData: EXT2.Struct[] = [
       </>
     ),
   },
+];
+
+const superblockExtendedDataPerfomanceHints: Array<EXT2.Struct> = [
   {
     id: "s_prealloc_blocks",
     offset: 204,
@@ -804,7 +808,15 @@ export const superblockExtendedData: EXT2.Struct[] = [
       </>
     ),
   },
-  { id: "alignment", offset: 206, size: 2, description: "(alignment)" },
+  {
+    id: "alignment",
+    offset: 206,
+    size: 2,
+    description: "(alignment)",
+  },
+];
+
+const superblockExtendedDataJournalingSupport: Array<EXT2.Struct> = [
   {
     id: "s_journal_uuid",
     offset: 208,
@@ -853,6 +865,9 @@ export const superblockExtendedData: EXT2.Struct[] = [
       </p>
     ),
   },
+];
+
+const superblockExtendedDataDirectoryIndexingSupport: Array<EXT2.Struct> = [
   {
     id: "s_hash_seed",
     offset: 236,
@@ -884,6 +899,9 @@ export const superblockExtendedData: EXT2.Struct[] = [
     size: 3,
     description: "padding - reserved for future expansion",
   },
+];
+
+const superblockExtendedDataOtherOptions: Array<EXT2.Struct> = [
   {
     id: "s_default_mount_options",
     offset: 256,
@@ -914,4 +932,49 @@ export const superblockExtendedData: EXT2.Struct[] = [
     size: 760,
     description: "unused - reserved for future revisions",
   },
+];
+
+const decodeDataToNodeData = (data: EXT2.Struct): CanvasDTO.Data => {
+  const { id, offset, size } = data;
+  return {
+    id,
+    metadata: {
+      group: "superblock",
+    },
+    offset,
+    offsetUnits: "byte",
+    size,
+    units: "byte",
+  };
+};
+
+// Adapted data for Canvas
+export const superBlockDataCanvas: Array<
+  CanvasDTO.Data | CanvasDTO.TableSection
+> = [
+  ...superblockData.map<CanvasDTO.Data>(decodeDataToNodeData),
+  { sectionTitle: "-- EXT2_DYNAMIC_REV Specific --" },
+  ...superblockExtendedData.map<CanvasDTO.Data>(decodeDataToNodeData),
+  { sectionTitle: "-- Performance Hints --" },
+  ...superblockExtendedDataPerfomanceHints.map<CanvasDTO.Data>(
+    decodeDataToNodeData
+  ),
+  {
+    sectionTitle: "-- Journaling Support --",
+  },
+  ...superblockExtendedDataJournalingSupport.map<CanvasDTO.Data>(
+    decodeDataToNodeData
+  ),
+  {
+    sectionTitle: "-- Directory Indexing Support --",
+  },
+  ...superblockExtendedDataDirectoryIndexingSupport.map<CanvasDTO.Data>(
+    decodeDataToNodeData
+  ),
+  {
+    sectionTitle: "-- Other options --",
+  },
+  ...superblockExtendedDataOtherOptions.map<CanvasDTO.Data>(
+    decodeDataToNodeData
+  ),
 ];
