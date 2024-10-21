@@ -10,8 +10,9 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import React from "react";
 import Link from "next/link";
+import React from "react";
+import { HamburguerMenu } from "./hamburguer-menu";
 import { NavbarSettings } from "./nav-bar-settings";
 
 const ListItem = React.forwardRef<
@@ -42,10 +43,41 @@ const ListItem = React.forwardRef<
 
 ListItem.displayName = "ListItem";
 
+export type NavbarItem = {
+  title: string;
+  href?: string;
+  submenu?: NavbarItem[];
+  isMobileEnabled?: boolean;
+};
+
+// TODO: Use this for desktop navbar items rendering
+const navbarItems: NavbarItem[] = [
+  {
+    title: "Getting stated",
+    submenu: [
+      {
+        title: "About the author",
+        href: "https://jiahuichen.dev",
+        isMobileEnabled: false,
+      },
+      { title: "Second Extended Filesystem", href: "/ext2" },
+      { title: "File Allocation Table 16", href: "/fat16" },
+    ],
+  },
+  { title: "Glossary", href: "/glossary" },
+  { title: "Information", href: "/information" },
+  { title: "Canvas", href: "/canvas/ext-2" },
+  {
+    title: "Settings",
+    href: "", // TODO: Open settings
+    isMobileEnabled: false,
+  },
+];
+
 export function Navbar() {
   return (
-    <div className="flex flex-row w-full max-w-full border-b border-gray-300 p-2">
-      <a href="/" className="mx-10 flex items-center space-x-2.5">
+    <div className="flex flex-row justify-between w-full max-w-full border-b border-gray-300 p-2">
+      <a href="/" className="ml-4 md:mx-10 flex items-center space-x-2.5">
         <Image
           src="/favicon.svg"
           alt="File systems icon"
@@ -54,7 +86,8 @@ export function Navbar() {
         />
         <span className="text-xl font-bold">File Systems</span>
       </a>
-      <NavigationMenu>
+      <HamburguerMenu navbarItems={navbarItems} />
+      <NavigationMenu className="hidden md:block">
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
@@ -99,6 +132,15 @@ export function Navbar() {
               className={navigationMenuTriggerStyle()}
             >
               <Link href="/information">Information</Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+
+          <NavigationMenuItem>
+            <NavigationMenuLink
+              asChild
+              className={navigationMenuTriggerStyle()}
+            >
+              <Link href="/canvas">Canvas</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
