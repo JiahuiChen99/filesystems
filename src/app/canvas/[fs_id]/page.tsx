@@ -30,7 +30,7 @@ export default function CanvasPage({ params }: { params: { fs_id: string } }) {
   }
 
   return (
-    <div style={{ width: "100vw", height: "100vh" }}>
+    <div className="w-full h-full">
       <ReactFlow
         nodes={currentNodes}
         edges={edges}
