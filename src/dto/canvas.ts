@@ -26,6 +26,7 @@ export namespace CanvasDTO {
     title: string;
     headers: Array<string>;
     tableData: Array<Data | TableSection>;
+    isRoot?: boolean;
   };
 
   export type TableNode = Node<TableNodeData>;

@@ -16,6 +16,7 @@ export const nodes: Array<CanvasDTO.TableNode | CanvasDTO.BitmapNode> = [
       title: "Sample 20mb Partition Layout with 1KiB blocks",
       headers: layoutTableHeaders,
       tableData: twentyMBpartitionWith1KiBBlocks,
+      isRoot: true,
     },
     type: "canvas-table",
   },

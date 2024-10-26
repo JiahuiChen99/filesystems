@@ -84,9 +84,17 @@ export const CanvasTableNode = ({ data }: NodeProps<CanvasDTO.TableNode>) => {
     [data]
   );
 
+  const canvasNodeHandle = React.useMemo(
+    () =>
+      (data.isRoot === false || data.isRoot === undefined) && (
+        <Handle type="target" position={Position.Left} />
+      ),
+    [data.isRoot]
+  );
+
   return (
     <div className="border border-black rounded-sm overflow-hidden bg-white">
-      <Handle type="target" position={Position.Left} />
+      {canvasNodeHandle}
       <div className="absolute top-0 -translate-y-[110%] origin-top-left border border-green-700 bg-green-200 rounded-md px-2 text-sm">
         {data.title}
       </div>
