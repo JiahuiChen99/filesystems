@@ -39,6 +39,8 @@ export default function CanvasPage({ params }: { params: { fs_id: string } }) {
         proOptions={{
           hideAttribution: true,
         }}
+        edgesReconnectable={false}
+        nodesDraggable={false}
         panOnScroll
         selectionOnDrag
         selectionMode={SelectionMode.Partial}
@@ -48,7 +50,7 @@ export default function CanvasPage({ params }: { params: { fs_id: string } }) {
           zoom: 0.4,
         }}
       >
-        <Controls />
+        <Controls showInteractive={false} />
         <MiniMap />
         <Background variant={"dots" as BackgroundVariant} gap={12} size={1} />
       </ReactFlow>
