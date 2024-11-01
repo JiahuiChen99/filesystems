@@ -73,7 +73,7 @@ export const edges: Array<Edge> = [
     id: "layout-to-superblock",
     source: "layout-example",
     target: "super-block",
-    animated: true,
+    sourceHandle: "superblock",
     markerEnd: {
       type: MarkerType.ArrowClosed,
     },
@@ -82,7 +82,7 @@ export const edges: Array<Edge> = [
     id: "layout-to-block-group-descriptor",
     source: "layout-example",
     target: "block-group-descriptor",
-    animated: true,
+    sourceHandle: "block group descriptor table",
     markerEnd: {
       type: MarkerType.ArrowClosed,
     },
@@ -91,7 +91,7 @@ export const edges: Array<Edge> = [
     id: "layout-to-block-bitmap",
     source: "layout-example",
     target: "block-bitmap",
-    animated: true,
+    sourceHandle: "block bitmap",
     markerEnd: {
       type: MarkerType.ArrowClosed,
     },
@@ -100,7 +100,7 @@ export const edges: Array<Edge> = [
     id: "layout-to-inode-bitmap",
     source: "layout-example",
     target: "inode-bitmap",
-    animated: true,
+    sourceHandle: "inode bitmap",
     markerEnd: {
       type: MarkerType.ArrowClosed,
     },
@@ -109,7 +109,7 @@ export const edges: Array<Edge> = [
     id: "layout-to-inode-table",
     source: "layout-example",
     target: "inode-table",
-    animated: true,
+    sourceHandle: "inode table",
     markerEnd: {
       type: MarkerType.ArrowClosed,
     },
