@@ -12,6 +12,7 @@ export namespace CanvasDTO {
 
   export type Data = ReactFlowElementMetadata & {
     id: string;
+    name: string;
     size: number | string;
     units: "byte" | "block";
     offset: number;

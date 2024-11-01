@@ -40,6 +40,10 @@ export default function CanvasPage({ params }: { params: { fs_id: string } }) {
           hideAttribution: true,
         }}
         edgesReconnectable={false}
+        defaultEdgeOptions={{
+          zIndex: 1,
+          animated: true,
+        }}
         nodesDraggable={false}
         panOnScroll
         selectionOnDrag

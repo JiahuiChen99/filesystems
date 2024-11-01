@@ -66,9 +66,14 @@ export const CanvasTableNode = ({ data }: NodeProps<CanvasDTO.TableNode>) => {
             </CanvasTableComponentCell>
             <CanvasTableComponentCell className={borderStyles}>
               {hasConnection && (
-                <Handle id={item.id} position={Position.Right} type="source" />
+                <Handle
+                  id={item.id}
+                  position={Position.Right}
+                  type="source"
+                  isConnectable={false}
+                />
               )}
-              {item.id}
+              {item.name}
             </CanvasTableComponentCell>
           </CanvasTableComponentRow>
         );

@@ -8,6 +8,7 @@ export const twentyMBpartitionWith1KiBBlocks: Array<
   },
   {
     id: "boot-record (if present)",
+    name: "boot record (if present)",
     metadata: {
       group: "boot-record",
     },
@@ -18,6 +19,7 @@ export const twentyMBpartitionWith1KiBBlocks: Array<
   },
   {
     id: "additional boot record data (if present)",
+    name: "additional boot record data (if present)",
     metadata: {
       group: "boot-record",
     },
@@ -31,6 +33,7 @@ export const twentyMBpartitionWith1KiBBlocks: Array<
   },
   {
     id: "superblock",
+    name: "superblock",
     metadata: {
       group: "superblock",
     },
@@ -41,6 +44,7 @@ export const twentyMBpartitionWith1KiBBlocks: Array<
   },
   {
     id: "block group descriptor table",
+    name: "block group descriptor table",
     metadata: {
       group: "block-group-descriptor",
     },
@@ -51,6 +55,7 @@ export const twentyMBpartitionWith1KiBBlocks: Array<
   },
   {
     id: "block bitmap",
+    name: "block bitmap",
     metadata: {
       group: "block-bitmap",
     },
@@ -61,6 +66,7 @@ export const twentyMBpartitionWith1KiBBlocks: Array<
   },
   {
     id: "inode bitmap",
+    name: "inode bitmap",
     metadata: {
       group: "inode-bitmap",
     },
@@ -71,6 +77,7 @@ export const twentyMBpartitionWith1KiBBlocks: Array<
   },
   {
     id: "inode table",
+    name: "inode table",
     metadata: {
       group: "inode-table",
     },
@@ -81,6 +88,7 @@ export const twentyMBpartitionWith1KiBBlocks: Array<
   },
   {
     id: "data blocks",
+    name: "data blocks",
     metadata: {
       group: "data-blocks",
     },
@@ -93,7 +101,8 @@ export const twentyMBpartitionWith1KiBBlocks: Array<
     sectionTitle: "-- block group 2, blocks 16385 to 24576 --",
   },
   {
-    id: "superblock backup",
+    id: "superblock backup block group 2",
+    name: "superblock backup",
     metadata: {
       group: "superblock",
     },
@@ -103,7 +112,8 @@ export const twentyMBpartitionWith1KiBBlocks: Array<
     offsetUnits: "block",
   },
   {
-    id: "block group descriptor table backup",
+    id: "block group descriptor table backup block group 2",
+    name: "block group descriptor table backup",
     metadata: {
       group: "block-group-descriptor",
     },
@@ -113,7 +123,8 @@ export const twentyMBpartitionWith1KiBBlocks: Array<
     offsetUnits: "block",
   },
   {
-    id: "block bitmap",
+    id: "block bitmap block group 2",
+    name: "block bitmap",
     metadata: {
       group: "block-bitmap",
     },
@@ -123,7 +134,8 @@ export const twentyMBpartitionWith1KiBBlocks: Array<
     offsetUnits: "block",
   },
   {
-    id: "inode bitmap",
+    id: "inode bitmap block group 2",
+    name: "inode bitmap",
     metadata: {
       group: "inode-bitmap",
     },
@@ -133,7 +145,8 @@ export const twentyMBpartitionWith1KiBBlocks: Array<
     offsetUnits: "block",
   },
   {
-    id: "inode table",
+    id: "inode table block group 2",
+    name: "inode table",
     metadata: {
       group: "inode-table",
     },
@@ -143,7 +156,8 @@ export const twentyMBpartitionWith1KiBBlocks: Array<
     offsetUnits: "block",
   },
   {
-    id: "data blocks",
+    id: "data blocks block group 2",
+    name: "data blocks",
     metadata: {
       group: "data-blocks",
     },
