@@ -24,7 +24,7 @@ export const CanvasTableNode = ({ data }: NodeProps<CanvasDTO.TableNode>) => {
             </CanvasTableComponentRow>
           );
 
-        const borderStyles = cn({
+        const borderStyles = cn("relative", {
           "border-amber-700 bg-amber-300/20":
             item.metadata.group === "boot-record" ||
             item.metadata.group === "reserved-area",
@@ -66,15 +66,7 @@ export const CanvasTableNode = ({ data }: NodeProps<CanvasDTO.TableNode>) => {
             </CanvasTableComponentCell>
             <CanvasTableComponentCell className={borderStyles}>
               {hasConnection && (
-                <Handle
-                  id={item.id}
-                  position={Position.Right}
-                  type="source"
-                  style={{
-                    top: 0,
-                    right: 4,
-                  }}
-                />
+                <Handle id={item.id} position={Position.Right} type="source" />
               )}
               {item.id}
             </CanvasTableComponentCell>
