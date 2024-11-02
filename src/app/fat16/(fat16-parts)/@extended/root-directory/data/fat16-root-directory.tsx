@@ -1,4 +1,5 @@
 import { FAT16 } from "@/app/fat16/types/fat16";
+import { CanvasDTO } from "@/dto/canvas";
 
 export const fat16RootDirData: { [key: string]: FAT16.Struct } = {
   dir_name: {
@@ -252,3 +253,25 @@ export const fat16RootDirData: { [key: string]: FAT16.Struct } = {
     ),
   },
 };
+
+const decodeDataToNodeData = (
+  data: FAT16.Struct
+): CanvasDTO.Data<CanvasDTO.SizeAndOffset> => {
+  const { offset, size, name } = data;
+  return {
+    id: name,
+    name,
+    metadata: {
+      group: "root-directory",
+    },
+    offset,
+    offsetUnits: "byte",
+    size,
+    units: "byte",
+  };
+};
+
+// Adapted data for Canvas
+export const fat16RootDirDataCanvas: Array<
+  CanvasDTO.Data<CanvasDTO.SizeAndOffset>
+> = [...Object.values(fat16RootDirData).map(decodeDataToNodeData)];

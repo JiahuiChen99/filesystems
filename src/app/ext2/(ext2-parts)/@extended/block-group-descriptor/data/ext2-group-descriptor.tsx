@@ -100,10 +100,13 @@ export const groupDescriptorData: EXT2.Struct[] = [
   },
 ];
 
-const decodeDataToNodeData = (data: EXT2.Struct): CanvasDTO.Data => {
+const decodeDataToNodeData = (
+  data: EXT2.Struct
+): CanvasDTO.Data<CanvasDTO.SizeAndOffset> => {
   const { id, offset, size } = data;
   return {
     id,
+    name: id,
     metadata: {
       group: "block-group-descriptor",
     },
@@ -114,6 +117,6 @@ const decodeDataToNodeData = (data: EXT2.Struct): CanvasDTO.Data => {
   };
 };
 
-export const groupDescriptorDataCanvas: Array<CanvasDTO.Data> = [
-  ...groupDescriptorData.map<CanvasDTO.Data>(decodeDataToNodeData),
-];
+export const groupDescriptorDataCanvas: Array<
+  CanvasDTO.Data<CanvasDTO.SizeAndOffset>
+> = [...groupDescriptorData.map(decodeDataToNodeData)];

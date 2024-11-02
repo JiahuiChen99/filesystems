@@ -3,6 +3,7 @@ import {
   Background,
   BackgroundVariant,
   Controls,
+  MarkerType,
   MiniMap,
   ReactFlow,
   SelectionMode,
@@ -43,6 +44,9 @@ export default function CanvasPage({ params }: { params: { fs_id: string } }) {
         defaultEdgeOptions={{
           zIndex: 1,
           animated: true,
+          markerEnd: {
+            type: MarkerType.ArrowClosed,
+          },
         }}
         nodesDraggable={false}
         panOnScroll

@@ -1,5 +1,6 @@
 import { FAT16 } from "@/app/fat16/types/fat16";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { CanvasDTO } from "@/dto/canvas";
 import { AlertTriangleIcon } from "lucide-react";
 
 export const fat16ReservedAreaData: { [key: string]: FAT16.Struct } = {
@@ -353,3 +354,25 @@ export const fat16ReservedAreaData: { [key: string]: FAT16.Struct } = {
     ),
   },
 };
+
+const decodeDataToNodeData = (
+  data: FAT16.Struct
+): CanvasDTO.Data<CanvasDTO.SizeAndOffset> => {
+  const { offset, size, name } = data;
+  return {
+    id: name,
+    name,
+    metadata: {
+      group: "reserved-area",
+    },
+    offset,
+    offsetUnits: "byte",
+    size,
+    units: "byte",
+  };
+};
+
+// Adapted data for Canvas
+export const reservedAreaDataCanvas: Array<
+  CanvasDTO.Data<CanvasDTO.SizeAndOffset>
+> = [...Object.values(fat16ReservedAreaData).map(decodeDataToNodeData)];

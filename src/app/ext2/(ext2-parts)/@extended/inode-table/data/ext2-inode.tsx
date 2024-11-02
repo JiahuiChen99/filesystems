@@ -345,10 +345,13 @@ export const inodeData: EXT2.Struct[] = [
   },
 ];
 
-const decodeDataToNodeData = (data: EXT2.Struct): CanvasDTO.Data => {
+const decodeDataToNodeData = (
+  data: EXT2.Struct
+): CanvasDTO.Data<CanvasDTO.SizeAndOffset> => {
   const { id, offset, size } = data;
   return {
     id,
+    name: id,
     metadata: {
       group: "inode-table",
     },
@@ -360,6 +363,6 @@ const decodeDataToNodeData = (data: EXT2.Struct): CanvasDTO.Data => {
 };
 
 // Adapted data for Canvas
-export const inodeDataCanvas: Array<CanvasDTO.Data> = [
-  ...inodeData.map<CanvasDTO.Data>(decodeDataToNodeData),
+export const inodeDataCanvas: Array<CanvasDTO.Data<CanvasDTO.SizeAndOffset>> = [
+  ...inodeData.map(decodeDataToNodeData),
 ];

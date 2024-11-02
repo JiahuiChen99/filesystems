@@ -1,7 +1,7 @@
 import { CanvasDTO } from "@/dto/canvas";
 
 export const twentyMBpartitionWith1KiBBlocks: Array<
-  CanvasDTO.Data | CanvasDTO.TableSection
+  CanvasDTO.Data<CanvasDTO.SizeAndOffset> | CanvasDTO.TableSection
 > = [
   {
     sectionTitle: "-- block group 0, blocks 1 to 8192 --",

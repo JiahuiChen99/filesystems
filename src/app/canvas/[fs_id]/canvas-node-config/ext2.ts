@@ -3,7 +3,11 @@ import { inodeDataCanvas } from "@/app/ext2/(ext2-parts)/@extended/inode-table/d
 import { superBlockDataCanvas } from "@/app/ext2/(ext2-parts)/@extended/super-block/data/ext2-super-block";
 import { twentyMBpartitionWith1KiBBlocks } from "@/app/ext2/data/20mb-partition-1kib";
 import { CanvasDTO } from "@/dto/canvas";
-import { Edge, MarkerType } from "@xyflow/react";
+import { Edge } from "@xyflow/react";
+import {
+  buildTableBodyContent,
+  buildTableHeadersContent,
+} from "./ext-2-helpers";
 
 const layoutTableHeaders = ["Block Offset", "Length", "Description"];
 const tableHeaders = ["Offset (bytes)", "Size (bytes)", "Description"];
@@ -17,6 +21,10 @@ export const nodes: Array<CanvasDTO.TableNode | CanvasDTO.BitmapNode> = [
       headers: layoutTableHeaders,
       tableData: twentyMBpartitionWith1KiBBlocks,
       isRoot: true,
+      buildTableBodyContent: () =>
+        buildTableBodyContent(twentyMBpartitionWith1KiBBlocks),
+      buildTableHeadersContent: () =>
+        buildTableHeadersContent(layoutTableHeaders),
     },
     type: "canvas-table",
   },
@@ -27,6 +35,8 @@ export const nodes: Array<CanvasDTO.TableNode | CanvasDTO.BitmapNode> = [
       title: "Superblock",
       headers: tableHeaders,
       tableData: superBlockDataCanvas,
+      buildTableBodyContent: () => buildTableBodyContent(superBlockDataCanvas),
+      buildTableHeadersContent: () => buildTableHeadersContent(tableHeaders),
     },
     type: "canvas-table",
   },
@@ -37,6 +47,9 @@ export const nodes: Array<CanvasDTO.TableNode | CanvasDTO.BitmapNode> = [
       title: "Block Group Descriptor",
       headers: tableHeaders,
       tableData: groupDescriptorDataCanvas,
+      buildTableBodyContent: () =>
+        buildTableBodyContent(groupDescriptorDataCanvas),
+      buildTableHeadersContent: () => buildTableHeadersContent(tableHeaders),
     },
     type: "canvas-table",
   },
@@ -63,6 +76,8 @@ export const nodes: Array<CanvasDTO.TableNode | CanvasDTO.BitmapNode> = [
       title: "Inode table",
       headers: tableHeaders,
       tableData: inodeDataCanvas,
+      buildTableBodyContent: () => buildTableBodyContent(inodeDataCanvas),
+      buildTableHeadersContent: () => buildTableHeadersContent(tableHeaders),
     },
     type: "canvas-table",
   },
@@ -74,44 +89,29 @@ export const edges: Array<Edge> = [
     source: "layout-example",
     target: "super-block",
     sourceHandle: "superblock",
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-    },
   },
   {
     id: "layout-to-block-group-descriptor",
     source: "layout-example",
     target: "block-group-descriptor",
     sourceHandle: "block group descriptor table",
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-    },
   },
   {
     id: "layout-to-block-bitmap",
     source: "layout-example",
     target: "block-bitmap",
     sourceHandle: "block bitmap",
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-    },
   },
   {
     id: "layout-to-inode-bitmap",
     source: "layout-example",
     target: "inode-bitmap",
     sourceHandle: "inode bitmap",
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-    },
   },
   {
     id: "layout-to-inode-table",
     source: "layout-example",
     target: "inode-table",
     sourceHandle: "inode table",
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-    },
   },
 ];

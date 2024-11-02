@@ -934,10 +934,13 @@ const superblockExtendedDataOtherOptions: Array<EXT2.Struct> = [
   },
 ];
 
-const decodeDataToNodeData = (data: EXT2.Struct): CanvasDTO.Data => {
+const decodeDataToNodeData = (
+  data: EXT2.Struct
+): CanvasDTO.Data<CanvasDTO.SizeAndOffset> => {
   const { id, offset, size } = data;
   return {
     id,
+    name: id,
     metadata: {
       group: "superblock",
     },
@@ -950,31 +953,23 @@ const decodeDataToNodeData = (data: EXT2.Struct): CanvasDTO.Data => {
 
 // Adapted data for Canvas
 export const superBlockDataCanvas: Array<
-  CanvasDTO.Data | CanvasDTO.TableSection
+  CanvasDTO.Data<CanvasDTO.SizeAndOffset> | CanvasDTO.TableSection
 > = [
-  ...superblockData.map<CanvasDTO.Data>(decodeDataToNodeData),
+  ...superblockData.map(decodeDataToNodeData),
   { sectionTitle: "-- EXT2_DYNAMIC_REV Specific --" },
-  ...superblockExtendedData.map<CanvasDTO.Data>(decodeDataToNodeData),
+  ...superblockExtendedData.map(decodeDataToNodeData),
   { sectionTitle: "-- Performance Hints --" },
-  ...superblockExtendedDataPerfomanceHints.map<CanvasDTO.Data>(
-    decodeDataToNodeData
-  ),
+  ...superblockExtendedDataPerfomanceHints.map(decodeDataToNodeData),
   {
     sectionTitle: "-- Journaling Support --",
   },
-  ...superblockExtendedDataJournalingSupport.map<CanvasDTO.Data>(
-    decodeDataToNodeData
-  ),
+  ...superblockExtendedDataJournalingSupport.map(decodeDataToNodeData),
   {
     sectionTitle: "-- Directory Indexing Support --",
   },
-  ...superblockExtendedDataDirectoryIndexingSupport.map<CanvasDTO.Data>(
-    decodeDataToNodeData
-  ),
+  ...superblockExtendedDataDirectoryIndexingSupport.map(decodeDataToNodeData),
   {
     sectionTitle: "-- Other options --",
   },
-  ...superblockExtendedDataOtherOptions.map<CanvasDTO.Data>(
-    decodeDataToNodeData
-  ),
+  ...superblockExtendedDataOtherOptions.map(decodeDataToNodeData),
 ];

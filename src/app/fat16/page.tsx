@@ -1,12 +1,14 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
+import Link from "next/link";
+import React from "react";
 import { FAT16 as FAT16Graphic } from "./(fat16-parts)/components/graphic/fat16";
-import { useEffect } from "react";
 
 export default function FAT16() {
   const { toast } = useToast();
 
-  useEffect(() => {
+  React.useEffect(() => {
     toast({
       description: "Click on a selectable item to see its details.",
     });
@@ -25,6 +27,9 @@ export default function FAT16() {
           FAT:
         </p>
       </section>
+      <Button variant="default" size="default" asChild>
+        <Link href="/canvas/fat-16">View in canvas</Link>
+      </Button>
     </section>
   );
 }

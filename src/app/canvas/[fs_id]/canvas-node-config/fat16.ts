@@ -3,9 +3,13 @@ import { fat16RootDirDataCanvas } from "@/app/fat16/(fat16-parts)/@extended/root
 import { exampleLayout } from "@/app/fat16/data/example-layout";
 import { CanvasDTO } from "@/dto/canvas";
 import { cn } from "@/lib/utils";
-import { Edge, MarkerType } from "@xyflow/react";
+import { Edge } from "@xyflow/react";
+import {
+  buildTableBodyContent,
+  buildTableHeadersContent,
+} from "./fat-16-helpers";
 
-const layoutTableHeaders = ["Block Offset", "Length", "Name"];
+const layoutTableHeaders = ["Region Name"];
 const tableHeaders = ["Offset (byte)", "Size (bytes)", "Name"];
 
 export const nodes: Array<
@@ -19,6 +23,9 @@ export const nodes: Array<
       headers: layoutTableHeaders,
       tableData: exampleLayout,
       isRoot: true,
+      buildTableHeadersContent: () =>
+        buildTableHeadersContent(layoutTableHeaders),
+      buildTableBodyContent: () => buildTableBodyContent(exampleLayout),
     },
     type: "canvas-table",
   },
@@ -29,6 +36,9 @@ export const nodes: Array<
       title: "Reserved Area (Boot Sector and BPB Structure)",
       headers: tableHeaders,
       tableData: reservedAreaDataCanvas,
+      buildTableHeadersContent: () => buildTableHeadersContent(tableHeaders),
+      buildTableBodyContent: () =>
+        buildTableBodyContent(reservedAreaDataCanvas),
     },
     type: "canvas-table",
   },
@@ -39,6 +49,9 @@ export const nodes: Array<
       title: "Root directory (Directory Entry Structure)",
       headers: tableHeaders,
       tableData: fat16RootDirDataCanvas,
+      buildTableHeadersContent: () => buildTableHeadersContent(tableHeaders),
+      buildTableBodyContent: () =>
+        buildTableBodyContent(fat16RootDirDataCanvas),
     },
     type: "canvas-table",
   },
@@ -49,19 +62,13 @@ export const edges: Array<Edge> = [
     id: "layout-to-reserved-area",
     source: "example-layout",
     target: "reserved-area",
-    animated: true,
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-    },
+    sourceHandle: "reserved-area",
   },
   {
     id: "layout-to-root-directory",
     source: "example-layout",
     target: "root-directory",
-    animated: true,
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-    },
+    sourceHandle: "root-directory",
   },
 ];
 

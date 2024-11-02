@@ -6,31 +6,44 @@ export namespace CanvasDTO {
     title: string;
   };
 
-  export type ReactFlowElementMetadata = {
+  type ReactFlowElementMetadata = {
     metadata: { group: string };
   };
 
-  export type Data = ReactFlowElementMetadata & {
+  type Id = {
     id: string;
     name: string;
+  };
+
+  type BaseData = Id & ReactFlowElementMetadata;
+
+  export type SizeAndOffset = {
     size: number | string;
     units: "byte" | "block";
     offset: number;
     offsetUnits: "byte" | "block";
   };
 
+  export type Data<TableDataType = undefined> = TableDataType extends undefined
+    ? BaseData
+    : BaseData & TableDataType;
+
   export type TableSection = {
     sectionTitle: string;
   };
 
-  export type TableNodeData = {
+  export type TableNodeData<T> = {
     title: string;
     headers: Array<string>;
-    tableData: Array<Data | TableSection>;
+    tableData: Array<Data<T> | TableSection>;
     isRoot?: boolean;
+    buildTableBodyContent: () => React.ReactNode[];
+    buildTableHeadersContent: () => React.ReactNode[];
   };
 
-  export type TableNode = Node<TableNodeData>;
+  export type TableNode<TableDataType = undefined> = Node<
+    TableNodeData<TableDataType>
+  >;
 
   export type BitmapNode = Node<NodeInfo>;
 }
