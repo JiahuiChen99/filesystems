@@ -1,9 +1,7 @@
 "use client";
+
+import { superblockData, superblockExtendedData } from "@/domain/ext-2";
 import { TableWithDescription } from "../../components/table-with-description";
-import {
-  superblockData,
-  superblockExtendedData,
-} from "./data/ext2-super-block";
 
 export default function SuperBlock() {
   return (

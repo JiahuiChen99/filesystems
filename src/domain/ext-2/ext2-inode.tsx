@@ -8,7 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { CanvasDTO } from "@/dto/canvas";
-import { TableWithDescription } from "../../../components/table-with-description";
+import { TableWithDescription } from "../../app/ext2/(ext2-parts)/components/table-with-description";
 import { imodeData } from "./ext2-imode-flags";
 import { iflagsData } from "./ext2-inode-flags";
 import { iosd2HurdData, iosd2LinuxData, iosd2MasixData } from "./ext2-iosd2";

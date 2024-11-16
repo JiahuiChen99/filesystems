@@ -1,7 +1,7 @@
-import { groupDescriptorDataCanvas } from "@/app/ext2/(ext2-parts)/@extended/block-group-descriptor/data/ext2-group-descriptor";
-import { inodeDataCanvas } from "@/app/ext2/(ext2-parts)/@extended/inode-table/data/ext2-inode";
-import { superBlockDataCanvas } from "@/app/ext2/(ext2-parts)/@extended/super-block/data/ext2-super-block";
-import { twentyMBpartitionWith1KiBBlocks } from "@/app/ext2/data/20mb-partition-1kib";
+import { twentyMBpartitionWith1KiBBlocks } from "@/domain/ext-2/20mb-partition-1kib";
+import { groupDescriptorDataCanvas } from "@/domain/ext-2/ext2-group-descriptor";
+import { inodeDataCanvas } from "@/domain/ext-2/ext2-inode";
+import { superBlockDataCanvas } from "@/domain/ext-2/ext2-super-block";
 import { CanvasDTO } from "@/dto/canvas";
 import { Edge } from "@xyflow/react";
 import {

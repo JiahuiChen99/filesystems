@@ -7,9 +7,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { inodeData, reservedInodesData } from "@/domain/ext-2";
 import { TableWithDescription } from "../../components/table-with-description";
-import { inodeData } from "./data/ext2-inode";
-import { reservedInodesData } from "./data/ext2-reserved-inode";
 
 export default function InodeTable() {
   return (
