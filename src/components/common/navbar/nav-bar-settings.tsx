@@ -7,8 +7,8 @@ import {
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 import { Button } from "../../ui/button";
-import { EXT2Settings } from "../settings/ext2-settings";
-import { FAT16Settings } from "../settings/fat16-settings";
+import { EXT2Settings } from "../settings/ext-2-settings";
+import { FAT16Settings } from "../settings/fat-16-settings";
 import { GeneralSettings } from "../settings/general-settings";
 import { SettingsNav } from "../settings/settings-nav";
 

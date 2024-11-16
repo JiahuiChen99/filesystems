@@ -60,8 +60,8 @@ const navbarItems: NavbarItem[] = [
         href: "https://jiahuichen.dev",
         isMobileEnabled: false,
       },
-      { title: "Second Extended Filesystem", href: "/ext2" },
-      { title: "File Allocation Table 16", href: "/fat16" },
+      { title: "Second Extended Filesystem", href: "/ext-2" },
+      { title: "File Allocation Table 16", href: "/fat-16" },
     ],
   },
   { title: "Glossary", href: "/glossary" },
@@ -108,10 +108,10 @@ export function Navbar() {
                     </Link>
                   </NavigationMenuLink>
                 </li>
-                <ListItem href="/ext2" title="Second Extended Filesystem">
+                <ListItem href="/ext-2" title="Second Extended Filesystem">
                   Linux kernel filesystem.
                 </ListItem>
-                <ListItem href="/fat16" title="File Allocation Table 16">
+                <ListItem href="/fat-16" title="File Allocation Table 16">
                   Default filesystem for MS-DOS and Windows 9x (&apos;95,
                   &apos;98, Me).
                 </ListItem>

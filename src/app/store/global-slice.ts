@@ -1,11 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export interface GlobalState {
   tableGraphic: boolean;
   selectedFSComponent: string;
   settings: {
-    ext2: {
+    "ext-2": {
       "super-block": string;
       "block-group-descriptor": string;
       "block-bitmap": string;
@@ -20,7 +20,7 @@ const initialState: GlobalState = {
   tableGraphic: true,
   selectedFSComponent: "",
   settings: {
-    ext2: {
+    "ext-2": {
       "super-block": "",
       "block-group-descriptor": "",
       "block-bitmap": "",
@@ -47,17 +47,17 @@ export const globalSlice = createSlice({
     setEXT2BlockGroupComponentColor: (
       state,
       action: PayloadAction<{
-        id: keyof GlobalState["settings"]["ext2"];
+        id: keyof GlobalState["settings"]["ext-2"];
         color: string;
       }>
     ) => {
-      state.settings.ext2[action.payload.id] = action.payload.color;
+      state.settings["ext-2"][action.payload.id] = action.payload.color;
     },
   },
   selectors: {
     selectTableGraphic: (global) => global.tableGraphic,
     selectFSComponent: (global) => global.selectedFSComponent,
-    selectEXT2BlockGroupColors: (global) => global.settings.ext2,
+    selectEXT2BlockGroupColors: (global) => global.settings["ext-2"],
   },
 });
 

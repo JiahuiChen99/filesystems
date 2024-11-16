@@ -1,9 +1,9 @@
 "use client";
+import { FATFSTable } from "@/app/fat-16/components/fat-fs-table";
+import { changeSelection } from "@/app/fat-16/store/fat16-slice";
+import { FAT16 } from "@/app/fat-16/types/fat16";
 import * as React from "react";
-import { FATFSTable } from "@/app/fat16/components/fat-fs-table";
 import { useDispatch } from "react-redux";
-import { FAT16 } from "@/app/fat16/types/fat16";
-import { changeSelection } from "@/app/fat16/store/fat16-slice";
 import { useTableGraphicSwitch } from "./table-graphic-switch";
 
 export function TableGraphic({

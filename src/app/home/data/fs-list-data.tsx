@@ -1,7 +1,7 @@
 export const FSList = [
   {
-    id: "ext2",
-    href: "/ext2",
+    id: "ext-2",
+    href: "/ext-2",
     name: "The second Extended File Systems (EXT2)",
   },
   {

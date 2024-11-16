@@ -1,4 +1,4 @@
-import { FAT16 } from "@/app/fat16/types/fat16";
+import { FAT16 } from "@/app/fat-16/types/fat16";
 import { CanvasDTO } from "@/dto/canvas";
 
 export const fat16RootDirData: { [key: string]: FAT16.Struct } = {

@@ -1,8 +1,8 @@
-import { combineSlices, configureStore } from "@reduxjs/toolkit";
-import { fat16Slice } from "@/app/fat16/store/fat16-slice";
+import { fat16Slice } from "@/app/fat-16/store/fat16-slice";
 import { globalSlice } from "@/app/store/global-slice";
-import storage from "redux-persist/lib/storage";
+import { combineSlices, configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
 const persistConfig = {
   key: "global",

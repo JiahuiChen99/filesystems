@@ -1,4 +1,4 @@
-import { edges as EXT2Edges, nodes as EXT2Nodes } from "./ext2";
+import { edges as EXT2Edges, nodes as EXT2Nodes } from "./ext-2";
 
 import { edges as FAT16Edges, nodes as FAT16Nodes } from "./fat16";
 
