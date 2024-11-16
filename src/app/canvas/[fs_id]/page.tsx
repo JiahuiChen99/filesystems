@@ -1,4 +1,6 @@
 "use client";
+import { CanvasBitmapNode } from "@/components/canvas/canvas-bitmap-node";
+import { CanvasTableNode } from "@/components/canvas/canvas-table-node";
 import {
   Background,
   BackgroundVariant,
@@ -9,9 +11,7 @@ import {
   SelectionMode,
   useNodesState,
 } from "@xyflow/react";
-
-import { CanvasBitmapNode } from "@/components/canvas/canvas-bitmap-node";
-import { CanvasTableNode } from "@/components/canvas/canvas-table-node";
+import "@xyflow/react/dist/style.css";
 import { notFound } from "next/navigation";
 import { fsNodesConfig } from "./canvas-node-config/fs-canvas-nodes-config";
 
