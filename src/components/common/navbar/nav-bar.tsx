@@ -134,16 +134,6 @@ export function Navbar() {
               <Link href="/information">Information</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <Link href="/canvas">Canvas</Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-
           <React.Suspense fallback={null}>
             <NavbarSettings />
           </React.Suspense>
