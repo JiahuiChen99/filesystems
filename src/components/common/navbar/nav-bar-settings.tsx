@@ -1,16 +1,16 @@
 "use client";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import {
   NavigationMenuItem,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Button } from "../../ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { SettingsNav } from "../settings/settings-nav";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useMemo } from "react";
+import { Button } from "../../ui/button";
 import { EXT2Settings } from "../settings/ext2-settings";
 import { FAT16Settings } from "../settings/fat16-settings";
 import { GeneralSettings } from "../settings/general-settings";
+import { SettingsNav } from "../settings/settings-nav";
 
 const SETTINGS_COMPONENT: { [index: string]: JSX.Element } = {
   General: <GeneralSettings />,
@@ -38,8 +38,7 @@ export function NavbarSettings() {
   }, [tab]);
 
   const defaultOpen = useMemo(() => {
-    if (tab) return true;
-    return false;
+    return tab ? true : false;
   }, [tab]);
 
   return (
@@ -50,11 +49,9 @@ export function NavbarSettings() {
             Settings
           </Button>
         </DialogTrigger>
-        <DialogContent className="w-full max-w-4xl h-4/6 border-0">
-          <div className="absolute left-0 top-0 flex h-full w-full">
-            <SettingsNav />
-            <div className="flex flex-col w-full p-10">{settingsComponent}</div>
-          </div>
+        <DialogContent className="flex w-full h-3/5 p-0 gap-0">
+          <SettingsNav />
+          <div className="p-3 w-full">{settingsComponent}</div>
         </DialogContent>
       </Dialog>
     </NavigationMenuItem>

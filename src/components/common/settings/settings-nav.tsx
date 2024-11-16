@@ -1,48 +1,67 @@
-import clsx from "clsx";
-import { Settings } from "lucide-react";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarProvider,
+} from "@/components/ui/sidebar";
+import { LucideIcon, Settings } from "lucide-react";
+import { useRouter } from "next/navigation";
 
-const SETTINGS_TABS = [
+interface TabProps {
+  name: string;
+  icon: LucideIcon;
+}
+
+const SETTINGS_TABS: Array<TabProps> = [
   {
-    title: "General",
-    icon: <Settings size={22} />,
+    name: "General",
+    icon: Settings,
   },
   {
-    title: "EXT2",
-    icon: <Settings size={22} />,
+    name: "EXT2",
+    icon: Settings,
   },
   {
-    title: "FAT16",
-    icon: <Settings size={22} />,
+    name: "FAT16",
+    icon: Settings,
   },
 ];
 
-export function SettingsNav() {
+export const SettingsNav = () => {
   const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  const tab = searchParams.get("tab");
-
   return (
-    <nav className="flex flex-col min-w-60 bg-black px-4 py-10 h-full rounded-tl-lg rounded-bl-lg gap-y-2 text-white">
-      {SETTINGS_TABS.map((item) => {
-        const { title, icon } = item;
-        const selected = title.toLowerCase() === tab?.toLowerCase();
-        return (
-          <div
-            key={item.title}
-            className={clsx(
-              "w-full flex  rounded-md p-1.5 gap-x-2 text-sm cursor-pointer",
-              { "hover:bg-white/30": !selected },
-              { "bg-white/40 font-bold": selected }
-            )}
-            onClick={() => router.push(`${pathname}?tab=${title}`)}>
-            {icon}
-            <span className="flex-none">{title}</span>
-          </div>
-        );
-      })}
-    </nav>
+    <SidebarProvider className="h-full">
+      <Sidebar
+        side="left"
+        variant="sidebar"
+        collapsible="none"
+        className="relative rounded-l-lg max-h-full"
+      >
+        <SidebarHeader className="font-bold">Settings</SidebarHeader>
+        <SidebarContent>
+          <SidebarGroup>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                {SETTINGS_TABS.map((tab) => (
+                  <SidebarMenuItem key={tab.name}>
+                    <SidebarMenuButton asChild>
+                      <div onClick={() => router.push(`?tab=${tab.name}`)}>
+                        <tab.icon />
+                        <span>{tab.name}</span>
+                      </div>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        </SidebarContent>
+      </Sidebar>
+    </SidebarProvider>
   );
-}
+};
