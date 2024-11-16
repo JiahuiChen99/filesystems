@@ -37,11 +37,7 @@ const homePageFSCanvasConfig: ReactFlowProps = {
   nodesDraggable: false,
   panOnScroll: true,
   selectionOnDrag: true,
-  defaultViewport: {
-    x: 0,
-    y: 0,
-    zoom: 0,
-  },
+  minZoom: 0,
 };
 
 export default function Home() {
