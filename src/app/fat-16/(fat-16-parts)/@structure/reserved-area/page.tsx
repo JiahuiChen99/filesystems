@@ -1,6 +1,6 @@
 import { TableGraphic } from "@/components/common/table-graphic";
+import { fat16ReservedAreaData } from "@/domain/fat-16/fat-16-reserved-area";
 import { Metadata } from "next";
-import { fat16ReservedAreaData } from "../../../../../domain/fat-16/fat16-reserved-area";
 import { FAT16ReservedArea } from "../../components/graphic/fat-16-reserved-area";
 
 export const metadata: Metadata = {

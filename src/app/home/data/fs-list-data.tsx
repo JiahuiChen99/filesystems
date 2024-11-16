@@ -5,8 +5,8 @@ export const FSList = [
     name: "The second Extended File Systems (EXT2)",
   },
   {
-    id: "fat16",
-    href: "/fat16",
+    id: "fat-16",
+    href: "/fat-16",
     name: "Fat Allocation Table 16 (FAT16)",
   },
 ];

@@ -1,7 +1,7 @@
 "use client";
 import type { MouseEvent } from "react";
 import { useDispatch } from "react-redux";
-import { changeSelection } from "../../../store/fat16-slice";
+import { changeSelection } from "../../../store/fat-16-slice";
 import { groupStyle, hoverStyle } from "./fat-16-styles";
 
 export function FAT16RootDir() {
@@ -23,7 +23,7 @@ export function FAT16RootDir() {
           className={hoverStyle}
         />
         <g id="directory-all">
-          <g id="fat16-dir-content">
+          <g id="fat-16-dir-content">
             <g id="dir-content">
               <g
                 id="filesize"
@@ -423,7 +423,7 @@ export function FAT16RootDir() {
               </g>
             </g>
             <text
-              id="fat16-dir-content-title"
+              id="fat-16-dir-content-title"
               fill="black"
               fontFamily="Inter"
               fontSize="12"
@@ -493,8 +493,8 @@ export function FAT16RootDir() {
                 </tspan>
               </text>
             </g>
-            <g id="fat16-root-dir">
-              <g id="fat16-dir-n">
+            <g id="fat-16-root-dir">
+              <g id="fat-16-dir-n">
                 <rect
                   x="31.5"
                   y="214.5"
@@ -511,7 +511,7 @@ export function FAT16RootDir() {
                   stroke="black"
                 />
                 <text
-                  id="fat16 dir n"
+                  id="fat-16 dir n"
                   fill="black"
                   fontFamily="Inter"
                   fontSize="12"
@@ -550,7 +550,7 @@ export function FAT16RootDir() {
                   </tspan>
                 </text>
               </g>
-              <g id="fat16-dir-2">
+              <g id="fat-16-dir-2">
                 <rect
                   x="31.5"
                   y="126.5"
@@ -567,7 +567,7 @@ export function FAT16RootDir() {
                   stroke="black"
                 />
                 <text
-                  id="fat16 dir 2"
+                  id="fat-16 dir 2"
                   fill="black"
                   fontFamily="Inter"
                   fontSize="12"
@@ -578,7 +578,7 @@ export function FAT16RootDir() {
                   </tspan>
                 </text>
               </g>
-              <g id="fat16-dir-1" className={groupStyle}>
+              <g id="fat-16-dir-1" className={groupStyle}>
                 <rect
                   x="31.5"
                   y="83.5"
@@ -595,7 +595,7 @@ export function FAT16RootDir() {
                   stroke="black"
                 />
                 <text
-                  id="fat16 dir 1"
+                  id="fat-16 dir 1"
                   fill="black"
                   fontFamily="Inter"
                   fontSize="12"
@@ -606,7 +606,7 @@ export function FAT16RootDir() {
                   </tspan>
                 </text>
               </g>
-              <g id="fat16-dir-0">
+              <g id="fat-16-dir-0">
                 <rect
                   x="31.5"
                   y="39.5"
@@ -623,7 +623,7 @@ export function FAT16RootDir() {
                   stroke="black"
                 />
                 <text
-                  id="fat16 dir 0"
+                  id="fat-16 dir 0"
                   fill="black"
                   fontFamily="Inter"
                   fontSize="12"

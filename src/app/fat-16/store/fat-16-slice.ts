@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export interface FAT16State {
   selectedProp: string;
@@ -10,7 +10,7 @@ const initialState: FAT16State = {
 };
 
 export const fat16Slice = createSlice({
-  name: "fat16",
+  name: "fat-16",
   initialState,
   reducers: {
     changeSelection: (state, action: PayloadAction<string | null>) => {
@@ -18,7 +18,7 @@ export const fat16Slice = createSlice({
     },
   },
   selectors: {
-    selectSelectedProp: (fat16) => fat16.selectedProp,
+    selectSelectedProp: (state) => state.selectedProp,
   },
 });
 

@@ -1,6 +1,6 @@
 import { exampleLayout } from "@/domain/fat-16/example-layout";
-import { reservedAreaDataCanvas } from "@/domain/fat-16/fat16-reserved-area";
-import { fat16RootDirDataCanvas } from "@/domain/fat-16/fat16-root-directory";
+import { reservedAreaDataCanvas } from "@/domain/fat-16/fat-16-reserved-area";
+import { fat16RootDirDataCanvas } from "@/domain/fat-16/fat-16-root-directory";
 import { CanvasDTO } from "@/dto/canvas";
 import { cn } from "@/lib/utils";
 import { Edge } from "@xyflow/react";

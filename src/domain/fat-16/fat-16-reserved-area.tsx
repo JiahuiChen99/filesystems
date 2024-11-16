@@ -1,4 +1,4 @@
-import { FAT16 } from "@/app/fat-16/types/fat16";
+import { FAT16 } from "@/app/fat-16/types/fat-16";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { CanvasDTO } from "@/dto/canvas";
 import { AlertTriangleIcon } from "lucide-react";

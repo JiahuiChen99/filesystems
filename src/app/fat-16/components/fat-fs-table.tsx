@@ -6,7 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { FAT16 } from "../types/fat16";
+import { FAT16 } from "../types/fat-16";
 
 export function FATFSTable({
   data,
@@ -29,7 +29,8 @@ export function FATFSTable({
           {Object.entries(data).map(([dataPropKey, dataProp]) => (
             <TableRow
               key={dataProp.id}
-              onClick={() => onRowClickCallback(dataPropKey)}>
+              onClick={() => onRowClickCallback(dataPropKey)}
+            >
               <TableCell className="font-medium">{dataProp.offset}</TableCell>
               <TableCell>{dataProp.size}</TableCell>
               <TableCell>{dataProp.name}</TableCell>

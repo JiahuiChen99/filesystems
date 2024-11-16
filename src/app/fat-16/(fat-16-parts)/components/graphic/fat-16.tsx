@@ -6,7 +6,7 @@ export function FAT16() {
   const onFAT16SectionClick = (e: MouseEvent<SVGGElement>) => {
     const component = e.currentTarget.getAttribute("data-id");
     const location = window.location;
-    location.href = `${location.origin}/fat16/${component}`;
+    location.href = `${location.origin}/fat-16/${component}`;
   };
 
   return (
@@ -19,7 +19,7 @@ export function FAT16() {
           transform="translate(-41 -39)"
           fill="white"
         />
-        <g id="fat16-all">
+        <g id="fat-16-all">
           <g
             id="data-g"
             data-id="data"

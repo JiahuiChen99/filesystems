@@ -1,15 +1,16 @@
 "use client";
-import { selectSelectedProp } from "@/app/fat-16/store/fat16-slice";
-import { FAT16 } from "@/app/fat-16/types/fat16";
+
+import { selectSelectedProp } from "@/app/fat-16/store/fat-16-slice";
+import { FAT16 } from "@/app/fat-16/types/fat-16";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { fat16ReservedAreaData } from "@/domain/fat-16/fat-16-reserved-area";
 import { useStoreSelector } from "@/store/store-hooks";
 import { ArrowRightFromLine, Cpu } from "lucide-react";
-import { fat16ReservedAreaData } from "../../../../../domain/fat-16/fat16-reserved-area";
 
 export default function ReservedArea() {
   const selectedProp = useStoreSelector(selectSelectedProp);

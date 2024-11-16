@@ -18,7 +18,7 @@ export default function FAT16FileSystemLayout({
       </div>
       <div className="flex w-full relative">
         <div className="sticky top-2 w-1/2 h-fit mr-2">
-          <BackButton backToPath="/fat16" />
+          <BackButton backToPath="/fat-16" />
           <section>{structure}</section>
         </div>
         <section className="flex flex-col flex-grow gap-2 w-1/2">

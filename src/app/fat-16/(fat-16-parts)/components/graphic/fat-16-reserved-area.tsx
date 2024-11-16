@@ -1,7 +1,7 @@
 "use client";
+import { changeSelection } from "@/app/fat-16/store/fat-16-slice";
 import type { MouseEvent } from "react";
 import { useDispatch } from "react-redux";
-import { changeSelection } from "../../../store/fat16-slice";
 import { groupStyle, hoverStyle } from "./fat-16-styles";
 
 export function FAT16ReservedArea() {

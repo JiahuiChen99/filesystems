@@ -1,3 +1,3 @@
 export * from "./example-layout";
-export * from "./fat16-reserved-area";
-export * from "./fat16-root-directory";
+export * from "./fat-16-reserved-area";
+export * from "./fat-16-root-directory";
