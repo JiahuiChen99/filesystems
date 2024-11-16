@@ -1,15 +1,15 @@
 "use client";
-import { fat16RootDirData } from "./data/fat16-root-directory";
-import { FAT16 } from "@/app/fat16/types/fat16";
-import { useStoreSelector } from "@/store/store-hooks";
 import { selectSelectedProp } from "@/app/fat16/store/fat16-slice";
-import { ArrowRightFromLine, Cpu } from "lucide-react";
+import { FAT16 } from "@/app/fat16/types/fat16";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useStoreSelector } from "@/store/store-hooks";
+import { ArrowRightFromLine, Cpu } from "lucide-react";
+import { fat16RootDirData } from "../../../../../domain/fat-16/fat16-root-directory";
 
 export default function RootDiretory() {
   const selectedProp = useStoreSelector(selectSelectedProp);

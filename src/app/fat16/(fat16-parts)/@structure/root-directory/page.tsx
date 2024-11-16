@@ -1,7 +1,7 @@
-import { Metadata } from "next";
-import { FAT16RootDir } from "../../components/graphic/fat16-root-dir";
-import { fat16RootDirData } from "../../@extended/root-directory/data/fat16-root-directory";
 import { TableGraphic } from "@/components/common/table-graphic";
+import { Metadata } from "next";
+import { fat16RootDirData } from "../../../../../domain/fat-16/fat16-root-directory";
+import { FAT16RootDir } from "../../components/graphic/fat16-root-dir";
 
 export const metadata: Metadata = {
   title: "Root Directory",
