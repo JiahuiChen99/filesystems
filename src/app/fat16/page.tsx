@@ -12,7 +12,7 @@ export default function FAT16() {
     toast({
       description: "Click on a selectable item to see its details.",
     });
-  }, []);
+  }, [toast]);
 
   return (
     <section className="flex flex-col p-10 w-full h-full justify-center align-middle">
