@@ -1,4 +1,4 @@
-import { EXT2 } from "@/app/ext-2/types/ext-2";
+import { EXT2 } from "@/app/(file-systems)/ext-2/types/ext-2";
 
 export const iosd2HurdData: EXT2.Struct[] = [
   {

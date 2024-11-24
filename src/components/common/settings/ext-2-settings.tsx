@@ -1,4 +1,4 @@
-import { EXT2BlockGroup } from "@/app/ext-2/(ext-2-parts)/components/graphic/ext-2-block-group";
+import { EXT2BlockGroup } from "@/app/(file-systems)/ext-2/(ext-2-parts)/components/graphic/ext-2-block-group";
 import {
   GlobalState,
   changeSelectedFSComponent,

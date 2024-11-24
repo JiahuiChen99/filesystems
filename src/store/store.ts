@@ -1,4 +1,4 @@
-import { fat16Slice } from "@/app/fat-16/store/fat-16-slice";
+import { fat16Slice } from "@/app/(file-systems)/fat-16/store/fat-16-slice";
 import { globalSlice } from "@/app/store/global-slice";
 import { combineSlices, configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";

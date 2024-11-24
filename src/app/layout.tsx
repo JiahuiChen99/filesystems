@@ -1,14 +1,14 @@
+import { StoreProvider } from "@/store/store-provider";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Navbar } from "../components/common/navbar/nav-bar";
-import { StoreProvider } from "@/store/store-provider";
 
-import "./globals.css";
-import clsx from "clsx";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import clsx from "clsx";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -49,7 +49,7 @@ export default function RootLayout({
         <html lang="en">
           <body className={clsx("flex flex-col w-full h-dvh", inter.className)}>
             <Navbar />
-            {children}
+            <div className="w-full h-full">{children}</div>
             <Toaster />
           </body>
         </html>

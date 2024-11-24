@@ -1,4 +1,4 @@
-import type { EXT2 } from "@/app/ext-2/types/ext-2";
+import type { EXT2 } from "@/app/(file-systems)/ext-2/types/ext-2";
 import {
   Table,
   TableBody,
@@ -8,7 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { CanvasDTO } from "@/dto/canvas";
-import { TableWithDescription } from "../../app/ext-2/(ext-2-parts)/components/table-with-description";
+import { TableWithDescription } from "../../app/(file-systems)/ext-2/(ext-2-parts)/components/table-with-description";
 import { imodeData } from "./ext-2-imode-flags";
 import { iflagsData } from "./ext-2-inode-flags";
 import { iosd2HurdData, iosd2LinuxData, iosd2MasixData } from "./ext-2-iosd2";

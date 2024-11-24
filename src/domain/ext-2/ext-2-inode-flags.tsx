@@ -1,4 +1,4 @@
-import type { EXT2 } from "@/app/ext-2/types/ext-2";
+import type { EXT2 } from "@/app/(file-systems)/ext-2/types/ext-2";
 
 export const iflagsData: EXT2.ConstValueDesc[] = [
   {
