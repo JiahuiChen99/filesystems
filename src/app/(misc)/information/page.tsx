@@ -1,6 +1,6 @@
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { TeacherAssistantCard } from "./components/teacher-assistant-card";
 import { CalendarDays } from "lucide-react";
+import { TeacherAssistantCard } from "./components/teacher-assistant-card";
 import { TAs } from "./data/ta-data";
 
 export default function Information() {
@@ -33,7 +33,15 @@ export default function Information() {
       {Object.entries(TAs).map(([year, tas]) => (
         <>
           <h4 className="font-bold mb-1.5">{year}</h4>
-          {tas === null ? <p>TBA</p> : <TeacherAssistantCard ta={tas[0]} />}
+          {tas === null ? (
+            <p>TBA</p>
+          ) : (
+            <>
+              {tas.map((ta) => (
+                <TeacherAssistantCard key={ta.name} ta={ta} />
+              ))}
+            </>
+          )}
         </>
       ))}
     </>
