@@ -16,7 +16,7 @@ export default function FileSystemsLayout({
       }
     >
       <AppSidebar />
-      <SidebarInset>{children}</SidebarInset>
+      <SidebarInset className="overflow-auto">{children}</SidebarInset>
     </SidebarProvider>
   );
 }

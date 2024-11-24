@@ -47,9 +47,11 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
         <html lang="en">
-          <body className={clsx("flex flex-col w-full h-dvh", inter.className)}>
+          <body
+            className={clsx("flex flex-col w-full h-screen", inter.className)}
+          >
             <Navbar />
-            <div className="w-full h-full">{children}</div>
+            <div className="w-full h-full overflow-hidden">{children}</div>
             <Toaster />
           </body>
         </html>
