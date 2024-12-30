@@ -19,62 +19,61 @@ const data = {
   navMain: [
     {
       title: "Second Extendend Filesystem",
-      url: "#",
+      url: "ext-2",
       items: [
         {
           title: "Block group",
           url: "#",
-          isActive: true,
         },
         {
           title: "Superblock",
-          url: "#",
+          url: "/ext-2/super-block",
         },
         {
           title: "Block group descriptor",
-          url: "#",
+          url: "/ext-2/block-group-descriptor",
         },
         {
           title: "Block bitmap",
-          url: "#",
+          url: "/ext-2/block-bitmap",
         },
         {
           title: "Inode bitmap",
-          url: "#",
+          url: "/ext-2/inode-bitmap",
         },
         {
           title: "Inode table",
-          url: "#",
+          url: "/ext-2/inode-table",
         },
         {
-          title: "Date block",
+          title: "Data blocks",
           url: "#",
         },
       ],
     },
     {
       title: "File Allocation Table (16-bits)",
-      url: "#",
+      url: "/fat-16",
       items: [
         {
           title: "Reserved area",
-          url: "#",
+          url: "/fat-16/reserved-area",
         },
         {
           title: "FAT 1",
-          url: "#",
+          url: "/fat-16/fat",
         },
         {
           title: "FAT 2",
-          url: "#",
+          url: "/fat-16/fat",
         },
         {
           title: "Root directory",
-          url: "#",
+          url: "/fat-16/root-directory",
         },
         {
           title: "Data (files and directories)",
-          url: "#",
+          url: "/fat-16/data",
         },
       ],
     },
@@ -117,7 +116,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <SidebarMenuSub className="ml-0 border-l-0 px-1.5">
                     {item.items.map((item) => (
                       <SidebarMenuSubItem key={item.title}>
-                        <SidebarMenuSubButton asChild isActive={item.isActive}>
+                        <SidebarMenuSubButton asChild isActive={false}>
                           <a href={item.url}>{item.title}</a>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
