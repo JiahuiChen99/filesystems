@@ -1,6 +1,8 @@
+"use client";
 import { GalleryVerticalEnd } from "lucide-react";
 import * as React from "react";
 
+import { changeSelectedFSComponent } from "@/app/store/global-slice";
 import {
   Sidebar,
   SidebarContent,
@@ -14,6 +16,7 @@ import {
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
 
 const data = {
   navMain: [
@@ -22,30 +25,37 @@ const data = {
       url: "ext-2",
       items: [
         {
+          id: "block-group",
           title: "Block group",
           url: "#",
         },
         {
+          id: "super-block",
           title: "Superblock",
           url: "/ext-2/super-block",
         },
         {
+          id: "block-group-descriptor",
           title: "Block group descriptor",
           url: "/ext-2/block-group-descriptor",
         },
         {
+          id: "block-bitmap",
           title: "Block bitmap",
           url: "/ext-2/block-bitmap",
         },
         {
+          id: "inode-bitmap",
           title: "Inode bitmap",
           url: "/ext-2/inode-bitmap",
         },
         {
+          id: "inode-table",
           title: "Inode table",
           url: "/ext-2/inode-table",
         },
         {
+          id: "data-blocks",
           title: "Data blocks",
           url: "#",
         },
@@ -56,22 +66,27 @@ const data = {
       url: "/fat-16",
       items: [
         {
+          id: "reserved-area",
           title: "Reserved area",
           url: "/fat-16/reserved-area",
         },
         {
+          id: "fat",
           title: "FAT 1",
           url: "/fat-16/fat",
         },
         {
+          id: "fat",
           title: "FAT 2",
           url: "/fat-16/fat",
         },
         {
+          id: "root-directory",
           title: "Root directory",
           url: "/fat-16/root-directory",
         },
         {
+          id: "data",
           title: "Data (files and directories)",
           url: "/fat-16/data",
         },
@@ -81,6 +96,11 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const dispath = useDispatch();
+  const fsItemClickHandler = (id: string) => {
+    dispath(changeSelectedFSComponent(id));
+  };
+
   return (
     <Sidebar variant="floating" {...props}>
       <SidebarHeader>
@@ -116,7 +136,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <SidebarMenuSub className="ml-0 border-l-0 px-1.5">
                     {item.items.map((item) => (
                       <SidebarMenuSubItem key={item.title}>
-                        <SidebarMenuSubButton asChild isActive={false}>
+                        <SidebarMenuSubButton
+                          asChild
+                          isActive={false}
+                          onClick={() => fsItemClickHandler(item.id)}
+                        >
                           <a href={item.url}>{item.title}</a>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
